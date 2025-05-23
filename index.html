@@ -31,15 +31,18 @@
       width: 100%;
       background: var(--bg-color);
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
+      justify-content: center; /* Center content */
+      padding: 1rem 0;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       z-index: 1000;
     }
-    .logo {
-      font-weight: bold;
-      font-size: 1.2rem;
+    .nav-container {
+      width: 100%;
+      max-width: 900px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
     }
     .nav-links {
       display: flex;
@@ -114,33 +117,52 @@
       color: var(--accent-color);
       font-size: 1.2rem;
     }
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .project-item {
+      margin-bottom: 1rem;
+    }
+    .project-item h3 {
+      margin: 0;
+      font-size: 1.1rem;
+      color: var(--accent-color);
+    }
+    .project-item p {
+      margin: 0.3rem 0 0 0;
+    }
   </style>
 </head>
 <body>
   <nav>
-    <div class="logo">Alireza</div>
-    <div class="nav-links">
-      <a href="#home" class="active">Home</a>
-      <a href="#about">About Me</a>
-      <a href="#education">Education</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </div>
-    <div class="menu">
-      <div class="menu-item">
-        <div class="menu-label"><i class="fas fa-moon"></i> Theme</div>
-        <div class="dropdown" id="theme-dropdown">
-          <div data-theme="light">Light</div>
-          <div data-theme="dark">Dark</div>
-          <div data-theme="auto" class="active">Automatic</div>
-        </div>
+    <div class="nav-container">
+      <!-- حذف Alireza -->
+      <div class="nav-links">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About Me</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
       </div>
-      <div class="menu-item">
-        <div class="menu-label"><i class="fas fa-language"></i> English</div>
-        <div class="dropdown">
-          <div class="active">English</div>
-          <div onclick="window.location.href='https://aeteghad.github.io/fa/'">فارسی</div>
+      <div class="menu">
+        <div class="menu-item">
+          <div class="menu-label"><i class="fas fa-moon"></i> Theme</div>
+          <div class="dropdown" id="theme-dropdown">
+            <div data-theme="light">Light</div>
+            <div data-theme="dark">Dark</div>
+            <div data-theme="auto" class="active">Automatic</div>
+          </div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-label"><i class="fas fa-language"></i> EN</div>
+          <div class="dropdown" style="left: auto; right: 0;"> <!-- اصلاح موقعیت -->
+            <div class="active">English</div>
+            <div onclick="window.location.href='https://aeteghad.github.io/fa/'">فارسی</div>
+          </div>
         </div>
       </div>
     </div>
@@ -186,9 +208,10 @@
 
   <section id="projects">
     <h2>Projects</h2>
-    <ul>
-      <li>Development of various data loggers integrated with custom GUI interfaces.</li>
-    </ul>
+    <div class="project-item">
+      <h3>Advanced Data Logger System</h3>
+      <p>Designed and built a robust data logging system with a custom graphical interface, supporting real-time signal acquisition, visualization, and embedded processing capabilities.</p>
+    </div>
   </section>
 
   <section id="contact">
