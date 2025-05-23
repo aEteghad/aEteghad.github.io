@@ -6,12 +6,23 @@
   <title>Alireza Eteghad | CV-Home</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
+    :root {
+      --bg-color: #f8f9fa;
+      --text-color: #333;
+      --accent-color: #0056b3;
+    }
+    body.dark-mode {
+      --bg-color: #121212;
+      --text-color: #e0e0e0;
+      --accent-color: #4dabf7;
+    }
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: #f8f9fa;
-      color: #333;
+      background: var(--bg-color);
+      color: var(--text-color);
+      transition: background 0.3s, color 0.3s;
     }
     .container {
       max-width: 900px;
@@ -23,6 +34,7 @@
       align-items: center;
       gap: 2rem;
       margin-bottom: 2rem;
+      flex-wrap: wrap;
     }
     .header img {
       width: 150px;
@@ -35,15 +47,18 @@
       font-size: 2rem;
     }
     h2 {
-      color: #0056b3;
+      color: var(--accent-color);
       border-bottom: 2px solid #ccc;
       padding-bottom: 5px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
     ul {
       padding-left: 20px;
     }
     .contact a {
-      color: #0056b3;
+      color: var(--accent-color);
       text-decoration: none;
       margin-right: 15px;
       display: inline-flex;
@@ -53,10 +68,51 @@
     .contact a:hover {
       text-decoration: underline;
     }
+    .toggle-mode {
+      text-align: right;
+      margin-bottom: 1rem;
+    }
+    .toggle-mode button {
+      padding: 5px 10px;
+      background: var(--accent-color);
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .contact-form {
+      margin-top: 2rem;
+    }
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    .contact-form button {
+      background: var(--accent-color);
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    @media (max-width: 600px) {
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="container">
+    <div class="toggle-mode">
+      <button onclick="document.body.classList.toggle('dark-mode')">Toggle Dark Mode</button>
+    </div>
     <div class="header">
       <img src="profile.jpg" alt="Alireza Eteghad">
       <div>
@@ -65,20 +121,20 @@
       </div>
     </div>
 
-    <h2>About Me</h2>
+    <h2><i class="fas fa-user"></i> About Me</h2>
     <p>
       I am a graduate student specializing in digital systems with a solid background in electronics and integrated circuits.
       My main interests include FPGA design, real-time data processing, and embedded systems.
       I love building complete hardware-software solutions tailored to signal processing and user interfaces.
     </p>
 
-    <h2>Education</h2>
+    <h2><i class="fas fa-graduation-cap"></i> Education</h2>
     <ul>
       <li><strong>M.Sc.</strong> in Electrical Engineering – Integrated Circuits, Sahand University of Technology</li>
       <li><strong>B.Sc.</strong> in Electrical Engineering – Electronics, Sahand University of Technology</li>
     </ul>
 
-    <h2>Skills</h2>
+    <h2><i class="fas fa-tools"></i> Skills</h2>
     <ul>
       <li>FPGA Design</li>
       <li>Real-Time Data Processing</li>
@@ -87,15 +143,25 @@
       <li>GUI Development</li>
     </ul>
 
-    <h2>Projects</h2>
+    <h2><i class="fas fa-project-diagram"></i> Projects</h2>
     <ul>
       <li>Development of various data loggers integrated with custom GUI interfaces.</li>
     </ul>
 
-    <h2>Contact</h2>
+    <h2><i class="fas fa-envelope-open-text"></i> Contact</h2>
     <div class="contact">
       <a href="mailto:eteghadalireza@gmail.com"><i class="fas fa-envelope"></i> eteghadalireza@gmail.com</a>
       <a href="https://instagram.com/alireza_eteghad" target="_blank"><i class="fab fa-instagram"></i> @alireza_eteghad</a>
+    </div>
+
+    <div class="contact-form">
+      <h3>Send a Message</h3>
+      <form action="https://formspree.io/f/mwkgybka" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Send</button>
+      </form>
     </div>
   </div>
 </body>
