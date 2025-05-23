@@ -134,6 +134,35 @@
     .project-item p {
       margin: 0.3rem 0 0 0;
     }
+    .contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  max-width: 500px;
+  margin-top: 1rem;
+}
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+.contact-form button {
+  align-self: flex-start;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.contact-form button:hover {
+  background-color: #003e82;
+}
+
   </style>
 </head>
 <body>
@@ -178,7 +207,7 @@
 </section>
 
 <section id="about">
-  <h2>About Me</h2>
+  <h2><i class="fas fa-user"></i> About Me</h2>
   <p>I am a graduate student specializing in digital systems with a solid background in electronics and integrated circuits. My main interests include FPGA design, real-time data processing, and embedded systems. I love building complete hardware-software solutions tailored to signal processing and user interfaces.</p>
 
   <h3>Education</h3>
@@ -198,29 +227,29 @@
 </section>
 
   <section id="projects">
-    <h2>Projects</h2>
+    <h2><i class="fas fa-project-diagram"></i> Projects</h2>
     <div class="project-item">
       <h3>Advanced Data Logger System</h3>
       <p>Designed and built a robust data logging system with a custom graphical interface, supporting real-time signal acquisition, visualization, and embedded processing capabilities.</p>
     </div>
   </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <div class="contact">
-      <a href="mailto:eteghadalireza@gmail.com"><i class="fas fa-envelope"></i> eteghadalireza@gmail.com</a><br />
-      <a href="https://instagram.com/alireza_eteghad" target="_blank"><i class="fab fa-instagram"></i> @alireza_eteghad</a>
-    </div>
-    <div class="contact-form">
-      <h3>Send a Message</h3>
-      <form action="https://formspree.io/f/mwkgybka" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required />
-        <input type="email" name="email" placeholder="Your Email" required />
-        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-        <button type="submit">Send</button>
-      </form>
-    </div>
-  </section>
+<section id="contact">
+  <h2><i class="fas fa-envelope"></i> Contact</h2>
+  <div class="contact">
+    <a href="mailto:eteghadalireza@gmail.com"><i class="fas fa-envelope"></i> eteghadalireza@gmail.com</a><br />
+    <a href="https://instagram.com/alireza_eteghad" target="_blank"><i class="fab fa-instagram"></i> @alireza_eteghad</a>
+  </div>
+  <div class="contact-form">
+    <h3>Send a Message</h3>
+    <form action="https://formspree.io/f/mwkgybka" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </div>
+</section>
 
   <script>
     function applyTheme(theme) {
