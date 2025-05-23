@@ -162,7 +162,34 @@
 .contact-form button:hover {
   background-color: #003e82;
 }
+.tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
 
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: auto;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 5px 12px;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%; /* بالای آیکون */
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  white-space: nowrap;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
   </style>
 </head>
 <body>
@@ -194,17 +221,40 @@
     </div>
   </nav>
 
-<section id="home">
-  <div class="header" style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;">
-    <img src="profile.jpg" alt="Alireza Eteghad" style="width:150px;height:150px;border-radius:10px;object-fit:cover;">
-    <h1>Alireza Eteghad</h1>
-    <p>M.Sc. Student in Electrical Engineering</p>
-    <div class="social-icons">
-      <a href="mailto:eteghadalireza@gmail.com"><i class="fas fa-envelope"></i></a>
-      <a href="https://instagram.com/alireza_eteghad" target="_blank"><i class="fab fa-instagram"></i></a>
-    </div>
+<section id="home" style="position: relative; overflow: hidden;">
+  <!-- Video Background -->
+  <video autoplay muted loop playsinline style="position: absolute; width: 100%; height: 100%; object-fit: cover; z-index: -2;">
+    <source src="background.mp4" type="video/mp4">
+  </video>
+
+  <!-- Dark overlay for readability -->
+  <div style="position: absolute; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: -1;"></div>
+
+  <!-- Header Content -->
+  <div class="header" style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;position:relative;">
+    <img src="profile.jpg" alt="Alireza Eteghad" style="width:200px;height:200px;border-radius:20px;object-fit:cover;box-shadow: 0 0 20px rgba(0,0,0,0.4);">
+    <h1 style="font-size: 2.8rem; margin: 20px 0 10px;">Alireza Eteghad</h1>
+    <p style="font-size: 1.5rem; margin-bottom: 30px;">M.Sc. Student in Electrical Engineering</p>
+
+    <!-- Social Icons -->
+<div class="social-icons">
+  <span class="tooltip">
+    <a href="mailto:eteghadalireza@gmail.com" style="font-size: 2rem; margin: 0 20px; color: var(--accent-color);">
+      <i class="fas fa-envelope"></i>
+    </a>
+    <span class="tooltiptext">Email</span>
+  </span>
+
+  <span class="tooltip">
+    <a href="https://instagram.com/alireza_eteghad" target="_blank" style="font-size: 2rem; margin: 0 20px; color: var(--accent-color);">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <span class="tooltiptext">Instagram</span>
+  </span>
+</div>
   </div>
 </section>
+
 
 <section id="about">
   <h2><i class="fas fa-user"></i> About Me</h2>
