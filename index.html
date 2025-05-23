@@ -223,12 +223,13 @@
 
 <section id="home" style="position: relative; overflow: hidden;">
   <!-- Video Background -->
-  <video autoplay muted loop playsinline style="position: absolute; width: 100%; height: 100%; object-fit: cover; z-index: -2;">
+  <video autoplay muted loop playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2;">
     <source src="background.mp4" type="video/mp4">
+    Your browser does not support the video tag.
   </video>
 
-  <!-- Dark overlay for readability -->
-  <div style="position: absolute; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: -1;"></div>
+  <!-- Dark Overlay -->
+  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: -1;"></div>
 
   <!-- Header Content -->
   <div class="header" style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;position:relative;">
@@ -236,25 +237,24 @@
     <h1 style="font-size: 2.8rem; margin: 20px 0 10px;">Alireza Eteghad</h1>
     <p style="font-size: 1.5rem; margin-bottom: 30px;">M.Sc. Student in Electrical Engineering</p>
 
-    <!-- Social Icons -->
-<div class="social-icons">
-  <span class="tooltip">
-    <a href="mailto:eteghadalireza@gmail.com" style="font-size: 2rem; margin: 0 20px; color: var(--accent-color);">
-      <i class="fas fa-envelope"></i>
-    </a>
-    <span class="tooltiptext">Email</span>
-  </span>
+    <!-- Social Icons with Tooltip -->
+    <div class="social-icons">
+      <span class="tooltip">
+        <a href="mailto:eteghadalireza@gmail.com" style="font-size: 2rem; margin: 0 20px; color: var(--accent-color);">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <span class="tooltiptext">Email</span>
+      </span>
 
-  <span class="tooltip">
-    <a href="https://instagram.com/alireza_eteghad" target="_blank" style="font-size: 2rem; margin: 0 20px; color: var(--accent-color);">
-      <i class="fab fa-instagram"></i>
-    </a>
-    <span class="tooltiptext">Instagram</span>
-  </span>
-</div>
+      <span class="tooltip">
+        <a href="https://instagram.com/alireza_eteghad" target="_blank" style="font-size: 2rem; margin: 0 20px; color: var(--accent-color);">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <span class="tooltiptext">Instagram</span>
+      </span>
+    </div>
   </div>
 </section>
-
 
 <section id="about">
   <h2><i class="fas fa-user"></i> About Me</h2>
