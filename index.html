@@ -39,21 +39,41 @@
       margin: 0;
       font-size: 1.2rem;
     }
-    .theme-switcher {
+    .menu {
       display: flex;
-      align-items: center;
-      gap: 0.5rem;
+      gap: 2rem;
+      position: relative;
     }
-    .theme-switcher label {
+    .menu-item {
+      position: relative;
+    }
+    .menu-item:hover .dropdown {
+      display: block;
+    }
+    .menu-label {
       display: flex;
       align-items: center;
+      cursor: default;
       gap: 0.3rem;
     }
-    .theme-switcher select {
-      padding: 5px 10px;
-      border-radius: 5px;
+    .dropdown {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 100%;
+      background: var(--bg-color);
       border: 1px solid #ccc;
-      font-size: 1rem;
+      border-radius: 5px;
+      overflow: hidden;
+      white-space: nowrap;
+      z-index: 1001;
+    }
+    .dropdown div {
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+    }
+    .dropdown div:hover {
+      background-color: #ddd;
     }
     .container {
       max-width: 900px;
@@ -138,13 +158,21 @@
 <body>
   <header>
     <h1>Home</h1>
-    <div class="theme-switcher">
-      <label for="theme-select"><i class="fas fa-moon"></i> Theme:</label>
-      <select id="theme-select">
-        <option value="light">Light</option>
-        <option value="dark">Dark</option>
-        <option value="auto" selected>Automatic</option>
-      </select>
+    <div class="menu">
+      <div class="menu-item">
+        <div class="menu-label"><i class="fas fa-moon"></i> Theme</div>
+        <div class="dropdown" id="theme-dropdown">
+          <div data-theme="light">Light</div>
+          <div data-theme="dark">Dark</div>
+          <div data-theme="auto">Automatic</div>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-label"><i class="fas fa-language"></i> English</div>
+        <div class="dropdown">
+          <div onclick="window.location.href='https://aeteghad.github.io/fa/'">فارسی</div>
+        </div>
+      </div>
     </div>
   </header>
   <div class="container">
@@ -204,9 +232,7 @@
     </div>
   </div>
 
-  <script>
-    const themeSelect = document.getElementById('theme-select');
-
+<script>
     function applyTheme(theme) {
       if (theme === 'dark') {
         document.body.classList.add('dark-mode');
@@ -218,15 +244,16 @@
       }
     }
 
-    themeSelect.addEventListener('change', () => {
-      const theme = themeSelect.value;
-      localStorage.setItem('theme', theme);
-      applyTheme(theme);
-    });
-
     const savedTheme = localStorage.getItem('theme') || 'auto';
-    themeSelect.value = savedTheme;
     applyTheme(savedTheme);
+
+    document.querySelectorAll('#theme-dropdown div').forEach(item => {
+      item.addEventListener('click', () => {
+        const selected = item.getAttribute('data-theme');
+        localStorage.setItem('theme', selected);
+        applyTheme(selected);
+      });
+    });
   </script>
 </body>
 </html>
