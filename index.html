@@ -68,17 +68,15 @@
     .contact a:hover {
       text-decoration: underline;
     }
-    .toggle-mode {
+    .theme-switcher {
       text-align: right;
       margin-bottom: 1rem;
     }
-    .toggle-mode button {
+    .theme-switcher select {
       padding: 5px 10px;
-      background: var(--accent-color);
-      color: #fff;
-      border: none;
       border-radius: 5px;
-      cursor: pointer;
+      border: 1px solid #ccc;
+      font-size: 1rem;
     }
     .contact-form {
       margin-top: 2rem;
@@ -110,9 +108,15 @@
 </head>
 <body>
   <div class="container">
-    <div class="toggle-mode">
-      <button onclick="document.body.classList.toggle('dark-mode')">Toggle Dark Mode</button>
+    <div class="theme-switcher">
+      <label for="theme-select"><i class="fas fa-moon"></i> Theme:</label>
+      <select id="theme-select">
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+        <option value="auto" selected>Automatic</option>
+      </select>
     </div>
+
     <div class="header">
       <img src="profile.jpg" alt="Alireza Eteghad">
       <div>
@@ -164,5 +168,30 @@
       </form>
     </div>
   </div>
+
+  <script>
+    const themeSelect = document.getElementById('theme-select');
+
+    function applyTheme(theme) {
+      if (theme === 'dark') {
+        document.body.classList.add('dark-mode');
+      } else if (theme === 'light') {
+        document.body.classList.remove('dark-mode');
+      } else {
+        const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.body.classList.toggle('dark-mode', isDark);
+      }
+    }
+
+    themeSelect.addEventListener('change', () => {
+      const theme = themeSelect.value;
+      localStorage.setItem('theme', theme);
+      applyTheme(theme);
+    });
+
+    const savedTheme = localStorage.getItem('theme') || 'auto';
+    themeSelect.value = savedTheme;
+    applyTheme(savedTheme);
+  </script>
 </body>
 </html>
