@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Alireza Eteghad | CV-Home</title>
+  <title>Alireza Eteghad</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
     :root {
@@ -16,6 +16,9 @@
       --text-color: #e0e0e0;
       --accent-color: #4dabf7;
     }
+    html {
+      scroll-behavior: smooth;
+    }
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -24,100 +27,69 @@
       color: var(--text-color);
       transition: background 0.3s, color 0.3s;
     }
-    header {
-      position: sticky;
+    nav {
+      position: fixed;
       top: 0;
+      width: 100%;
       background: var(--bg-color);
-      padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid #ccc;
+      padding: 1rem 2rem;
       z-index: 1000;
-      max-width: 900px;
-      margin: auto;
+      border-bottom: 1px solid #ccc;
     }
-    header h1 {
-      margin: 0;
-      font-size: 1.2rem;
+    nav h1 {
+      font-size: 1.5rem;
       background-color: var(--accent-color);
       color: white;
       padding: 0.3rem 0.7rem;
       border-radius: 6px;
-      cursor: pointer;
+      margin: 0;
     }
-    .menu {
+    nav ul {
+      list-style: none;
       display: flex;
-      gap: 2rem;
-      position: relative;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
     }
-    .menu-item {
-      position: relative;
+    nav ul li a {
+      text-decoration: none;
+      color: var(--text-color);
+      font-weight: bold;
     }
-    .menu-item:hover .dropdown {
-      display: block;
+    nav ul li a:hover {
+      color: var(--accent-color);
     }
-    .menu-label {
-      display: flex;
-      align-items: center;
-      cursor: default;
-      gap: 0.3rem;
-    }
-    .dropdown {
-      display: none;
-      position: absolute;
-      right: 0;
-      top: 100%;
-      background: var(--bg-color);
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      overflow: hidden;
-      white-space: nowrap;
-      z-index: 1001;
-      min-width: 120px;
-    }
-    .dropdown div {
-      padding: 0.5rem 1rem;
-      cursor: pointer;
-      border-radius: 0;
-    }
-    .dropdown div:hover {
-      background-color: #ddd;
-    }
-    .dropdown div.active {
-      background-color: var(--accent-color);
-      color: white;
-      border-radius: 8px;
-    }
-    .container {
+    section {
+      min-height: 100vh;
+      padding: 5rem 2rem 2rem;
       max-width: 900px;
       margin: auto;
-      padding: 2rem;
     }
-    .header {
+    .home {
       display: flex;
+      flex-direction: column;
+      justify-content: center;
       align-items: center;
-      gap: 2rem;
-      margin-bottom: 2rem;
-      flex-wrap: wrap;
+      text-align: center;
     }
-    .header img {
-      width: 150px;
-      height: 150px;
+    .home img {
+      width: 180px;
+      height: 180px;
       border-radius: 10px;
       object-fit: cover;
     }
-    .header h1 {
-      margin: 0;
-      font-size: 2rem;
+    .social-icons a {
+      margin: 1rem 0.5rem 0 0.5rem;
+      font-size: 1.5rem;
+      color: var(--accent-color);
     }
     h2 {
       color: var(--accent-color);
       border-bottom: 2px solid #ccc;
-      padding-bottom: 5px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      padding-bottom: 0.5rem;
     }
     ul {
       padding-left: 20px;
@@ -125,16 +97,8 @@
     .contact a {
       color: var(--accent-color);
       text-decoration: none;
-      margin-right: 15px;
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-    }
-    .contact a:hover {
-      text-decoration: underline;
-    }
-    .contact-form {
-      margin-top: 2rem;
+      display: inline-block;
+      margin-bottom: 10px;
     }
     .contact-form input, .contact-form textarea {
       width: 100%;
@@ -153,74 +117,64 @@
       border-radius: 5px;
       cursor: pointer;
     }
-    .social-icons {
-      margin-top: 0.5rem;
-    }
-    .social-icons a {
-      margin-right: 15px;
-      color: var(--accent-color);
-      font-size: 1.2rem;
+    .theme-toggle {
+      cursor: pointer;
+      margin-left: 1rem;
     }
     @media (max-width: 600px) {
-      header {
+      nav {
         flex-direction: column;
         align-items: flex-start;
       }
-      .menu {
-        width: 100%;
-        justify-content: space-between;
+      nav ul {
+        flex-wrap: wrap;
+        gap: 1rem;
       }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Home</h1>
-    <div class="menu">
-      <div class="menu-item">
-        <div class="menu-label"><i class="fas fa-moon"></i> Theme</div>
-        <div class="dropdown" id="theme-dropdown">
-          <div data-theme="light">Light</div>
-          <div data-theme="dark">Dark</div>
-          <div data-theme="auto" class="active">Automatic</div>
-        </div>
-      </div>
-      <div class="menu-item">
-        <div class="menu-label"><i class="fas fa-language"></i> English</div>
-        <div class="dropdown">
-          <div class="active">English</div>
-          <div onclick="window.location.href='https://aeteghad.github.io/fa/'">فارسی</div>
-        </div>
-      </div>
-    </div>
-  </header>
-  
-  <div class="container">
-    <div class="header">
-      <img src="profile.jpg" alt="Alireza Eteghad">
-      <div>
-        <h1>Alireza Eteghad</h1>
-        <p>M.Sc. Student in Electrical Engineering</p>
-        <div class="social-icons">
-          <a href="mailto:eteghadalireza@gmail.com"><i class="fas fa-envelope"></i></a>
-          <a href="https://instagram.com/alireza_eteghad" target="_blank"><i class="fab fa-instagram"></i></a>
-        </div>
-      </div>
-    </div>
+  <nav>
+    <h1>Alireza</h1>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="theme-toggle"><i class="fas fa-moon" id="theme-icon"></i></div>
+  </nav>
 
+  <section id="home" class="home">
+    <img src="profile.jpg" alt="Alireza Eteghad">
+    <h2>Alireza Eteghad</h2>
+    <p>M.Sc. Student in Electrical Engineering</p>
+    <div class="social-icons">
+      <a href="mailto:eteghadalireza@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="https://instagram.com/alireza_eteghad" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+  </section>
+
+  <section id="about">
     <h2><i class="fas fa-user"></i> About Me</h2>
     <p>
       I am a graduate student specializing in digital systems with a solid background in electronics and integrated circuits.
       My main interests include FPGA design, real-time data processing, and embedded systems.
       I love building complete hardware-software solutions tailored to signal processing and user interfaces.
     </p>
+  </section>
 
+  <section id="education">
     <h2><i class="fas fa-graduation-cap"></i> Education</h2>
     <ul>
       <li><strong>M.Sc.</strong> in Electrical Engineering – Integrated Circuits, Sahand University of Technology</li>
       <li><strong>B.Sc.</strong> in Electrical Engineering – Electronics, Sahand University of Technology</li>
     </ul>
+  </section>
 
+  <section id="skills">
     <h2><i class="fas fa-tools"></i> Skills</h2>
     <ul>
       <li>FPGA Design</li>
@@ -229,18 +183,21 @@
       <li>Signal Processing</li>
       <li>GUI Development</li>
     </ul>
+  </section>
 
+  <section id="projects">
     <h2><i class="fas fa-project-diagram"></i> Projects</h2>
     <ul>
       <li>Development of various data loggers integrated with custom GUI interfaces.</li>
     </ul>
+  </section>
 
+  <section id="contact">
     <h2><i class="fas fa-envelope-open-text"></i> Contact</h2>
     <div class="contact">
-      <a href="mailto:eteghadalireza@gmail.com"><i class="fas fa-envelope"></i> eteghadalireza@gmail.com</a>
+      <a href="mailto:eteghadalireza@gmail.com"><i class="fas fa-envelope"></i> eteghadalireza@gmail.com</a><br>
       <a href="https://instagram.com/alireza_eteghad" target="_blank"><i class="fab fa-instagram"></i> @alireza_eteghad</a>
     </div>
-
     <div class="contact-form">
       <h3>Send a Message</h3>
       <form action="https://formspree.io/f/mwkgybka" method="POST">
@@ -250,34 +207,31 @@
         <button type="submit">Send</button>
       </form>
     </div>
-  </div>
+  </section>
 
-<script>
+  <script>
+    const themeIcon = document.getElementById("theme-icon");
+    const savedTheme = localStorage.getItem('theme') || 'auto';
+
     function applyTheme(theme) {
-      document.querySelectorAll('#theme-dropdown div').forEach(el => el.classList.remove('active'));
-      const themeElement = document.querySelector(`#theme-dropdown div[data-theme="${theme}"]`);
-      if (themeElement) themeElement.classList.add('active');
-
       if (theme === 'dark') {
         document.body.classList.add('dark-mode');
-      } else if (theme === 'light') {
-        document.body.classList.remove('dark-mode');
+        themeIcon.classList.remove('fa-sun');
+        themeIcon.classList.add('fa-moon');
       } else {
-        const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        document.body.classList.toggle('dark-mode', isDark);
+        document.body.classList.remove('dark-mode');
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
       }
+      localStorage.setItem('theme', theme);
     }
 
-    const savedTheme = localStorage.getItem('theme') || 'auto';
     applyTheme(savedTheme);
 
-    document.querySelectorAll('#theme-dropdown div').forEach(item => {
-      item.addEventListener('click', () => {
-        const selected = item.getAttribute('data-theme');
-        localStorage.setItem('theme', selected);
-        applyTheme(selected);
-      });
+    themeIcon.addEventListener('click', () => {
+      const isDark = document.body.classList.contains('dark-mode');
+      applyTheme(isDark ? 'light' : 'dark');
     });
-</script>
+  </script>
 </body>
 </html>
