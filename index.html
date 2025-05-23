@@ -85,7 +85,7 @@
       background-color: #ddd;
     }
     .dropdown div.active {
-      background-color: #333;
+      background-color: var(--accent-color);
       color: white;
       border-radius: 8px;
     }
@@ -180,9 +180,9 @@
       <div class="menu-item">
         <div class="menu-label"><i class="fas fa-moon"></i> Theme</div>
         <div class="dropdown" id="theme-dropdown">
-          <div data-theme="light" class="active">Light</div>
+          <div data-theme="light">Light</div>
           <div data-theme="dark">Dark</div>
-          <div data-theme="auto">Automatic</div>
+          <div data-theme="auto" class="active">Automatic</div>
         </div>
       </div>
       <div class="menu-item">
@@ -254,6 +254,10 @@
 
 <script>
     function applyTheme(theme) {
+      document.querySelectorAll('#theme-dropdown div').forEach(el => el.classList.remove('active'));
+      const themeElement = document.querySelector(`#theme-dropdown div[data-theme="${theme}"]`);
+      if (themeElement) themeElement.classList.add('active');
+
       if (theme === 'dark') {
         document.body.classList.add('dark-mode');
       } else if (theme === 'light') {
@@ -269,8 +273,6 @@
 
     document.querySelectorAll('#theme-dropdown div').forEach(item => {
       item.addEventListener('click', () => {
-        document.querySelectorAll('#theme-dropdown div').forEach(el => el.classList.remove('active'));
-        item.classList.add('active');
         const selected = item.getAttribute('data-theme');
         localStorage.setItem('theme', selected);
         applyTheme(selected);
