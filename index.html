@@ -24,6 +24,37 @@
       color: var(--text-color);
       transition: background 0.3s, color 0.3s;
     }
+    header {
+      position: sticky;
+      top: 0;
+      background: var(--bg-color);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ccc;
+      z-index: 1000;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+    .theme-switcher {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .theme-switcher label {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .theme-switcher select {
+      padding: 5px 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
     .container {
       max-width: 900px;
       margin: auto;
@@ -68,16 +99,6 @@
     .contact a:hover {
       text-decoration: underline;
     }
-    .theme-switcher {
-      text-align: right;
-      margin-bottom: 1rem;
-    }
-    .theme-switcher select {
-      padding: 5px 10px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-      font-size: 1rem;
-    }
     .contact-form {
       margin-top: 2rem;
     }
@@ -107,7 +128,8 @@
   </style>
 </head>
 <body>
-  <div class="container">
+  <header>
+    <h1>Home</h1>
     <div class="theme-switcher">
       <label for="theme-select"><i class="fas fa-moon"></i> Theme:</label>
       <select id="theme-select">
@@ -116,7 +138,8 @@
         <option value="auto" selected>Automatic</option>
       </select>
     </div>
-
+  </header>
+  <div class="container">
     <div class="header">
       <img src="profile.jpg" alt="Alireza Eteghad">
       <div>
