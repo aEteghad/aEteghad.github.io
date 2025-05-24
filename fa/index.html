@@ -1,49 +1,67 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>علیرضا اعتقاد | سیستم‌های دیجیتال</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Tahoma', sans-serif;
-            background-color: #f9f9f9;
-            color: #333;
-            text-align: center;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>علیرضا اعتقاد</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Vazirmatn", sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+    }
 
-        header {
-            background-color: #0a3d62;
-            color: white;
-            padding: 40px 20px;
-        }
+    header {
+      background-color: #333;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
+    .nav-left,
+    .nav-right {
+      display: flex;
+      gap: 15px;
+    }
 
-        header p {
-            margin-top: 10px;
-            font-size: 1.2em;
-        }
+    .nav-left a,
+    .nav-right a {
+      color: white;
+      text-decoration: none;
+      font-size: 1em;
+    }
 
-        .coming-soon {
-            margin-top: 100px;
-            font-size: 2em;
-            color: #555;
-        }
-    </style>
+    .nav-left a:hover,
+    .nav-right a:hover {
+      text-decoration: underline;
+    }
+
+    .content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: calc(100vh - 60px); /* Adjust for header height */
+      font-size: 2em;
+      color: #666;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>علیرضا اعتقاد</h1>
-        <p>پژوهشگر و توسعه‌دهنده‌ی سیستم‌های دیجیتال</p>
-    </header>
-
-    <div class="coming-soon">
-        به زودی ...
+  <header>
+    <div class="nav-left">
+      <a href="#">خانه</a>
     </div>
+    <div class="nav-right">
+      <a href="#">زبان</a>
+      <a href="#">Theme</a>
+    </div>
+  </header>
+
+  <div class="content">
+    به زودی ...
+  </div>
 </body>
 </html>
