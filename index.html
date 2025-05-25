@@ -49,7 +49,9 @@
   }
 
 
-.gallery img {
+
+	  
+ .gallery img {
   cursor: pointer;
   transition: transform 0.2s;
 }
@@ -71,41 +73,33 @@
   justify-content: center;
 }
 
-.lightbox-image-wrapper {
+.lightbox-content {
   max-width: 90%;
   max-height: 80%;
-  overflow: hidden;
-  position: relative;
-  cursor: grab;
+  transition: transform 0.3s ease;
 }
 
-.lightbox-content {
-  transition: transform 0.2s ease;
-  user-select: none;
-  pointer-events: none;
-  position: relative;
-}
-
-.lightbox-close {
+.lightbox-close,
+.lightbox-arrow,
+.zoom-button {
   position: absolute;
-  top: 20px;
-  right: 30px;
   color: white;
   font-size: 40px;
   font-weight: bold;
   cursor: pointer;
-  z-index: 10;
+  user-select: none;
+  z-index: 1001;
+}
+
+.lightbox-close {
+  top: 20px;
+  right: 30px;
 }
 
 .lightbox-arrow {
-  position: absolute;
   top: 50%;
-  font-size: 60px;
-  color: white;
-  cursor: pointer;
-  user-select: none;
   transform: translateY(-50%);
-  z-index: 10;
+  font-size: 60px;
 }
 
 .lightbox-prev {
@@ -116,25 +110,17 @@
   right: 20px;
 }
 
-.zoom-controls {
-  position: absolute;
+.zoom-button {
   bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
 }
 
-.zoom-controls button {
-  margin: 0 5px;
-  padding: 10px 15px;
-  font-size: 20px;
-  border: none;
-  border-radius: 5px;
-  background-color: white;
-  color: black;
-  cursor: pointer;
+#zoom-in {
+  left: 40px;
 }
 
+#zoom-out {
+  left: 100px;
+}
 
 
 
@@ -614,126 +600,96 @@ document.querySelectorAll('.tab-button').forEach(btn => {
   });
     
 document.addEventListener("DOMContentLoaded", function () {
-  const images = document.querySelectorAll(".gallery img");
-  const lightbox = document.getElementById("lightbox");
-  const lightboxImage = document.getElementById("lightbox-image");
-  const lightboxWrapper = document.getElementById("lightbox-wrapper");
-  const closeBtn = document.getElementById("lightbox-close");
-  const prevBtn = document.getElementById("lightbox-prev");
-  const nextBtn = document.getElementById("lightbox-next");
-  const zoomInBtn = document.getElementById("zoom-in");
-  const zoomOutBtn = document.getElementById("zoom-out");
+    const images = document.querySelectorAll(".gallery img");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = document.getElementById("lightbox-image");
+    const closeBtn = document.getElementById("lightbox-close");
+    const prevBtn = document.getElementById("lightbox-prev");
+    const nextBtn = document.getElementById("lightbox-next");
+    const zoomInBtn = document.getElementById("zoom-in");
+    const zoomOutBtn = document.getElementById("zoom-out");
 
-  let currentIndex = 0;
-  let zoom = 1;
-  let panX = 0;
-  let panY = 0;
-  let isDragging = false;
-  let startX, startY;
+    let currentIndex = 0;
+    let zoomLevel = 1;
 
-  function updateTransform() {
-    lightboxImage.style.transform = `scale(${zoom}) translate(${panX}px, ${panY}px)`;
-  }
+    function openLightbox(index) {
+      currentIndex = index;
+      zoomLevel = 1;
+      updateImage();
+      lightbox.style.display = "flex";
+    }
 
-  function openLightbox(index) {
-    currentIndex = index;
-    lightboxImage.src = images[currentIndex].src;
-    lightbox.style.display = "flex";
-    zoom = 1;
-    panX = 0;
-    panY = 0;
-    updateTransform();
-  }
+    function closeLightbox() {
+      lightbox.style.display = "none";
+      zoomLevel = 1;
+      lightboxImage.style.transform = "scale(1)";
+    }
 
-  function closeLightbox() {
-    lightbox.style.display = "none";
-  }
+    function showPrev() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      zoomLevel = 1;
+      updateImage();
+    }
 
-  function showPrev() {
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    openLightbox(currentIndex);
-  }
+    function showNext() {
+      currentIndex = (currentIndex + 1) % images.length;
+      zoomLevel = 1;
+      updateImage();
+    }
 
-  function showNext() {
-    currentIndex = (currentIndex + 1) % images.length;
-    openLightbox(currentIndex);
-  }
+    function updateImage() {
+      lightboxImage.src = images[currentIndex].src;
+      lightboxImage.style.transform = `scale(${zoomLevel})`;
+    }
 
-  zoomInBtn.addEventListener("click", function () {
-    zoom = Math.min(zoom + 0.2, 5);
-    updateTransform();
-  });
+    function zoomIn() {
+      zoomLevel += 0.2;
+      lightboxImage.style.transform = `scale(${zoomLevel})`;
+    }
 
-  zoomOutBtn.addEventListener("click", function () {
-    zoom = Math.max(zoom - 0.2, 1);
-    panX = 0;
-    panY = 0;
-    updateTransform();
-  });
+    function zoomOut() {
+      zoomLevel = Math.max(0.2, zoomLevel - 0.2);
+      lightboxImage.style.transform = `scale(${zoomLevel})`;
+    }
 
-  lightboxWrapper.addEventListener("mousedown", function (e) {
-    if (zoom <= 1) return;
-    isDragging = true;
-    startX = e.clientX;
-    startY = e.clientY;
-    lightboxWrapper.style.cursor = "grabbing";
-  });
+    images.forEach((img, index) => {
+      img.addEventListener("click", function () {
+        openLightbox(index);
+      });
+    });
 
-  document.addEventListener("mousemove", function (e) {
-    if (!isDragging) return;
-    panX += (e.clientX - startX);
-    panY += (e.clientY - startY);
-    startX = e.clientX;
-    startY = e.clientY;
-    updateTransform();
-  });
+    closeBtn.addEventListener("click", closeLightbox);
+    prevBtn.addEventListener("click", showPrev);
+    nextBtn.addEventListener("click", showNext);
+    zoomInBtn.addEventListener("click", zoomIn);
+    zoomOutBtn.addEventListener("click", zoomOut);
 
-  document.addEventListener("mouseup", function () {
-    isDragging = false;
-    lightboxWrapper.style.cursor = "grab";
-  });
+    lightbox.addEventListener("click", function (e) {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
 
-  images.forEach((img, index) => {
-    img.addEventListener("click", function () {
-      openLightbox(index);
+    document.addEventListener("keydown", function (e) {
+      if (lightbox.style.display === "flex") {
+        if (e.key === "ArrowLeft") showPrev();
+        else if (e.key === "ArrowRight") showNext();
+        else if (e.key === "Escape") closeLightbox();
+        else if (e.key === "+") zoomIn();
+        else if (e.key === "-") zoomOut();
+      }
     });
   });
-
-  closeBtn.addEventListener("click", closeLightbox);
-  prevBtn.addEventListener("click", showPrev);
-  nextBtn.addEventListener("click", showNext);
-
-  lightbox.addEventListener("click", function (e) {
-    if (e.target === lightbox) {
-      closeLightbox();
-    }
-  });
-
-  document.addEventListener("keydown", function (e) {
-    if (lightbox.style.display === "flex") {
-      if (e.key === "ArrowLeft") showPrev();
-      else if (e.key === "ArrowRight") showNext();
-      else if (e.key === "Escape") closeLightbox();
-    }
-  });
-});
-
   </script>
 	
 <div class="lightbox" id="lightbox">
   <span class="lightbox-close" id="lightbox-close">&times;</span>
   <span class="lightbox-arrow lightbox-prev" id="lightbox-prev">&#10094;</span>
-  <div class="lightbox-image-wrapper" id="lightbox-wrapper">
-    <img class="lightbox-content" id="lightbox-image">
-  </div>
+  <img class="lightbox-content" id="lightbox-image">
   <span class="lightbox-arrow lightbox-next" id="lightbox-next">&#10095;</span>
-
-  <div class="zoom-controls">
-    <button id="zoom-in">+</button>
-    <button id="zoom-out">−</button>
-  </div>
+  <span class="zoom-button" id="zoom-in">+</span>
+  <span class="zoom-button" id="zoom-out">−</span>
 </div>
-
 
 	
 </body>
