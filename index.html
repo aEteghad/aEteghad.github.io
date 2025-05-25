@@ -483,6 +483,7 @@
   <div class="tabs">
     <button class="tab-button active" data-tab="project1">FSHA-DataLoggerGUI</button>
     <button class="tab-button" data-tab="project2">ZYNQ Based Real-Time Data Logger</button>
+    <button class="tab-button" data-tab="project3">Smart Industrial Data Logger (In Progress)</button>  
     <!-- <button class="tab-button" data-tab="project2">Other Project</button> -->
   </div>
 
@@ -552,14 +553,39 @@
       <img src="assets/projects/ZYNQDataLogger/5.jpg" alt="Triangle Signal">
       <img src="assets/projects/ZYNQDataLogger/6.jpg" alt="Voltage Accuracy Test">
       <img src="assets/projects/ZYNQDataLogger/7.jpg" alt="AD7768 Board">
-      <video controls>
+     <!-- <video controls>
         <source src="assets/projects/ZYNQDataLogger/Demo.mp4" type="video/mp4">
         Your browser does not support the video tag.
-      </video>
+      </video> -->
     </div>
   </div>
 </div>
 
+	<!-- Content for Project 3 -->
+<div id="project3" class="tab-content">
+  <h3 style="color: var(--accent-color); margin-top: 1rem;">40-Channel Multi-Purpose Industrial Data Logger (In Progress)</h3>
+  <p>
+    <strong>This project focuses on the design and development of a high-performance, 40-channel industrial data logger equipped with intelligent signal processing tools.</strong> The system is built around a Zynq Ultrascale+ FPGA platform with four embedded ARM cores and aims to provide configurable analog data acquisition via WiFi6, Ethernet, or USB3 interfaces. It supports a wide variety of industrial sensors including load cells, LVDTs, strain gauges, accelerometers, pressure sensors, thermometers, hygrometers, and more. Both single-ended and differential signal configurations are supported, with automatic reference voltage generation per sensor type.
+  </p>
+
+  <ul style="line-height: 1.8;">
+    <li><strong>Modular 40-Channel Analog Input</strong> – 32x 24-bit ADCs (≥256 kSPS) + 8x 32-bit ADCs (≥768 kSPS)</li>
+    <li><strong>Powerful FPGA Platform</strong> – Zynq Ultrascale+ with quad-core ARM and optional Linux OS</li>
+    <li><strong>Flexible Connectivity</strong> – WiFi6, USB3.0, and Gigabit Ethernet support</li>
+    <li><strong>Cross-Platform Software</strong> – User interface developed in Qt/C++ for Windows & Android</li>
+    <li><strong>Real-Time Processing</strong> – Online signal math (sum, subtract, scaling), FFT, max/min/avg, etc.</li>
+    <li><strong>Smart Configuration</strong> – Auto sensor detection, calibration, and configurable I/O</li>
+    <li><strong>Long-Term Logging</strong> – Capable of continuous data recording for over a month</li>
+    <li><strong>Optional Cloud Integration</strong> – Remote monitoring, alert thresholds, and future IoT readiness</li>
+  </ul>
+
+  <!-- Gallery -->
+  <div class="gallery-container">
+    <div class="gallery">
+      <img src="assets/projects/IndustrialLogger40CH/Board.png" alt="40CH Logger Board Preview">
+    </div>
+  </div>
+</div>
   <!-- OtherTabs -->
 </section>
 
