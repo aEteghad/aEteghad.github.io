@@ -61,77 +61,48 @@
 .lightbox {
   display: none;
   position: fixed;
-  z-index: 999;
-  padding: 60px;
+  z-index: 1000;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden;
   background-color: rgba(0, 0, 0, 0.9);
+  align-items: center;
+  justify-content: center;
 }
 
-.lightbox-image {
-  margin: auto;
-  display: block;
+.lightbox-content {
   max-width: 90%;
   max-height: 80%;
-  transition: transform 0.3s ease;
-}
-
-.lightbox-close,
-.lightbox-prev,
-.lightbox-next {
-  position: absolute;
-  color: white;
-  font-size: 30px;
-  font-weight: bold;
-  cursor: pointer;
-  user-select: none;
-  z-index: 1001;
 }
 
 .lightbox-close {
+  position: absolute;
   top: 20px;
-  right: 35px;
+  right: 30px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.lightbox-arrow {
+  position: absolute;
+  top: 50%;
+  font-size: 60px;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  transform: translateY(-50%);
 }
 
 .lightbox-prev {
-  top: 50%;
-  left: 30px;
-  transform: translateY(-50%);
+  left: 20px;
 }
 
 .lightbox-next {
-  top: 50%;
-  right: 30px;
-  transform: translateY(-50%);
-}
-
-.lightbox-zoom {
-  position: absolute;
-  bottom: 20px;
   right: 20px;
-  z-index: 1002;
-  display: flex;
-  gap: 10px;
 }
-
-.lightbox-zoom button {
-  background-color: rgba(255, 255, 255, 0.8);
-  border: none;
-  padding: 8px 12px;
-  font-size: 18px;
-  cursor: pointer;
-  border-radius: 4px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-  transition: background-color 0.2s ease;
-}
-
-.lightbox-zoom button:hover {
-  background-color: rgba(200, 200, 200, 0.8);
-}
-
 
 
 	  
@@ -608,61 +579,34 @@ document.querySelectorAll('.tab-button').forEach(btn => {
     });
   });
     
-     document.addEventListener("DOMContentLoaded", function () {
+   document.addEventListener("DOMContentLoaded", function () {
     const images = document.querySelectorAll(".gallery img");
     const lightbox = document.getElementById("lightbox");
     const lightboxImage = document.getElementById("lightbox-image");
     const closeBtn = document.getElementById("lightbox-close");
     const prevBtn = document.getElementById("lightbox-prev");
     const nextBtn = document.getElementById("lightbox-next");
-    const zoomInBtn = document.getElementById("zoom-in");
-    const zoomOutBtn = document.getElementById("zoom-out");
 
     let currentIndex = 0;
-    let zoomLevel = 1;
 
     function openLightbox(index) {
       currentIndex = index;
-      zoomLevel = 1;
-      updateLightboxImage();
+      lightboxImage.src = images[currentIndex].src;
       lightbox.style.display = "flex";
     }
 
     function closeLightbox() {
       lightbox.style.display = "none";
-      resetZoom();
     }
 
     function showPrev() {
       currentIndex = (currentIndex - 1 + images.length) % images.length;
-      zoomLevel = 1;
-      updateLightboxImage();
+      lightboxImage.src = images[currentIndex].src;
     }
 
     function showNext() {
       currentIndex = (currentIndex + 1) % images.length;
-      zoomLevel = 1;
-      updateLightboxImage();
-    }
-
-    function updateLightboxImage() {
       lightboxImage.src = images[currentIndex].src;
-      lightboxImage.style.transform = `scale(${zoomLevel})`;
-    }
-
-    function zoomIn() {
-      zoomLevel += 0.2;
-      lightboxImage.style.transform = `scale(${zoomLevel})`;
-    }
-
-    function zoomOut() {
-      zoomLevel = Math.max(0.2, zoomLevel - 0.2);
-      lightboxImage.style.transform = `scale(${zoomLevel})`;
-    }
-
-    function resetZoom() {
-      zoomLevel = 1;
-      lightboxImage.style.transform = `scale(1)`;
     }
 
     images.forEach((img, index) => {
@@ -674,8 +618,6 @@ document.querySelectorAll('.tab-button').forEach(btn => {
     closeBtn.addEventListener("click", closeLightbox);
     prevBtn.addEventListener("click", showPrev);
     nextBtn.addEventListener("click", showNext);
-    zoomInBtn.addEventListener("click", zoomIn);
-    zoomOutBtn.addEventListener("click", zoomOut);
 
     lightbox.addEventListener("click", function (e) {
       if (e.target === lightbox) {
@@ -688,27 +630,17 @@ document.querySelectorAll('.tab-button').forEach(btn => {
         if (e.key === "ArrowLeft") showPrev();
         else if (e.key === "ArrowRight") showNext();
         else if (e.key === "Escape") closeLightbox();
-        else if (e.key === "+") zoomIn();
-        else if (e.key === "-") zoomOut();
       }
     });
   });
   </script>
 	
-<!-- Lightbox -->
 <div class="lightbox" id="lightbox">
   <span class="lightbox-close" id="lightbox-close">&times;</span>
-  <span class="lightbox-prev" id="lightbox-prev">&#10094;</span>
-  <span class="lightbox-next" id="lightbox-next">&#10095;</span>
-
-  <div class="lightbox-zoom">
-    <button id="zoom-in">+</button>
-    <button id="zoom-out">−</button>
-  </div>
-
-  <img class="lightbox-image" id="lightbox-image" src="" alt="">
+  <span class="lightbox-arrow lightbox-prev" id="lightbox-prev">&#10094;</span>
+  <img class="lightbox-content" id="lightbox-image">
+  <span class="lightbox-arrow lightbox-next" id="lightbox-next">&#10095;</span>
 </div>
-
 	
 </body>
 </html>
