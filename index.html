@@ -636,8 +636,13 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function updateTransform() {
-    lightboxImage.style.transform = `scale(${zoomLevel}) translate(${panX}px, ${panY}px)`;
-  }
+   if (zoomLevel === 1) {
+     lightboxImage.style.transform = "none";
+   } else {
+     lightboxImage.style.transform = `scale(${zoomLevel}) translate(${panX}px, ${panY}px)`;
+   }
+ }
+
 
   function openLightbox(index) {
     currentIndex = index;
