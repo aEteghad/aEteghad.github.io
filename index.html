@@ -48,8 +48,10 @@
     margin-bottom: 1rem;
   }
 
+
+
 	  
-   .gallery img {
+ .gallery img {
   cursor: pointer;
   transition: transform 0.2s;
 }
@@ -74,26 +76,30 @@
 .lightbox-content {
   max-width: 90%;
   max-height: 80%;
+  transition: transform 0.3s ease;
 }
 
-.lightbox-close {
+.lightbox-close,
+.lightbox-arrow,
+.zoom-button {
   position: absolute;
-  top: 20px;
-  right: 30px;
   color: white;
   font-size: 40px;
   font-weight: bold;
   cursor: pointer;
+  user-select: none;
+  z-index: 1001;
+}
+
+.lightbox-close {
+  top: 20px;
+  right: 30px;
 }
 
 .lightbox-arrow {
-  position: absolute;
   top: 50%;
-  font-size: 60px;
-  color: white;
-  cursor: pointer;
-  user-select: none;
   transform: translateY(-50%);
+  font-size: 60px;
 }
 
 .lightbox-prev {
@@ -103,6 +109,19 @@
 .lightbox-next {
   right: 20px;
 }
+
+.zoom-button {
+  bottom: 40px;
+}
+
+#zoom-in {
+  left: 40px;
+}
+
+#zoom-out {
+  left: 100px;
+}
+
 
 
 	  
@@ -579,34 +598,57 @@ document.querySelectorAll('.tab-button').forEach(btn => {
     });
   });
     
-   document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
     const images = document.querySelectorAll(".gallery img");
     const lightbox = document.getElementById("lightbox");
     const lightboxImage = document.getElementById("lightbox-image");
     const closeBtn = document.getElementById("lightbox-close");
     const prevBtn = document.getElementById("lightbox-prev");
     const nextBtn = document.getElementById("lightbox-next");
+    const zoomInBtn = document.getElementById("zoom-in");
+    const zoomOutBtn = document.getElementById("zoom-out");
 
     let currentIndex = 0;
+    let zoomLevel = 1;
 
     function openLightbox(index) {
       currentIndex = index;
-      lightboxImage.src = images[currentIndex].src;
+      zoomLevel = 1;
+      updateImage();
       lightbox.style.display = "flex";
     }
 
     function closeLightbox() {
       lightbox.style.display = "none";
+      zoomLevel = 1;
+      lightboxImage.style.transform = "scale(1)";
     }
 
     function showPrev() {
       currentIndex = (currentIndex - 1 + images.length) % images.length;
-      lightboxImage.src = images[currentIndex].src;
+      zoomLevel = 1;
+      updateImage();
     }
 
     function showNext() {
       currentIndex = (currentIndex + 1) % images.length;
+      zoomLevel = 1;
+      updateImage();
+    }
+
+    function updateImage() {
       lightboxImage.src = images[currentIndex].src;
+      lightboxImage.style.transform = `scale(${zoomLevel})`;
+    }
+
+    function zoomIn() {
+      zoomLevel += 0.2;
+      lightboxImage.style.transform = `scale(${zoomLevel})`;
+    }
+
+    function zoomOut() {
+      zoomLevel = Math.max(0.2, zoomLevel - 0.2);
+      lightboxImage.style.transform = `scale(${zoomLevel})`;
     }
 
     images.forEach((img, index) => {
@@ -618,6 +660,8 @@ document.querySelectorAll('.tab-button').forEach(btn => {
     closeBtn.addEventListener("click", closeLightbox);
     prevBtn.addEventListener("click", showPrev);
     nextBtn.addEventListener("click", showNext);
+    zoomInBtn.addEventListener("click", zoomIn);
+    zoomOutBtn.addEventListener("click", zoomOut);
 
     lightbox.addEventListener("click", function (e) {
       if (e.target === lightbox) {
@@ -630,6 +674,8 @@ document.querySelectorAll('.tab-button').forEach(btn => {
         if (e.key === "ArrowLeft") showPrev();
         else if (e.key === "ArrowRight") showNext();
         else if (e.key === "Escape") closeLightbox();
+        else if (e.key === "+") zoomIn();
+        else if (e.key === "-") zoomOut();
       }
     });
   });
@@ -640,7 +686,10 @@ document.querySelectorAll('.tab-button').forEach(btn => {
   <span class="lightbox-arrow lightbox-prev" id="lightbox-prev">&#10094;</span>
   <img class="lightbox-content" id="lightbox-image">
   <span class="lightbox-arrow lightbox-next" id="lightbox-next">&#10095;</span>
+  <span class="zoom-button" id="zoom-in">+</span>
+  <span class="zoom-button" id="zoom-out">−</span>
 </div>
+
 	
 </body>
 </html>
