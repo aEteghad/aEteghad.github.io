@@ -42,6 +42,50 @@
       --text-color: #333;
       --accent-color: #0056b3;
     }
+       .tabs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  .tab-button {
+    padding: 0.5rem 1rem;
+    border: none;
+    background: var(--bg-color);
+    color: var(--text-color);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  .tab-button.active {
+    background: var(--accent-color);
+    color: white;
+  }
+  .tab-content {
+    display: none;
+  }
+  .tab-content.active {
+    display: block;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+
+  .gallery-container {
+    margin-top: 2rem;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 1rem;
+  }
+  .gallery img, .gallery video {
+    height: 240px;
+    margin-right: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    display: inline-block;
+    vertical-align: middle;
+  }
     .themed-icon {
      fill: currentColor;
      transition: fill 0.3s;
@@ -354,13 +398,53 @@
   </ul>
 </section>
 
-  <section id="projects">
-    <h2><i class="fas fa-project-diagram"></i> Projects</h2>
-    <div class="project-item">
-      <h3>Advanced Data Logger System</h3>
-      <p>Designed and built a robust data logging system with a custom graphical interface, supporting real-time signal acquisition, visualization, and embedded processing capabilities.</p>
+<section id="projects">
+  <h2><i class="fas fa-project-diagram"></i> Projects</h2>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <button class="tab-button active" data-tab="project1">Data Logger UI</button>
+    <!-- <button class="tab-button" data-tab="project2">Other Project</button> -->
+  </div>
+
+  <!-- DATALOGER UI -->
+  <div id="project1" class="tab-content active">
+    <h3 style="color: var(--accent-color); margin-top: 1rem;">Advanced Data Logger Interface</h3>
+    <p>
+      I developed a Qt-based graphical user interface for an embedded data logger system. This application automatically detects the connected USB port and supports real-time data acquisition from all channels simultaneously. Key features include live plotting, Excel export, adjustable sample rate, and on-the-fly FFT calculation.
+    </p>
+
+    <ul style="line-height: 1.8;">
+      <li><strong>Auto USB Port Detection</strong> – Automatically detects and connects to the correct COM port.</li>
+      <li><strong>Simultaneous Channel Reading</strong> – All sensors can be read and plotted in real time.</li>
+      <li><strong>Live Plotting</strong> – Data is visualized instantly with smooth, multi-channel plots.</li>
+      <li><strong>FFT Calculation</strong> – Real-time FFT computation for frequency domain analysis.</li>
+      <li><strong>Excel Export</strong> – All collected data is saved to Excel format.</li>
+      <li><strong>Function Fitting & Interpolation</strong> – Linear functions and point-based interpolation for calibration and transformation.</li>
+      <li><strong>Sample Rate Control</strong> – User-defined sampling frequency (data per second).</li>
+    </ul>
+
+    <!-- Gallery -->
+    <div class="gallery-container">
+      <div class="gallery">
+        <img src="assets/projects/data-logger/1.png" alt="UI Screenshot 1">
+        <img src="assets/projects/data-logger/2.png" alt="UI Screenshot 2">
+        <img src="assets/projects/data-logger/3.png" alt="UI Screenshot 3">
+        <img src="assets/projects/data-logger/4.png" alt="UI Screenshot 4">
+        <img src="assets/projects/data-logger/5.png" alt="UI Screenshot 5">
+        <img src="assets/projects/data-logger/6.png" alt="UI Screenshot 6">
+        <img src="assets/projects/data-logger/7.png" alt="UI Screenshot 7">
+        <video controls>
+          <source src="assets/projects/data-logger/demo.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
     </div>
-  </section>
+  </div>
+
+  <!-- OtherTabs -->
+</section>
+
 
 <section id="contact">
   <h2><i class="fas fa-envelope"></i> Contact</h2>
@@ -424,6 +508,16 @@
         }
       });
     });
+
+document.querySelectorAll('.tab-button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+
+      btn.classList.add('active');
+      document.getElementById(btn.dataset.tab).classList.add('active');
+    });
+  });
   </script>
 </body>
 </html>
