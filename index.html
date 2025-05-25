@@ -53,9 +53,11 @@
   cursor: pointer;
   transition: transform 0.2s;
 }
+
 .gallery img:hover {
   transform: scale(1.05);
 }
+
 .lightbox {
   display: none;
   position: fixed;
@@ -68,10 +70,12 @@
   align-items: center;
   justify-content: center;
 }
+
 .lightbox-content {
   max-width: 90%;
   max-height: 80%;
 }
+
 .lightbox-close {
   position: absolute;
   top: 20px;
@@ -81,6 +85,7 @@
   font-weight: bold;
   cursor: pointer;
 }
+
 .lightbox-arrow {
   position: absolute;
   top: 50%;
@@ -90,33 +95,13 @@
   user-select: none;
   transform: translateY(-50%);
 }
+
 .lightbox-prev {
   left: 20px;
 }
+
 .lightbox-next {
   right: 20px;
-}
-.lightbox-zoom {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  z-index: 1002;
-  display: flex;
-  gap: 10px;
-}
-.lightbox-zoom button {
-  background-color: rgba(255, 255, 255, 0.8);
-  border: none;
-  padding: 8px 12px;
-  font-size: 18px;
-  cursor: pointer;
-  border-radius: 4px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-  transition: background-color 0.2s ease;
-}
-
-.lightbox-zoom button:hover {
-  background-color: rgba(200, 200, 200, 0.8);
 }
 
 
@@ -648,53 +633,14 @@ document.querySelectorAll('.tab-button').forEach(btn => {
       }
     });
   });
-
-let zoomLevel = 1;
-const zoomStep = 0.1;
-
-document.getElementById("zoom-in").addEventListener("click", () => {
-  zoomLevel += zoomStep;
-  updateZoom();
-});
-
-document.getElementById("zoom-out").addEventListener("click", () => {
-  zoomLevel = Math.max(zoomStep, zoomLevel - zoomStep);
-  updateZoom();
-});
-
-function updateZoom() {
-  lightboxImage.style.transform = `scale(${zoomLevel})`;
-}
-
-function resetZoom() {
-  zoomLevel = 1;
-  updateZoom();
-}
-
-// Reset zoom on image change
-function showImage(index) {
-  currentIndex = index;
-  lightboxImage.src = images[currentIndex].src;
-  resetZoom();
-}
-
   </script>
 	
-<!-- Lightbox -->
 <div class="lightbox" id="lightbox">
   <span class="lightbox-close" id="lightbox-close">&times;</span>
-  <span class="lightbox-prev" id="lightbox-prev">&#10094;</span>
-  <span class="lightbox-next" id="lightbox-next">&#10095;</span>
-
-  <!-- Zoom Buttons -->
-  <div class="lightbox-zoom">
-    <button id="zoom-in">+</button>
-    <button id="zoom-out">−</button>
-  </div>
-
-  <img class="lightbox-image" id="lightbox-image" src="" alt="">
+  <span class="lightbox-arrow lightbox-prev" id="lightbox-prev">&#10094;</span>
+  <img class="lightbox-content" id="lightbox-image">
+  <span class="lightbox-arrow lightbox-next" id="lightbox-next">&#10095;</span>
 </div>
-
 	
 </body>
 </html>
