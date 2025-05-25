@@ -47,13 +47,17 @@
     gap: 1rem;
     margin-bottom: 1rem;
   }
-      .gallery img {
+
+	  
+   .gallery img {
   cursor: pointer;
   transition: transform 0.2s;
 }
+
 .gallery img:hover {
   transform: scale(1.05);
 }
+
 .lightbox {
   display: none;
   position: fixed;
@@ -66,10 +70,12 @@
   align-items: center;
   justify-content: center;
 }
+
 .lightbox-content {
   max-width: 90%;
   max-height: 80%;
 }
+
 .lightbox-close {
   position: absolute;
   top: 20px;
@@ -79,6 +85,27 @@
   font-weight: bold;
   cursor: pointer;
 }
+
+.lightbox-arrow {
+  position: absolute;
+  top: 50%;
+  font-size: 60px;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  transform: translateY(-50%);
+}
+
+.lightbox-prev {
+  left: 20px;
+}
+
+.lightbox-next {
+  right: 20px;
+}
+
+
+	  
   .tab-button {
     padding: 0.5rem 1rem;
     border: none;
@@ -552,26 +579,57 @@ document.querySelectorAll('.tab-button').forEach(btn => {
     });
   });
     
-    document.addEventListener("DOMContentLoaded", function () {
+   document.addEventListener("DOMContentLoaded", function () {
     const images = document.querySelectorAll(".gallery img");
     const lightbox = document.getElementById("lightbox");
     const lightboxImage = document.getElementById("lightbox-image");
     const closeBtn = document.getElementById("lightbox-close");
+    const prevBtn = document.getElementById("lightbox-prev");
+    const nextBtn = document.getElementById("lightbox-next");
 
-    images.forEach(img => {
+    let currentIndex = 0;
+
+    function openLightbox(index) {
+      currentIndex = index;
+      lightboxImage.src = images[currentIndex].src;
+      lightbox.style.display = "flex";
+    }
+
+    function closeLightbox() {
+      lightbox.style.display = "none";
+    }
+
+    function showPrev() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      lightboxImage.src = images[currentIndex].src;
+    }
+
+    function showNext() {
+      currentIndex = (currentIndex + 1) % images.length;
+      lightboxImage.src = images[currentIndex].src;
+    }
+
+    images.forEach((img, index) => {
       img.addEventListener("click", function () {
-        lightboxImage.src = this.src;
-        lightbox.style.display = "flex";
+        openLightbox(index);
       });
     });
 
-    closeBtn.addEventListener("click", function () {
-      lightbox.style.display = "none";
-    });
+    closeBtn.addEventListener("click", closeLightbox);
+    prevBtn.addEventListener("click", showPrev);
+    nextBtn.addEventListener("click", showNext);
 
     lightbox.addEventListener("click", function (e) {
       if (e.target === lightbox) {
-        lightbox.style.display = "none";
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (lightbox.style.display === "flex") {
+        if (e.key === "ArrowLeft") showPrev();
+        else if (e.key === "ArrowRight") showNext();
+        else if (e.key === "Escape") closeLightbox();
       }
     });
   });
@@ -579,7 +637,9 @@ document.querySelectorAll('.tab-button').forEach(btn => {
 	
 <div class="lightbox" id="lightbox">
   <span class="lightbox-close" id="lightbox-close">&times;</span>
+  <span class="lightbox-arrow lightbox-prev" id="lightbox-prev">&#10094;</span>
   <img class="lightbox-content" id="lightbox-image">
+  <span class="lightbox-arrow lightbox-next" id="lightbox-next">&#10095;</span>
 </div>
 	
 </body>
