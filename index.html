@@ -51,11 +51,10 @@
 
 
 	  
- .gallery img {
+.gallery img {
   cursor: pointer;
   transition: transform 0.2s;
 }
-
 .gallery img:hover {
   transform: scale(1.05);
 }
@@ -71,24 +70,43 @@
   background-color: rgba(0, 0, 0, 0.9);
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+}
+
+.lightbox-wrapper {
+  position: relative;
+  cursor: grab;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .lightbox-content {
-  max-width: 90%;
-  max-height: 80%;
   transition: transform 0.3s ease;
+  transform: scale(1);
+  user-select: none;
+  max-width: none;
+  max-height: none;
+  pointer-events: none;
 }
 
 .lightbox-close,
-.lightbox-arrow,
-.zoom-button {
+.lightbox-arrow {
   position: absolute;
-  color: white;
+  color: #000;
   font-size: 40px;
   font-weight: bold;
   cursor: pointer;
   user-select: none;
   z-index: 1001;
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 10px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
 }
 
 .lightbox-close {
@@ -110,16 +128,28 @@
   right: 20px;
 }
 
+.zoom-controls {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+  z-index: 1002;
+}
+
 .zoom-button {
-  bottom: 40px;
-}
-
-#zoom-in {
-  left: 40px;
-}
-
-#zoom-out {
-  left: 100px;
+  background-color: rgba(255, 255, 255, 0.85);
+  color: #000;
+  font-size: 28px;
+  font-weight: bold;
+  padding: 10px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  user-select: none;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -177,6 +207,7 @@
       margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
+      font-size: 17px;
       scroll-behavior: smooth;
       background-color: var(--bg-color);
       color: var(--text-color);
@@ -195,7 +226,7 @@
     }
     .nav-container {
       width: 100%;
-      max-width: 900px;
+      max-width: 1200px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -259,13 +290,25 @@
     }
     section {
       min-height: 100vh;
-      padding: 100px 20px 50px;
-      max-width: 900px;
+      padding: 100px 30px 50px;
+      max-width: 1200px;
       margin: auto;
     }
     h1, h2 {
       color: var(--accent-color);
     }
+     h1 {
+  font-size: 2.2rem;
+}
+h2 {
+  font-size: 1.8rem;
+}
+h3 {
+  font-size: 1.4rem;
+}
+p, li {
+  font-size: 1rem;
+}
     ul {
       padding-left: 20px;
     }
@@ -458,23 +501,72 @@
 
 <section id="about">
   <h2><i class="fas fa-user"></i> About Me</h2>
-  <p>I am a graduate student specializing in digital systems with a solid background in electronics and integrated circuits. My main interests include FPGA design, real-time data processing, and embedded systems. I love building complete hardware-software solutions tailored to signal processing and user interfaces.</p>
+  <div style="display: flex; flex-wrap: wrap; gap: 30px;">
+    <!-- Left Side -->
+    <div style="flex: 1 1 500px; min-width: 300px;">
+      <p>
+        Graduate researcher in electrical engineering with a strong background in embedded systems, FPGA design, and high-speed data acquisition. Research and development efforts are focused on real-time signal processing systems that tightly integrate hardware and software to achieve ultra-low latency and high throughput.
+      </p>
+      <p>
+        Current projects include the development of a next-generation data logger equipped with Wi-Fi 6 connectivity, built on a hybrid architecture involving Zynq FPGAs and PetaLinux. This system enables high-frequency data capture and wireless streaming in real-time, making it suitable for edge computing and instrumentation applications.
+      </p>
+      <p>
+        In parallel, work is underway on deploying AI models directly onto FPGA fabrics to accelerate inference pipelines, particularly for signal-centric tasks. This integration of machine learning and programmable logic builds on extensive experience with analog-to-digital conversion, having designed custom drivers for a range of high-resolution ADCs (e.g., AD7768, ISL26104, CS5532).
+      </p>
+      <p>
+        Past work has involved full-stack hardware/software development, from low-level SPI communication to Qt-based graphical interfaces. Several of these systems have been featured in academic conferences, where results and methodologies were presented.
+      </p>
+      <p>
+        Teaching experience spans undergraduate-level courses in Digital Systems II, Microprocessor System Design, and ASIC/FPGA Circuit Design. These engagements reflect a commitment not only to technical depth, but also to effective communication and mentorship.
+      </p>
 
-  <h3>Education</h3>
-  <ul>
-    <li><strong>M.Sc.</strong> in Electrical Engineering – Integrated Circuits, Sahand University of Technology</li>
-    <li><strong>B.Sc.</strong> in Electrical Engineering – Electronics, Sahand University of Technology</li>
-  </ul>
+      <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+      <ul class="education-list">
+        <li>
+          <strong>M.Sc. in Electrical Engineering – Integrated Circuits</strong><br>
+          Sahand University of Technology, 2025 (in progress)
+        </li>
+        <li>
+          <strong>B.Sc. in Electrical Engineering – Electronics</strong><br>
+          Sahand University of Technology, 2023
+        </li>
+      </ul>
 
-  <h3>Skills</h3>
-  <ul>
-    <li>FPGA Design</li>
-    <li>Real-Time Data Processing</li>
-    <li>Embedded Systems</li>
-    <li>Signal Processing</li>
-    <li>GUI Development</li>
-  </ul>
+      <h3><i class="fas fa-chalkboard-teacher"></i> Courses Taught</h3>
+      <ul class="course-list">
+        <li>Digital Systems II</li>
+        <li>Microprocessor System Design</li>
+        <li>ASIC/FPGA Circuits</li>
+      </ul>
+
+      <h3><i class="fas fa-tools"></i> Skills</h3>
+      <ul class="skill-list">
+        <li><strong>Programming:</strong> C, C++, VHDL</li>
+        <li><strong>Embedded Platforms:</strong> ARM, FPGAs</li>
+        <li><strong>Operating Systems:</strong> PetaLinux</li>
+        <li><strong>Driver Development:</strong> A2D interfaces (e.g., AD7768, ISL26104)</li>
+        <li><strong>Signal Processing:</strong> Real-time implementation & optimization</li>
+        <li><strong>GUI Development:</strong> Qt (Desktop & Android Applications)</li>
+      </ul>
+    </div>
+
+    <!-- Right Side -->
+ <div style="flex: 1 1 300px; min-width: 280px;">
+  <h3 style="margin-top: 0;"><i class="fas fa-images"></i> Gallery</h3>
+  <div style="border: 2px solid #ccc; border-radius: 12px; padding: 10px; max-height: 900px; overflow-y: auto; display: flex; flex-direction: column;">
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <img src="assets/icons/personal/profile.jp" alt="Teaching a class" style="width: 100%; border-radius: 8px;" />
+      <img src="assets/icons/personal/profile.jg" alt="Presenting at a conference" style="width: 100%; border-radius: 8px;" />
+      <img src="assets/icons/personal/profile.pg" alt="Project showcase" style="width: 100%; border-radius: 8px;" />
+      <img src="assets/icons/personal/profil.jpg" alt="Conference participation" style="width: 100%; border-radius: 8px;" />
+      <!-- Add more images here as needed -->
+    </div>
+   </div>
+ </div>
+  </div>
 </section>
+
+
 
 <section id="projects">
   <h2><i class="fas fa-project-diagram"></i> Projects</h2>
@@ -676,55 +768,69 @@ document.addEventListener("DOMContentLoaded", function () {
   const nextBtn = document.getElementById("lightbox-next");
   const zoomInBtn = document.getElementById("zoom-in");
   const zoomOutBtn = document.getElementById("zoom-out");
+  const resetZoomBtn = document.getElementById("reset-zoom");
+  const wrapper = document.querySelector(".lightbox-wrapper");
 
   let currentGallery = [];
   let currentIndex = 0;
   let zoomLevel = 1;
+  let isDragging = false;
+  let startX, startY, translateX = 0, translateY = 0;
 
   function updateImage() {
-    lightboxImage.src = currentGallery[currentIndex].src;
-    lightboxImage.style.transform = `scale(${zoomLevel})`;
+  zoomLevel = 0.8;
+  translateX = 0;
+  translateY = 0;
+  lightboxImage.onload = () => {
+    applyTransform();
+  };
+
+  lightboxImage.src = currentGallery[currentIndex].src;
+}
+
+  function applyTransform() {
+    lightboxImage.style.transform = `scale(${zoomLevel}) translate(${translateX}px, ${translateY}px)`;
+  }
+  
+  function resetZoom() {
+  zoomLevel = 0.8;
+  translateX = 0;
+  translateY = 0;
+  applyTransform();
   }
 
   function openLightbox(images, index) {
     currentGallery = images;
     currentIndex = index;
-    zoomLevel = 1;
     updateImage();
     lightbox.style.display = "flex";
   }
 
   function closeLightbox() {
     lightbox.style.display = "none";
-    zoomLevel = 1;
-    lightboxImage.style.transform = "scale(1)";
   }
 
   function showPrev() {
     currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
-    zoomLevel = 1;
     updateImage();
   }
 
   function showNext() {
     currentIndex = (currentIndex + 1) % currentGallery.length;
-    zoomLevel = 1;
     updateImage();
   }
 
   function zoomIn() {
     zoomLevel += 0.2;
-    lightboxImage.style.transform = `scale(${zoomLevel})`;
+    applyTransform();
   }
 
   function zoomOut() {
     zoomLevel = Math.max(0.2, zoomLevel - 0.2);
-    lightboxImage.style.transform = `scale(${zoomLevel})`;
+    applyTransform();
   }
 
-  // Set event listeners for all gallery images
   const galleries = document.querySelectorAll(".gallery");
-
   galleries.forEach(gallery => {
     const images = gallery.querySelectorAll("img");
     images.forEach((img, index) => {
@@ -739,6 +845,9 @@ document.addEventListener("DOMContentLoaded", function () {
   nextBtn.addEventListener("click", showNext);
   zoomInBtn.addEventListener("click", zoomIn);
   zoomOutBtn.addEventListener("click", zoomOut);
+  resetZoomBtn.addEventListener("click", resetZoom);
+  lightboxImage.addEventListener("dblclick", resetZoom);
+
 
   lightbox.addEventListener("click", function (e) {
     if (e.target === lightbox) {
@@ -755,17 +864,51 @@ document.addEventListener("DOMContentLoaded", function () {
       else if (e.key === "-") zoomOut();
     }
   });
+
+  // Drag to move image
+  wrapper.addEventListener("mousedown", function (e) {
+    if (zoomLevel <= 0.6) return;
+    isDragging = true;
+    startX = e.clientX;
+    startY = e.clientY;
+    wrapper.style.cursor = "grabbing";
+  });
+
+  document.addEventListener("mousemove", function (e) {
+    if (!isDragging) return;
+    const dx = e.clientX - startX;
+    const dy = e.clientY - startY;
+    startX = e.clientX;
+    startY = e.clientY;
+    translateX += dx;
+    translateY += dy;
+    applyTransform();
+  });
+
+  document.addEventListener("mouseup", function () {
+    isDragging = false;
+    wrapper.style.cursor = "grab";
+  });
 });
   </script>
 	
 <div class="lightbox" id="lightbox">
-  <span class="lightbox-close" id="lightbox-close">&times;</span>
-  <span class="lightbox-arrow lightbox-prev" id="lightbox-prev">&#10094;</span>
-  <img class="lightbox-content" id="lightbox-image">
-  <span class="lightbox-arrow lightbox-next" id="lightbox-next">&#10095;</span>
-  <span class="zoom-button" id="zoom-in">+</span>
-  <span class="zoom-button" id="zoom-out">−</span>
+  <span class="lightbox-close" id="lightbox-close" title="Close">&times;</span>
+  <span class="lightbox-arrow lightbox-prev" id="lightbox-prev" title="Previous">&#10094;</span>
+
+  <div class="lightbox-wrapper" id="lightbox-wrapper">
+    <img class="lightbox-content" id="lightbox-image">
+  </div>
+
+  <span class="lightbox-arrow lightbox-next" id="lightbox-next" title="Next">&#10095;</span>
+
+  <div class="zoom-controls">
+    <span class="zoom-button" id="zoom-in" title="Zoom In">+</span>
+    <span class="zoom-button" id="zoom-out" title="Zoom Out">−</span>
+    <span class="zoom-button" id="reset-zoom" title="Reset"><i class="fas fa-compress"></i></span>
+  </div>
 </div>
+
 
 	
 </body>
