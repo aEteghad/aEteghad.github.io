@@ -792,6 +792,7 @@
         <button class="tab-button active" data-tab="project1">FSHA-DataLoggerGUI</button>
         <button class="tab-button" data-tab="project2">ZYNQ Based Real-Time Data Logger</button>
         <button class="tab-button" data-tab="project3">Smart Industrial Data Logger (In Progress)</button>
+        <button class="tab-button" data-tab="project4">AutoHeat Vending Machine (In Progress)</button>
         <!-- <button class="tab-button" data-tab="project2">Other Project</button> -->
     </div>
 
@@ -887,10 +888,10 @@
         </div>
     </div>
 
-    <!-- 40-Channel Multi-Purpose Industrial Data Logger -->
+    <!-- 64-Channel Multi-Purpose Industrial Data Logger -->
     <div id="project3" class="tab-content">
         <h3 style="color: var(--accent-color); margin-top: 1rem;">
-            40-Channel Multi-Purpose Industrial Data Logger (In Progress)
+            64-Channel Multi-Purpose Industrial Data Logger
         </h3>
 
         <p>
@@ -938,6 +939,35 @@
         </div>
     </div>
 
+    <!-- Smart Heated Vending Machine -->
+<div id="project4" class="tab-content">
+    <h3 style="color: var(--accent-color); margin-top: 1rem;">
+     Smart Vending Machine with Integrated Heating and Touch Interface
+    </h3>
+
+    <p>
+        <strong>An innovative smart vending machine designed to deliver hot, ready-to-consume products through an intuitive touchscreen interface and automated electromechanical system.</strong>
+        Built around an STM32H7 microcontroller and powered by a Qt-based GUI running on a mini-PC, the machine integrates real-time control, API-based payment, programmable heating, and motorized delivery—all within a compact and modular design. 
+    </p>
+
+    <ul style="line-height: 1.8;">
+        <li><strong>Embedded Real-Time Control</strong> – STM32H7 with FreeRTOS handles motor control, microwave activation, and system logic.</li>
+        <li><strong>Qt/C++ Touch Interface</strong> – A sleek, intuitive GUI on a DisplayPort-connected screen allows product selection and heating configuration (warm/hot).</li>
+        <li><strong>POS Integration via RS232</strong> – Secure, API-driven communication with payment terminals ensures reliable transaction handling.</li>
+        <li><strong>Programmable Heating</strong> – Real microwave oven controlled by hardware-level switches activated by microcontroller for user-defined durations.</li>
+        <li><strong>Motorized Delivery System</strong> – Dual stepper motors drive a tray mechanism that retrieves products and places them into the microwave, then into the output box.</li>
+        <li><strong>Modular Product Storage</strong> – Shelved layout enables scalability for different product types and volumes.</li>
+        <li><strong>Mini-PC with DisplayPort</strong> – Drives the high-resolution GUI with reliable rendering and connectivity.</li>
+        <li><strong>Robust Embedded Software Stack</strong> – Real-time firmware in C (STM32) and cross-platform GUI in C++ (Qt).</li>
+    </ul>
+
+    <!-- Gallery 
+    <div class="gallery-container">
+        <div class="gallery" data-gallery="project4">
+            <img src="assets/projects/SmartVendingMachine/1.jpg" alt="Smart Vending Machine Prototype">
+        </div>
+        </div>
+    </div> -->
     <!-- OtherTabs -->
 
 </section>
