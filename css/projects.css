@@ -1,0 +1,49 @@
+.project-section {
+  padding: 9.6rem 0;
+  color: var(--gray-color-medium);
+  background-color: white;
+  border-top: 1px solid #eee;
+}
+
+.projects {
+  overflow: auto;
+  display: flex;
+  flex-direction: row;
+  gap: 4.8rem;
+  padding: 1rem;
+}
+.project-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  width: 44.5rem;
+  justify-content: space-between;
+}
+
+.project-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  width: 100%;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.project-image {
+  width: 44.5rem;
+  height: 30rem;
+  border-radius: 9px;
+}
+
+.project-description {
+  line-height: 1.8;
+  font-size: 1.8rem;
+}
+
+.project-title {
+  line-height: 1.8;
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: var(--black-color);
+}

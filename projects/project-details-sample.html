@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta
+            name="description"
+            content="Personal site of Alireza Eteghad, Electrical Engineer specialized in FPGA, Embedded Systems, and Signal Processing. View resume, portfolio and contact info."
+    />
+
+    <!-- Favicon-->
+    <!-- <link rel="icon" href="assets/icons/favicon.png" type="image/png" />
+    <link
+      rel="shortcut icon"
+      href="assets/icons/favicon.png"
+      type="image/png"
+    /> -->
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+            rel="stylesheet"
+    />
+
+    <link rel="styleSheet" href="../css/style.css"/>
+    <link rel="styleSheet" href="../css/queries.css"/>
+    <link rel="styleSheet" href="../css/project-details.css"/>
+
+    <title>Alireza Eteghad &mdash; Portfolio</title>
+</head>
+<body>
+<header class="header">
+    <nav class="main-nav">
+        <ul class="main-nav-list">
+            <li class="main-nav-link mobile-none">
+                <a href="#" class="main-nav-link mobile-none"
+                >
+                    <span>ALIREZA ETEGHAD</span>
+                </a>
+            </li>
+            <!--        <li class="main-nav-link">-->
+            <!--            <a href="#" class="main-nav-link"-->
+            <!--            >-->
+            <!--                <ion-icon name="moon-outline" class="nav-icon"></ion-icon>-->
+            <!--                <span>Theme</span>-->
+            <!--            </a>-->
+            <!--        </li>-->
+            <!--        <li>-->
+            <!--            <a href="#" class="main-nav-link">-->
+            <!--                <ion-icon name="language" class="nav-icon"></ion-icon>-->
+            <!--                <span>EN</span>-->
+            <!--            </a>-->
+            <!--        </li>-->
+        </ul>
+
+        <ul class="main-nav-list">
+            <li><a href="#" class="main-nav-link" class="active">Home</a></li>
+            <li><a href="#about" class="main-nav-link">About Me</a></li>
+            <li>
+                <a href="#projects" class="main-nav-link">Projects</a>
+            </li>
+            <li>
+                <a href="#publications" class="main-nav-link">Publications</a>
+            </li>
+            <li><a href="#contact" class="main-nav-link">Contact Me</a></li>
+        </ul>
+    </nav>
+
+
+    <button class="btn-mobile-nav">
+        <ion-icon class="icon-mobile-nav" name="menu-outline"></ion-icon>
+        <ion-icon class="icon-mobile-nav" name="close-outline"></ion-icon>
+    </button>
+</header>
+
+<main class="project-section">
+    <div class="container center-text">
+        <h2 class="subheading">FSHA-DataLoggerGUI</h2>
+        <p class="subheading-description">
+            A custom Qt-based GUI for embedded systems enabling simultaneous,
+            real-time multi-channel data acquisition, FFT analysis, Excel export,
+            and live visualization.
+        </p>
+    </div>
+
+    <div class="container project-content">
+        <p class="project-paragraph">
+            <strong>This advanced interface</strong> automatically detects
+            connected USB ports and supports real-time plotting, FFT,
+            interpolation, sampling rate control, and Excel export. Implemented in
+            C++/Qt with a performance-optimized codebase of over 12,000 lines.
+        </p>
+
+        <ul class="project-list">
+            <li>
+                <strong>Auto USB Port Detection:</strong> Auto-detects and connects
+                to the correct COM port.
+            </li>
+            <li>
+                <strong>Simultaneous Channel Reading:</strong> All sensors are
+                plotted in real time.
+            </li>
+            <li>
+                <strong>Live Plotting:</strong> Smooth, multi-channel
+                visualizations.
+            </li>
+            <li>
+                <strong>Real-Time FFT:</strong> Frequency domain signal analysis.
+            </li>
+            <li>
+                <strong>Excel Export:</strong> Seamless export to .xlsx files.
+            </li>
+            <li>
+                <strong>Function Fitting & Interpolation:</strong> For calibration
+                and transformation.
+            </li>
+            <li>
+                <strong>Sample Rate Control:</strong> Adjustable data acquisition
+                rate.
+            </li>
+        </ul>
+
+        <div class="gallery">
+            <div class="gallery-item">
+                <img
+                        src="../assets/projects/FSHADataLogger-UI/1.png"
+                        alt="UI Screenshot 1"
+                />
+            </div>
+            <div class="gallery-item">
+                <img
+                        src="../assets/projects/FSHADataLogger-UI/2.png"
+                        alt="UI Screenshot 2"
+                />
+            </div>
+            <div class="gallery-item">
+                <img
+                        src="../assets/projects/FSHADataLogger-UI/3.png"
+                        alt="UI Screenshot 3"
+                />
+            </div>
+            <div class="gallery-item">
+                <img
+                        src="../assets/projects/FSHADataLogger-UI/4.png"
+                        alt="UI Screenshot 4"
+                />
+            </div>
+            <div class="gallery-item">
+                <img
+                        src="../assets/projects/FSHADataLogger-UI/5.png"
+                        alt="UI Screenshot 5"
+                />
+            </div>
+            <div class="gallery-item">
+                <img
+                        src="../assets/projects/FSHADataLogger-UI/6.png"
+                        alt="UI Screenshot 6"
+                />
+            </div>
+            <div class="gallery-item">
+                <img
+                        src="../assets/projects/FSHADataLogger-UI/7.png"
+                        alt="UI Screenshot 7"
+                />
+            </div>
+            <div class="gallery-item">
+                <video controls>
+                    <source
+                            src="../assets/projects/FSHADataLogger-UI/Demo.mp4"
+                            type="video/mp4"
+                    />
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="footer light">
+    <div class="container grid grid--footer grid--5--cols">
+        <div class="logo-col">
+            <div class="footer-logo">
+                <p class="copyright">
+                    ALIREZA ETEGHAD
+                </p>
+            </div>
+
+            <ul class="social-links">
+                <li>
+                    <a class="footer-link" href="https://www.instagram.com/alireza_eteghad/"
+                    >
+                        <ion-icon class="social-icon" name="logo-instagram"></ion-icon
+                        >
+                    </a>
+                </li>
+                <li>
+                    <a class="footer-link" href="https://x.com/alireza_eteghad"
+                    >
+                        <ion-icon class="social-icon" name="logo-twitter"></ion-icon
+                        >
+                    </a>
+                </li>
+                <li>
+                    <a class="footer-link" href="https://www.linkedin.com/in/alireza-eteghad/"
+                    >
+                        <ion-icon class="social-icon" name="logo-linkedin"></ion-icon
+                        >
+                    </a>
+                </li>
+            </ul>
+
+            <p class="copyright">
+                Copyright &copy; <span class="year">2025</span> by Alireza Eteghad.
+                All rights reserved.
+            </p>
+        </div>
+
+        <div class="address-col">
+            <p class="footer-headering">Contact us</p>
+            <address class="contacts">
+                <p class="address">
+                    Tabriz
+                </p>
+                <p>
+                    <a class="footer-link" href="tel:+989912319055">+989912319055</a>
+                    <br/>
+                    <a class="footer-link" href="mailto:a_eteghad402@sut.ac.ir"
+                    >a_eteghad402@sut.ac.ir</a
+                    >
+                </p>
+            </address>
+        </div>
+
+        <nav class="nav-col">
+            <p class="footer-headering">Projects</p>
+            <ul class="footer-nav">
+                <li><a class="footer-link" href="../projects/autoheat-vending-machine-project-details.html">Autoheat
+                    Vending Machine</a></li>
+                <li><a class="footer-link" href="../projects/fsha-project-details.html">FSHA-DataLoggerGUI</a></li>
+                <li><a class="footer-link" href="../projects/smart-industrial-project-details.html">Smart Industrial
+                    Data Logger</a></li>
+                <li><a class="footer-link" href="../projects/znq-project-details.html">ZYNQ-Based Real-Time Data
+                    Logger</a></li>
+            </ul>
+        </nav>
+
+        <nav class="nav-col">
+            <p class="footer-headering">Resources</p>
+            <ul class="footer-nav">
+                <li><a class="footer-link" href="https://scholar.google.com/citations?user=cy2gu3IAAAAJ"
+                       target="_blank">Google Scholar</a></li>
+                <li><a class="footer-link" href="https://www.researchgate.net/profile/Alireza-Eteghad">Research Gate</a>
+                </li>
+                <li><a class="footer-link" href="https://orcid.org/0009-0005-0581-9511">ORCiD</a></li>
+                <li><a class="footer-link" href="https://calendly.com/alireza_eteghad/30min">Calendly</a></li>
+            </ul>
+        </nav>
+    </div>
+</footer>
+
+
+<script
+        type="module"
+        src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+></script>
+<script
+        nomodule
+        src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+></script>
+
+<script
+        defer
+        src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"
+></script>
+
+<script defer src="../script.js"></script>
+</body>
+</html>

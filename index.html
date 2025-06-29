@@ -3,1331 +3,533 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Alireza Eteghad | Electrical Engineer</title>
-
-
-    <!-- SEO -->
-    <meta name="description"
-          content="Personal site of Alireza Eteghad, Electrical Engineer specialized in FPGA, Embedded Systems, and Signal Processing. View resume, portfolio and contact info.">
-    <meta name="keywords"
-          content="Alireza Eteghad, Electrical Engineer, FPGA, Embedded Systems, Signal Processing, Resume, CV, Sahand University of Technology">
-    <meta name="author" content="Alireza Eteghad"/>
-    <link rel="canonical" href="https://aeteghad.github.io/"/>
-    <meta name="robots" content="index, follow"/>
-
-    <!-- Social Media Preview -->
-    <meta property="og:title" content="Alireza Eteghad | Electrical Engineer"/>
-    <meta property="og:description"
-          content="Explore projects and background of Alireza Eteghad, expert in digital systems and FPGA design."/>
-    <meta property="og:url" content="https://aeteghad.github.io/"/>
-    <meta property="og:type" content="website"/>
-    <meta property="og:image" content="https://aeteghad.github.io/assets/icons/personal/profileA.jpg"/>
-
-    <meta name="twitter:card" content="summary_large_image"/>
-    <meta name="twitter:title" content="Alireza Eteghad | Electrical Engineer"/>
-    <meta name="twitter:description"
-          content="Explore projects and background of Alireza Eteghad, expert in digital systems and FPGA design."/>
-    <meta name="twitter:image" content="https://aeteghad.github.io/assets/icons/personal/profileA.jpg"/>
-
-    <!-- Google Search Console Verification -->
-    <meta name="google-site-verification" content="5ucRWoQcDonLaAJO7116gYGyD6nKaPv8KOzWkjrPmt0"/>
+    <meta
+            name="description"
+            content="Personal site of Alireza Eteghad, Electrical Engineer specialized in FPGA, Embedded Systems, and Signal Processing. View resume, portfolio and contact info."
+    />
 
     <!-- Favicon-->
-    <link rel="icon" href="assets/icons/favicon.png" type="image/png"/>
-    <link rel="shortcut icon" href="assets/icons/favicon.png" type="image/png"/>
-
-
-    <!-- Styles & Fonts -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css"/>
-
-
-    <style>
-        :root {
-            --bg-color: #f8f9fa;
-            --background-color: #f9f9f9;
-            --background-alt: #ffffff;
-            --text-color: #222;
-            --accent-color: #0077cc;
-            --accent-color-hover: #005fa3;
-        }
-
-        .tabs {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 1rem;
-
-            @media screen and(max-width: 769px) {
-                gap: 0.5rem;
-            }
-        }
-
-
-        .contact-section {
-            display: flex;
-            gap: 30px;
-            width: 100%;
-            align-items: stretch;
-            box-sizing: border-box;
-            flex-wrap: wrap;
-        }
-
-        /* ستون چپ شامل سوشال و فرم */
-        .left-column {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-            flex: 1;
-        }
-
-        /* ستون راست شامل کلندلی */
-        .right-column {
-            flex: 1;
-            background-color: var(--background-alt);
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            box-sizing: border-box;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-
-            @media screen and (max-width: 769px) {
-                max-width: calc(100% - 16px) !important;
-            }
-        }
-
-        /* سوشال مدیا */
-        .social-media-box {
-            background-color: var(--background-alt);
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            box-sizing: border-box;
-            flex: 1;
-        }
-
-        .social-media-box h3 {
-            font-size: 1.4rem;
-            text-align: center;
-            margin-bottom: 20px;
-            color: #111;
-        }
-
-        .contact-form {
-            background-color: var(--background-alt);
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            box-sizing: border-box;
-            flex: 1;
-        }
-
-        .contact-form h3 {
-            font-size: 1.4rem;
-            text-align: center;
-            margin-bottom: 20px;
-            color: #111;
-        }
-
-        .contact-form form {
-            display: flex;
-            flex-direction: column;
-            gap: 0.8rem;
-            height: 100%;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            padding: 10px;
-            font-size: 1rem;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            width: 100%;
-            box-sizing: border-box;
-        }
-
-        .contact-form button {
-            align-self: flex-start;
-            padding: 10px 20px;
-            font-size: 1rem;
-            background-color: var(--accent-color);
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 100%;
-        }
-
-        .contact-form button:hover {
-            background-color: #003e82;
-        }
-
-
-        .gallery img {
-            cursor: pointer;
-            transition: transform 0.2s;
-        }
-
-        .gallery img:hover {
-            transform: scale(1.05);
-        }
-
-        .lightbox {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-
-        .lightbox-wrapper {
-            position: relative;
-            cursor: grab;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .lightbox-content {
-            transition: transform 0.3s ease;
-            transform: scale(1);
-            user-select: none;
-            max-width: none;
-            max-height: none;
-            pointer-events: none;
-        }
-
-        .lightbox-close,
-        .lightbox-arrow {
-            position: absolute;
-            color: #000;
-            font-size: 40px;
-            font-weight: bold;
-            cursor: pointer;
-            user-select: none;
-            z-index: 1001;
-            background-color: rgba(255, 255, 255, 0.85);
-            padding: 10px 16px;
-            border-radius: 12px;
-            border: 1px solid rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(6px);
-            box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
-        }
-
-        .lightbox-close {
-            top: 20px;
-            right: 30px;
-        }
-
-        .lightbox-arrow {
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 60px;
-        }
-
-        .lightbox-prev {
-            left: 20px;
-        }
-
-        .lightbox-next {
-            right: 20px;
-        }
-
-        .zoom-controls {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 20px;
-            z-index: 1002;
-        }
-
-        .zoom-button {
-            background-color: rgba(255, 255, 255, 0.85);
-            color: #000;
-            font-size: 28px;
-            font-weight: bold;
-            padding: 10px 18px;
-            border-radius: 10px;
-            cursor: pointer;
-            user-select: none;
-            backdrop-filter: blur(4px);
-            border: 1px solid rgba(0, 0, 0, 0.2);
-            box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
-        }
-
-
-        .tab-button {
-            padding: 0.5rem 1rem;
-            border: none;
-            background: var(--bg-color);
-            color: var(--text-color);
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .tab-button.active {
-            background: var(--accent-color);
-            color: white;
-        }
-
-        .tab-content {
-            display: none;
-        }
-
-        .tab-content.active {
-            display: block;
-            animation: fadeIn 0.5s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        .gallery-container {
-            margin-top: 2rem;
-            overflow-x: auto;
-            white-space: nowrap;
-            padding-bottom: 1rem;
-        }
-
-        .gallery img, .gallery video {
-            height: 240px;
-            margin-right: 15px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            display: inline-block;
-            vertical-align: middle;
-        }
-
-        .themed-icon {
-            fill: currentColor;
-            transition: fill 0.3s;
-        }
-
-        body.dark-mode {
-            --bg-color: #0d1b2a;
-            --text-color: #e0e0e0;
-            --accent-color: #4dabf7;
-        }
-
-        html, body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            font-size: 17px;
-            scroll-behavior: smooth;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            transition: background 0.3s, color 0.3s;
-        }
-
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: var(--bg-color);
-            display: flex;
-            justify-content: center;
-            padding: 1rem 0;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-        }
-
-        .nav-container {
-            width: 100%;
-            max-width: 1200px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-
-            @media screen and(max-width: 769px) {
-                justify-content: center;
-               flex-wrap: wrap;
-            }
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 1.5rem;
-
-            @media screen and(max-width: 769px) {
-                gap: 8px;
-            }
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-color);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            transition: background 0.3s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: fit-content;
-
-            @media screen and(max-width: 769px) {
-                padding: 8px;
-            }
-        }
-
-        .nav-links a.active {
-            background: var(--accent-color);
-            color: white;
-        }
-
-        .menu {
-            display: flex;
-            gap: 1.5rem;
-            align-items: center;
-        }
-
-        .menu-item {
-            position: relative;
-        }
-
-        .menu-label {
-            display: flex;
-            align-items: center;
-            gap: 0.3rem;
-            cursor: default;
-        }
-
-        .dropdown {
-            display: none;
-            position: absolute;
-            right: 0;
-            top: 100%;
-            background: var(--bg-color);
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            overflow: hidden;
-            white-space: nowrap;
-            z-index: 1001;
-            min-width: 120px;
-        }
-
-        .dropdown div {
-            padding: 0.5rem 1rem;
-            cursor: pointer;
-        }
-
-        .dropdown div:hover {
-            background-color: #ddd;
-        }
-
-        .dropdown div.active {
-            background-color: var(--accent-color);
-            color: white;
-        }
-
-        .menu-item:hover .dropdown {
-            display: block;
-        }
-
-        section {
-            min-height: 100vh;
-            padding: 100px 30px 50px;
-            max-width: 1200px;
-            margin: auto;
-
-            @media screen and (max-width: 769px) {
-                padding: 32px 16px;
-                min-height: fit-content;
-            }
-        }
-
-        h1, h2 {
-            color: var(--accent-color);
-        }
-
-        h1 {
-            font-size: 2.2rem;
-        }
-
-        h2 {
-            font-size: 1.8rem;
-        }
-
-        h3 {
-            font-size: 1.4rem;
-        }
-
-        p, li {
-            font-size: 1rem;
-        }
-
-        ul {
-            padding-left: 20px;
-        }
-
-        .social-icons a {
-            margin-right: 15px;
-            color: var(--accent-color);
-            font-size: 1.2rem;
-
-            @media screen and(max-width: 769px) {
-                margin-right: 8px;
-            }
-        }
-
-        .header {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-            flex-direction: column;
-            justify-content: center;
-            min-height: 100vh;
-            text-align: center;
-            position: relative;
-
-            @media screen and (max-width: 769px) {
-                padding: 8px 16px;
-                min-height: fit-content;
-            }
-        }
-
-        .project-item {
-            margin-bottom: 1rem;
-        }
-
-        .project-item h3 {
-            margin: 0;
-            font-size: 1.1rem;
-            color: var(--accent-color);
-        }
-
-        .project-item p {
-            margin: 0.3rem 0 0 0;
-        }
-
-        .tooltip {
-            position: relative;
-            display: inline-block;
-            cursor: pointer;
-        }
-
-        .tooltip .tooltiptext {
-            visibility: hidden;
-            width: auto;
-            background-color: #000;
-            color: #fff;
-            text-align: center;
-            padding: 5px 12px;
-            border-radius: 6px;
-            position: absolute;
-            z-index: 1;
-            bottom: 125%;
-            left: 50%;
-            transform: translateX(-50%);
-            opacity: 0;
-            transition: opacity 0.3s;
-            white-space: nowrap;
-        }
-
-        .tooltip:hover .tooltiptext {
-            visibility: visible;
-            opacity: 1;
-        }
-    </style>
+    <!-- <link rel="icon" href="assets/icons/favicon.png" type="image/png" />
+    <link
+      rel="shortcut icon"
+      href="assets/icons/favicon.png"
+      type="image/png"
+    /> -->
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+            rel="stylesheet"
+    />
+
+    <link rel="styleSheet" href="css/style.css"/>
+    <link rel="styleSheet" href="css/queries.css"/>
+
+    <title>Alireza Eteghad &mdash; Electrical Engineering</title>
 </head>
 <body>
-<nav>
-    <div class="nav-container">
-        <div class="nav-links">
-            <a href="#home" class="active">Home</a>
-            <a href="#about">About Me</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-        </div>
-        <div class="menu">
-            <div class="menu-item">
-                <div class="menu-label"><i class="fas fa-moon"></i> Theme</div>
-                <div class="dropdown" id="theme-dropdown">
-                    <div data-theme="light">Light</div>
-                    <div data-theme="dark">Dark</div>
-                    <div data-theme="auto" class="active">Automatic</div>
-                </div>
-            </div>
-            <div class="menu-item">
-                <div class="menu-label"><i class="fas fa-language"></i> EN</div>
-                <div class="dropdown" style="left: auto; right: 0;">
-                    <div class="active">English</div>
-                    <div onclick="window.location.href='https://aeteghad.github.io/fa/'">فارسی</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</nav>
-
-<section id="home" style="position: relative; overflow: hidden;">
-    <!-- Video Background -->
-    <video autoplay muted loop playsinline
-           style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2;">
-        <source src="background.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-
-    <!-- Dark Overlay -->
-    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: -1;"></div>
-
-    <!-- Header Content -->
-    <div class="header">
-        <img src="assets/icons/personal/profileA.jpg" alt="Alireza Eteghad"
-             style="height: 260px; border-radius: 20px; object-fit: contain; box-shadow: 0 0 20px rgba(0,0,0,0.4);">
-        <h1 style="font-size: 2.8rem; margin: 20px 0 10px;">Alireza Eteghad</h1>
-        <p style="font-size: 1.5rem; margin-bottom: 30px;">M.Sc. Student in Electrical Engineering</p>
-
-        <!-- Social Icons with Tooltip -->
-        <div class="social-icons">
-    
-  <span class="tooltip">
-    <a href="mailto:eteghadalireza@gmail.com" target="_blank"
-       style="font-size: 2rem; margin: 0 20px; color: var(--accent-color);">
-       <svg class="themed-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 460" width="2rem" height="2rem"
-            fill="currentColor">
-      <path d="M440.917,67.925H71.083C31.827,67.925,0,99.752,0,139.008v233.984c0,39.256,31.827,71.083,71.083,71.083
-		h369.834c39.255,0,71.083-31.827,71.083-71.083V139.008C512,99.752,480.172,67.925,440.917,67.925z M178.166,321.72l-99.54,84.92
-		c-7.021,5.992-17.576,5.159-23.567-1.869c-5.992-7.021-5.159-17.576,1.87-23.567l99.54-84.92c7.02-5.992,17.574-5.159,23.566,1.87
-		C186.027,305.174,185.194,315.729,178.166,321.72z M256,289.436c-13.314-0.033-26.22-4.457-36.31-13.183l0.008,0.008l-0.032-0.024
-		c0.008,0.008,0.017,0.008,0.024,0.016L66.962,143.694c-6.98-6.058-7.723-16.612-1.674-23.583c6.057-6.98,16.612-7.723,23.582-1.674
-		l152.771,132.592c3.265,2.906,8.645,5.004,14.359,4.971c5.706,0.017,10.995-2.024,14.44-5.028l0.074-0.065l152.615-132.469
-		c6.971-6.049,17.526-5.306,23.583,1.674c6.048,6.97,5.306,17.525-1.674,23.583l-152.77,132.599
-		C282.211,284.929,269.322,289.419,256,289.436z M456.948,404.771c-5.992,7.028-16.547,7.861-23.566,1.869l-99.54-84.92
-		c-7.028-5.992-7.861-16.546-1.869-23.566c5.991-7.029,16.546-7.861,23.566-1.87l99.54,84.92
-		C462.107,387.195,462.94,397.75,456.948,404.771z"/>
-      </svg>
-    </a>
-    <span class="tooltiptext">Email</span>
-  </span>
-
-            <span class="tooltip">
-  <a href="https://scholar.google.com/citations?user=cy2gu3IAAAAJ" target="_blank"
-     style="font-size: 2rem; margin: 0 20px; color: var(--accent-color);">
-    <svg class="themed-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="1.8rem" height="1.8rem"
-         fill="currentColor">
-  <path d="M 48 32 C 21.5 32 0 53.5 0 80 L 0 432 C 0 458.5 21.5 480 48 480 L 400 480 C 426.5 480 448 458.5 448 432 L 448 80 C 448 53.5 426.5 32 400 32 L 48 32 z M 188.69531 96 L 366.93555 96 L 350.46484 108.85938 L 350.46484 131.55273 C 356.58074 132.33805 355.93359 136.01292 355.93359 140.41016 L 355.93359 247.63281 C 355.93359 252.59844 351.87154 256.66211 346.90625 256.66211 L 343.58203 256.66211 C 338.6164 256.66211 334.55273 252.59808 334.55273 247.63281 L 334.55273 140.41016 C 334.55273 136.00235 333.91278 132.32357 340.07422 131.54883 L 340.07422 117.2832 L 292.65039 156.17578 C 293.19834 157.19151 293.71814 157.84328 294.21289 158.69531 C 298.37973 166.07266 300.50195 175.2445 300.50195 186.45508 C 300.50195 195.04833 299.06991 202.77005 296.16602 209.58594 C 293.2752 216.4033 289.75942 221.97045 285.6582 226.25977 C 281.55701 230.56406 277.44275 234.49591 273.32812 238.03711 C 269.21486 241.58524 265.69906 245.28375 262.82031 249.125 C 259.91892 252.95314 258.47266 256.91247 258.47266 261.01367 C 258.47266 265.12181 260.3486 269.29452 264.08594 273.5 C 267.8098 277.7186 272.39123 281.80635 277.80859 285.84375 C 283.23797 289.85418 288.65493 294.30653 294.07227 299.15039 C 299.50131 303.98623 304.05933 310.21146 307.7832 317.77148 C 311.53367 325.35666 313.4082 333.7088 313.4082 342.88867 C 313.4082 354.99795 310.32064 365.93466 304.16211 375.66797 C 297.99007 385.36114 289.94334 393.09684 280.06055 398.76758 C 270.15151 404.47697 259.55333 408.77389 248.25195 411.67773 C 236.92398 414.55506 225.68694 416 214.46289 416 C 207.37866 416 200.23024 415.4525 193.04102 414.33398 C 185.82883 413.21398 178.60279 411.2357 171.32422 408.44922 C 164.03255 405.64267 157.57316 402.19843 151.97461 398.05859 C 146.36256 393.96392 141.84477 388.67686 138.38086 382.23828 C 134.91694 375.79976 133.19727 368.55971 133.19727 360.51953 C 133.19727 350.9809 135.85421 342.13421 141.17969 333.88477 C 146.50481 325.69549 153.56199 318.85925 162.33789 313.44336 C 177.65114 303.91787 201.67434 298.03206 234.36914 295.80664 C 226.89588 286.46381 223.14648 277.66689 223.14648 269.4375 C 223.14648 264.75479 224.36834 259.73766 226.79102 254.32031 C 222.8845 254.86718 218.86242 255.17383 214.75977 255.17383 C 197.19704 255.17383 182.36436 249.46431 170.32031 237.9668 C 158.27629 226.48824 152.26172 212.1206 152.26172 194.75 C 152.26172 192.93401 152.31391 191.33134 152.44336 189.56055 L 81.064453 189.56055 L 188.69531 96 z M 220.07422 134.33398 C 208.8753 134.33398 200.28236 138.36304 194.29297 146.4043 C 188.30507 154.42442 185.30859 164.13895 185.30859 175.55078 C 185.30859 185.27059 186.9492 195.16722 190.23047 205.25781 C 193.49857 215.34329 198.8517 224.34729 206.35156 232.2832 C 213.8248 240.23914 222.52348 244.20898 232.40625 244.20898 C 243.42216 244.20898 252.02911 240.51954 258.20117 233.13672 C 264.34622 225.76629 267.43164 216.46329 267.43164 205.25781 C 267.43164 195.71264 265.80524 185.72081 262.53711 175.27148 C 259.28103 164.80901 253.85206 155.36886 246.27344 146.96484 C 238.7211 138.53274 229.97011 134.33398 220.07422 134.33398 z M 238.5918 306.41406 C 230.55711 306.41406 222.65275 307.12634 214.89258 308.54492 C 207.13241 309.92488 199.47583 312.25478 191.92383 315.54297 C 184.34522 318.81255 178.22564 323.61796 173.56445 329.97266 C 168.87661 336.31933 166.54492 343.79435 166.54492 352.39453 C 166.54492 360.59035 168.60405 367.90081 172.71875 374.26758 C 176.8214 380.59526 182.2367 385.55152 188.96875 389.09961 C 195.70076 392.65432 202.7576 395.33574 210.12695 397.09961 C 217.50975 398.85145 225.02377 399.76367 232.67969 399.76367 C 247.82231 399.76367 260.85547 396.35252 271.79297 389.53516 C 282.70351 382.71926 288.17383 372.1931 288.17383 357.98633 C 288.17383 354.99821 287.75694 352.05432 286.93555 349.18359 C 286.07694 346.2797 285.2319 343.79439 284.39844 341.73047 C 283.56499 339.70522 281.97671 337.26317 279.63281 334.45117 C 277.302 331.63256 275.51712 329.54862 274.31836 328.16211 C 273.09446 326.73003 270.80621 324.68508 267.43164 321.98242 C 264.08738 319.26867 261.95132 317.57694 261 316.95117 L 260.99805 316.95117 C 260.06034 316.29355 257.62635 314.51567 253.70703 311.63086 C 249.78813 308.72002 247.64052 307.17679 247.26172 306.99414 C 245.20436 306.62337 242.31565 306.41406 238.5918 306.41406 z"/>
-</svg>
-  </a>
-  <span class="tooltiptext">Google Scholar</span>
-</span>
-
-
-            <span class="tooltip">
-  <a href="https://www.researchgate.net/profile/Alireza-Eteghad" target="_blank"
-     style="font-size: 2rem; margin: 0 20px; color: var(--accent-color);">
-    <svg class="themed-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="1.8rem" height="1.8rem"
-         fill="currentColor">
-      <path d="M 48 32 C 21.5 32 0 53.5 0 80 L 0 432 C 0 458.5 21.5 480 48 480 L 400 480 C 426.5 480 448 458.5 448 432 L 448 80 C 448 53.5 426.5 32 400 32 L 48 32 z M 325.20117 96 C 330.82804 96 335.93243 96.651372 340.45898 97.980469 C 344.93467 99.29777 348.94834 101.11477 352.49023 103.44141 C 355.98128 105.74336 359.00097 108.45416 361.49414 111.52344 C 364.05137 114.60451 366.10872 117.8918 367.7207 121.42188 C 368.34658 122.54654 368.1698 123.44247 367.17188 124.06836 L 353.27148 129.7832 C 352.09419 130.41051 351.26481 130.09098 350.61133 128.84961 C 347.4923 123.0695 344.83123 119.2734 340.45898 116.51172 C 336.03447 113.76185 331.94086 112.45703 325.20117 112.45703 C 317.87355 112.45703 314.59971 113.9142 310.00977 117.20117 C 305.45673 120.42368 302.11969 124.47694 300.15039 130.65234 C 299.75509 131.76552 299.39606 133.14769 298.97461 134.77148 C 298.62908 136.4214 298.34785 138.44168 298.16992 140.80664 C 297.99038 143.17268 297.82317 146.1016 297.66992 149.55469 C 297.56787 153.0078 297.51758 157.20137 297.51758 162.06055 C 297.51758 166.94478 297.56786 171.13868 297.66992 174.5918 C 297.82327 178.03162 297.99053 180.96013 298.16992 183.32617 C 298.34783 185.71726 298.62908 187.72549 298.97461 189.38867 C 299.39641 190.98738 299.75509 192.3661 300.15039 193.49219 C 302.11969 199.64289 304.93311 203.00606 309.07617 205.70508 C 313.16841 208.4417 317.87355 210.41211 325.20117 210.41211 C 331.71062 210.41211 337.66996 208.55732 341.55664 205.73047 C 345.40647 202.90468 348.60259 199.17139 350.03516 194.06836 C 350.6625 191.91967 351.46763 189.24603 352.01758 185.97266 C 352.51636 182.69897 352.51758 179.23534 352.51758 174.45312 C 352.51758 173.69762 352.09388 173.3125 351.39062 173.3125 L 329.12695 173.3125 C 327.87376 173.3125 327.25977 172.7001 327.25977 171.44727 L 327.25977 158.68555 C 327.25977 157.41946 327.87376 156.80469 329.12695 156.80469 L 369.98438 156.80469 C 371.26371 156.80469 371.86523 157.41911 371.86523 158.68555 L 371.86523 169.5918 C 371.86523 175.37192 371.86484 180.73178 371.26367 185.69336 C 370.68758 190.65496 369.90853 194.94977 368.92383 198.08203 C 365.80339 207.89137 360.85476 214.8745 353.27148 220.07812 C 345.66207 225.32118 335.85368 228.14648 325.20117 228.14648 C 314.25539 228.14648 305.03638 225.62955 297.51758 220.62891 C 289.9855 215.56528 284.59997 208.13333 281.31445 198.19727 C 280.68713 196.3182 280.20261 194.3877 279.83203 192.36719 C 279.4482 190.35994 279.10141 188.019 278.79492 185.32031 C 278.47552 182.5966 278.27128 179.40138 278.14453 175.62891 C 278.01631 171.88256 277.96484 167.30393 277.96484 162.06055 C 277.96484 156.7914 278.01659 152.27876 278.14453 148.51953 C 278.27168 144.74705 278.47552 141.5101 278.79492 138.8125 C 279.10141 136.12674 279.4482 133.77484 279.83203 131.76758 C 280.20261 129.74708 280.68909 127.82829 281.31641 125.94922 C 284.60193 116.01316 289.9855 108.54511 297.51758 103.53125 C 305.03642 98.518462 314.25539 96 325.20117 96 z M 173.52734 173.8125 C 217.09601 173.8125 250.33008 193.67089 250.33008 236.45898 C 250.33008 265.48697 227.41412 294.54191 196.46875 301.7793 C 215.20225 335.0277 237.7209 364.44058 254.54883 382.75195 C 264.4473 393.45532 278.19453 403.01953 291.94141 403.01953 L 291.94141 412.93164 C 287.74856 414.86159 280.88088 416 274.39648 416 C 252.23637 416 234.67781 407.22664 223.19531 393.45508 C 210.61105 378.95271 188.44983 347.61039 165.15039 305.98633 C 152.89914 305.98633 144.88164 305.98606 135.71289 305.21875 L 135.71289 369.00391 C 135.71289 392.7001 141.08505 397.67521 151.39062 399.17188 L 171.26367 401.88086 L 171.26367 412.93164 C 161.71108 412.56105 139.54998 411.80469 122.36328 411.80469 C 104.39603 411.80469 86.441431 412.56105 76.134766 412.93164 L 76.134766 401.88086 L 90.636719 399.17188 C 100.61111 397.27953 106.28906 392.7001 106.28906 369.00391 L 106.28906 218.50586 C 106.28906 194.79824 100.61076 190.24462 90.636719 188.32617 L 76.134766 185.66602 L 76.134766 174.58008 C 85.661226 174.95066 100.95604 174.94922 116.26367 174.94922 C 133.04039 174.94922 151.00846 173.8125 173.52734 173.8125 z M 166.66016 190.99805 C 156.34026 190.99805 144.52429 190.9983 135.71289 191.76562 L 135.71289 287.61133 C 144.52429 288.44166 150.22826 288.78711 163.2207 288.78711 C 197.2364 288.78711 217.84961 268.54435 217.84961 238.36523 C 217.84961 207.82875 198.76959 190.99805 166.66016 190.99805 z "/>
-    </svg>
-  </a>
-  <span class="tooltiptext">ResearchGate</span>
-</span>
-
-            <span class="tooltip">
-  <a href="https://www.linkedin.com/in/alireza-eteghad/" target="_blank"
-     style="font-size: 2rem; margin: 0 20px; color: var(--accent-color);">
-    <svg class="themed-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="1.8rem" height="1.8rem"
-         fill="currentColor">
-      <path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/>
-    </svg>
-  </a>
-  <span class="tooltiptext">LinkedIn</span>
-</span>
-
-            <span class="tooltip">
-  <a href="#" target="_blank" style="font-size: 2rem; margin: 0 20px; color: var(--accent-color);">
-    <svg class="themed-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="1.8rem" height="1.8rem"
-         fill="currentColor">
-      <path d="M 48 32 C 21.5 32 0 53.5 0 80 L 0 432 C 0 458.5 21.5 480 48 480 L 400 480 C 426.5 480 448 458.5 448 432 L 448 80 C 448 53.5 426.5 32 400 32 L 48 32 z M 146.88086 165.23438 C 166.51551 165.23438 183.96176 172.02263 196.80859 182.20508 C 208.68854 191.6569 214.25262 201.11234 219.10742 209.59766 L 185.18359 226.54688 C 182.75692 220.98152 179.83663 215.15976 172.33789 208.86523 C 164.0899 202.3133 155.85965 200.38086 148.81445 200.38086 C 121.18778 200.38086 106.64453 226.07442 106.64453 254.66797 C 106.64453 292.24121 125.80523 310.88867 148.81445 310.88867 C 171.11309 310.88867 180.09182 295.37817 185.89453 285.45312 L 219.59961 302.66016 C 213.28505 312.58559 207.22637 322.29529 193.65039 331.72852 C 186.3879 336.8192 169.67288 346.76562 145.91406 346.76562 C 100.58611 346.76562 64 313.80959 64 255.87109 C 64 205.2352 98.415334 165.23438 146.88086 165.23438 z M 222.36328 170.5625 L 267.92773 170.5625 L 303.31055 292.24023 L 338.43555 170.5625 L 384 170.5625 L 324.62109 341.67383 L 281.00977 341.67383 L 222.36328 170.5625 z "/>
-    </svg>
-  </a>
-  <span class="tooltiptext">CV</span>
-</span>
-
-        </div>
-    </div>
-</section>
-
-<section id="about">
-    <h2><i class="fas fa-user"></i> About Me</h2>
-    <div style="display: flex; flex-wrap: wrap; gap: 30px;">
-        <!-- Left Side -->
-        <div style="flex: 1 1 500px; min-width: 300px;">
-            <p>
-                Graduate researcher in electrical engineering with a strong background in embedded systems, FPGA design,
-                and high-speed data acquisition. Research and development efforts are focused on real-time signal
-                processing systems that tightly integrate hardware and software to achieve ultra-low latency and high
-                throughput.
-            </p>
-            <p>
-                Current projects include the development of a next-generation data logger equipped with Wi-Fi 6
-                connectivity, built on a hybrid architecture involving Zynq Ultrascale+ FPGAs and PetaLinux. This system
-                enables high-frequency data capture and real-time wireless streaming, making it suitable for edge
-                computing and instrumentation applications.
-            </p>
-            <p>
-                In parallel, work is underway on deploying AI models directly onto FPGA fabrics to accelerate inference
-                pipelines, particularly for signal-centric tasks. This integration of machine learning and programmable
-                logic builds on extensive experience in sensor interfacing, including the development of custom drivers
-                for a variety of high-precision sensors—such as analog-to-digital converters (e.g., AD7768, ISL26104,
-                CS5532).
-            </p>
-            <p>
-                Previous work has involved full-stack hardware/software development, from low-level SPI communication to
-                Qt-based graphical interfaces. Several of these systems have been presented at academic conferences,
-                highlighting both innovation and applied methodology.
-            </p>
-            <p>
-                Teaching experience includes undergraduate courses in Digital Systems II, Microprocessor System Design,
-                and ASIC/FPGA Circuit Design, reflecting both technical depth and a strong commitment to communication
-                and mentorship.
-            </p>
-
-            <h3><i class="fas fa-graduation-cap"></i> Education</h3>
-            <ul class="education-list">
-                <li>
-                    <strong>M.Sc. in Electrical Engineering – Integrated Circuits</strong><br>
-                    Sahand University of Technology, 2025 (in progress)
-                </li>
-                <li>
-                    <strong>B.Sc. in Electrical Engineering – Electronics</strong><br>
-                    Sahand University of Technology, 2023
-                </li>
-            </ul>
-
-            <h3><i class="fas fa-chalkboard-teacher"></i> Courses Taught</h3>
-            <ul class="course-list">
-                <li>Digital Systems II</li>
-                <li>Microprocessor System Design</li>
-                <li>ASIC/FPGA Circuits</li>
-            </ul>
-
-            <h3><i class="fas fa-tools"></i> Skills</h3>
-            <ul class="skill-list">
-                <li><strong>Programming:</strong> C, C++, VHDL</li>
-                <li><strong>Embedded Platforms:</strong> ARM, FPGAs</li>
-                <li><strong>Operating Systems:</strong> PetaLinux</li>
-                <li><strong>Driver Development:</strong> A2D interfaces (e.g., AD7768, ISL26104)</li>
-                <li><strong>Signal Processing:</strong> Real-time implementation & optimization</li>
-                <li><strong>GUI Development:</strong> Qt (Desktop & Android Applications)</li>
-            </ul>
-        </div>
-
-        <!-- Right Side -->
-
-        <div style="flex: 1 1 300px; min-width: 280px;">
-            <h3 style="margin-top: 0;"><i class="fas fa-images"></i> Gallery</h3>
-            <div style="border: 2px solid #ccc; border-radius: 12px; padding: 10px; max-height: 900px; overflow-y: auto; display: flex; flex-direction: column;">
-                <div style="display: flex; flex-direction: column; gap: 10px;">
-
-                    <a href="assets/gallery/1.jpg" class="glightbox" data-gallery="project-gallery">
-                        <img src="assets/gallery/1.jpg" alt="1" style="width: 100%; border-radius: 8px;"/>
-                    </a>
-                    <a href="assets/gallery/2.jpg" class="glightbox" data-gallery="project-gallery">
-                        <img src="assets/gallery/2.jpg" alt="2" style="width: 100%; border-radius: 8px;"/>
-                    </a>
-                    <a href="assets/gallery/3.jpg" class="glightbox" data-gallery="project-gallery">
-                        <img src="assets/gallery/3.jpg" alt="3" style="width: 100%; border-radius: 8px;"/>
-                    </a>
-                    <a href="assets/gallery/4.jpg" class="glightbox" data-gallery="project-gallery">
-                        <img src="assets/gallery/4.jpg" alt="4" style="width: 100%; border-radius: 8px;"/>
-                    </a>
-                    <a href="assets/gallery/5.jpg" class="glightbox" data-gallery="project-gallery">
-                        <img src="assets/gallery/5.jpg" alt="5" style="width: 100%; border-radius: 8px;"/>
-                    </a>
-                    <a href="assets/gallery/6.jpg" class="glightbox" data-gallery="project-gallery">
-                        <img src="assets/gallery/6.jpg" alt="6" style="width: 100%; border-radius: 8px;"/>
-                    </a>
-                    <a href="assets/gallery/7.jpg" class="glightbox" data-gallery="project-gallery">
-                        <img src="assets/gallery/7.jpg" alt="7" style="width: 100%; border-radius: 8px;"/>
-                    </a>
-                    <a href="assets/gallery/8.jpg" class="glightbox" data-gallery="project-gallery">
-                        <img src="assets/gallery/8.jpg" alt="8" style="width: 100%; border-radius: 8px;"/>
-                    </a>
-                    <a href="assets/gallery/9.jpg" class="glightbox" data-gallery="project-gallery">
-                        <img src="assets/gallery/9.jpg" alt="9" style="width: 100%; border-radius: 8px;"/>
-                    </a>
-                    <a href="assets/gallery/10.jpg" class="glightbox" data-gallery="project-gallery">
-                        <img src="assets/gallery/10.jpg" alt="10" style="width: 100%; border-radius: 8px;"/>
-                    </a>
-                    <a href="assets/gallery/11.jpg" class="glightbox" data-gallery="project-gallery">
-                        <img src="assets/gallery/11.jpg" alt="11" style="width: 100%; border-radius: 8px;"/>
-                    </a>
-
-                </div>
-            </div>
-        </div>
-
-
-    </div>
-</section>
-
-
-<section id="projects">
-    <h2><i class="fas fa-project-diagram"></i> Projects</h2>
-
-    <!-- Tabs -->
-    <div class="tabs">
-        <button class="tab-button active" data-tab="project1">FSHA-DataLoggerGUI</button>
-        <button class="tab-button" data-tab="project2">ZYNQ Based Real-Time Data Logger</button>
-        <button class="tab-button" data-tab="project3">Smart Industrial Data Logger (In Progress)</button>
-        <button class="tab-button" data-tab="project4">AutoHeat Vending Machine (In Progress)</button>
-        <!-- <button class="tab-button" data-tab="project2">Other Project</button> -->
-    </div>
-
-    <!-- DATALOGER UI -->
-    <div id="project1" class="tab-content active">
-        <h3 style="color: var(--accent-color); margin-top: 1rem;">Advanced Data Logger Interface</h3>
-        <p>
-            <strong>A custom Qt-based graphical user interface was developed for an embedded data logger
-                system.</strong> This interface automatically detects connected USB ports and enables simultaneous,
-            real-time data acquisition from multiple channels. Core functionalities include live signal plotting,
-            real-time FFT analysis, linear transformations, interpolation, adjustable sampling rates, and seamless data
-            export to Excel files. The application was implemented in C++/Qt with a codebase exceeding 12,000 lines,
-            optimized for performance and responsiveness on embedded systems.
-        </p>
-
-
-        <ul style="line-height: 1.8;">
-            <li><strong>Auto USB Port Detection</strong> – Automatically detects and connects to the correct COM port.
+<header class="header">
+    <nav class="main-nav">
+        <ul class="main-nav-list">
+            <li class="main-nav-link mobile-none">
+                <a href="#" class="main-nav-link mobile-none"
+                >
+                    <span>ALIREZA ETEGHAD</span>
+                </a>
             </li>
-            <li><strong>Simultaneous Channel Reading</strong> – All sensors can be read and plotted in real time.</li>
-            <li><strong>Live Plotting</strong> – Data is visualized instantly with smooth, multi-channel plots.</li>
-            <li><strong>FFT Calculation</strong> – Real-time FFT computation for frequency domain analysis.</li>
-            <li><strong>Excel Export</strong> – All collected data is saved to Excel format.</li>
-            <li><strong>Function Fitting & Interpolation</strong> – Linear functions and point-based interpolation for
-                calibration and transformation.
-            </li>
-            <li><strong>Sample Rate Control</strong> – User-defined sampling frequency (data per second).</li>
+            <!--        <li class="main-nav-link">-->
+            <!--            <a href="#" class="main-nav-link"-->
+            <!--            >-->
+            <!--                <ion-icon name="moon-outline" class="nav-icon"></ion-icon>-->
+            <!--                <span>Theme</span>-->
+            <!--            </a>-->
+            <!--        </li>-->
+            <!--        <li>-->
+            <!--            <a href="#" class="main-nav-link">-->
+            <!--                <ion-icon name="language" class="nav-icon"></ion-icon>-->
+            <!--                <span>EN</span>-->
+            <!--            </a>-->
+            <!--        </li>-->
         </ul>
 
-        <!-- Gallery -->
-        <div class="gallery-container">
-            <div class="gallery" data-gallery="project1">
-                <img src="assets/projects/FSHADataLogger-UI/1.png" alt="UI Screenshot 1">
-                <img src="assets/projects/FSHADataLogger-UI/2.png" alt="UI Screenshot 2">
-                <img src="assets/projects/FSHADataLogger-UI/3.png" alt="UI Screenshot 3">
-                <img src="assets/projects/FSHADataLogger-UI/4.png" alt="UI Screenshot 4">
-                <img src="assets/projects/FSHADataLogger-UI/5.png" alt="UI Screenshot 5">
-                <img src="assets/projects/FSHADataLogger-UI/6.png" alt="UI Screenshot 6">
-                <img src="assets/projects/FSHADataLogger-UI/7.png" alt="UI Screenshot 7">
-                <video controls>
-                    <source src="assets/projects/FSHADataLogger-UI/Demo.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-        </div>
-    </div>
-
-    <!-- ZYNQ DATA LOGGER -->
-    <div id="project2" class="tab-content">
-        <h3 style="color: var(--accent-color); margin-top: 1rem;">ZYNQ-Based Real-Time Data Logger</h3>
-        <p>
-            <strong>A high-speed, multi-channel data acquisition system designed using the ZYNQ XC7Z020 SoC and the
-                24-bit AD7768 ADC.</strong>
-            This system features a sampling rate of 256 kSPS and real-time data transfer over Ethernet, making it ideal
-            for industrial measurement, power monitoring, and medical applications. It captures and processes analog
-            signals using ADA4807 precision amplifiers and a delta-sigma ADC. The architecture efficiently bridges
-            programmable logic and ARM processors for concurrent data processing and transmission.
-        </p>
-
-        <ul style="line-height: 1.8;">
-            <li><strong>Powered by ZYNQ XC7Z020 SoC</strong> – Integrated ARM + FPGA system for high-speed processing.
+        <ul class="main-nav-list">
+            <li><a href="#" class="main-nav-link" class="active">Home</a></li>
+            <li><a href="#about" class="main-nav-link">About Me</a></li>
+            <li>
+                <a href="#projects" class="main-nav-link">Projects</a>
             </li>
-            <li><strong>24-bit AD7768 ADC</strong> – Delta-sigma ADC with exceptional resolution and noise performance.
+            <li>
+                <a href="#publications" class="main-nav-link">Publications</a>
             </li>
-            <li><strong>256 kSPS Sampling Rate</strong> – Fast and accurate data acquisition for high-frequency signals.
-            </li>
-            <li><strong>Ethernet (TCP/IP) Communication</strong> – Real-time data transfer using lwIP stack.</li>
-            <li><strong>Flexible Analog Front-End</strong> – ADA4807 amplifiers with configurable gain (×1 and ×10).
-            </li>
-            <li><strong>Direct PL-to-PS Data Transfer</strong> – AXI_GPIO-based communication without DMA overhead.</li>
-            <li><strong>Software Integration</strong> – Qt and MATLAB-based interfaces for live display and
-                configuration.
-            </li>
-            <li><strong>Multi-Signal Support</strong> – Tested with sine, square, triangle, and DC signals.</li>
-            <li><strong>High Accuracy</strong> – Verified by comparing against precision voltmeter readings.</li>
+            <li><a href="#contact" class="main-nav-link">Contact Me</a></li>
         </ul>
+    </nav>
 
-        <!-- Gallery -->
-        <div class="gallery-container" data-gallery="project2">
-            <div class="gallery">
-                <img src="assets/projects/ZYNQDataLogger/1.jpg" alt="ZYNQ Logger Board">
-                <img src="assets/projects/ZYNQDataLogger/2.jpg" alt="System Architecture">
-                <img src="assets/projects/ZYNQDataLogger/3.jpg" alt="Square Signal">
-                <img src="assets/projects/ZYNQDataLogger/4.jpg" alt="Sine Signal">
-                <img src="assets/projects/ZYNQDataLogger/5.jpg" alt="Triangle Signal">
-                <img src="assets/projects/ZYNQDataLogger/6.jpg" alt="Voltage Accuracy Test">
-                <img src="assets/projects/ZYNQDataLogger/7.jpg" alt="AD7768 Board">
-                <!-- <video controls>
-                   <source src="assets/projects/ZYNQDataLogger/Demo.mp4" type="video/mp4">
-                   Your browser does not support the video tag.
-                 </video> -->
+
+    <button class="btn-mobile-nav">
+        <ion-icon class="icon-mobile-nav" name="menu-outline"></ion-icon>
+        <ion-icon class="icon-mobile-nav" name="close-outline"></ion-icon>
+    </button>
+</header>
+
+
+<main>
+    <section class="section-hero">
+        <div class="hero">
+            <div class="hero-text-box">
+                <h1 class="heading-primary">Alireza Eteghad</h1>
+
+                <div class="hero-info">
+                    <p class="hero-headline">
+                        M.Sc. Student in Electrical Engineering
+                    </p>
+
+                    <p class="hero-description">
+                        Graduate researcher in electrical engineering with a strong
+                        background in embedded systems, FPGA design, and high-speed data
+                        acquisition.
+                    </p>
+                </div>
+                <div class="hero-btns">
+                    <a href="#contact" class="btn btn--full">Contact me</a>
+                    <a href="#" target="_blank" class="btn btn--outline">Download CV
+                        <ion-icon name="download-outline" class="hero-icon"></ion-icon>
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="hero-img-box">
+                <img
+                        src="assets/icons/personal/profileA.jpg"
+                        type="image/jpg"
+                        alt="picture of Alireza Eteghad."
+                        class="hero-img"
+                />
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- 64-Channel Multi-Purpose Industrial Data Logger -->
-    <div id="project3" class="tab-content">
-        <h3 style="color: var(--accent-color); margin-top: 1rem;">
-            64-Channel Multi-Purpose Industrial Data Logger
-        </h3>
+    <section class="section-about" id="about">
+        <div class="container center-text">
+            <h2 class="subheading">About Me</h2>
+            <p class="subheading-description center-text">
+                <!-- Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae minima aspernatur impedit dolore nulla
+                mollitia porro illo tempora, expedita, dolor voluptatum quaerat. -->
+            </p>
+        </div>
 
-        <p>
-            <strong>A cutting-edge, multi-purpose industrial data logger is currently under development, designed to
-                support real-time signal acquisition, intelligent processing, and flexible connectivity.</strong>
-            The system features 64 configurable channels—40 analog and 24 digital—and is equipped with a next-generation
-            Zynq Ultrascale+ MPSoC platform. It supports high-speed interfaces including WiFi6, Ethernet, and USB 3.0
-            for seamless integration with both desktop and mobile environments. The project also includes a powerful
-            cross-platform Qt-based user interface for advanced visualization, processing, and export.
-        </p>
+        <div class="container grid grid--2--cols grid--center-v">
+            <!-- STEP 01 -->
+            <div class="step-text-box">
+                <p class="step-number">01</p>
+                <h3 class="heading-teriary-lightbackgroud">Profile</h3>
+                <p class="step-description">
+                    Graduate researcher in electrical engineering with a strong background in embedded systems, FPGA
+                    design, and high-speed data acquisition. Research and development efforts are focused on real-time
+                    signal processing systems that tightly integrate hardware and software to achieve ultra-low latency
+                    and high throughput.
+                </p>
+            </div>
 
-        <ul style="line-height: 1.8;">
-            <li><strong>64 Total Channels</strong> – Including 20 strain gauge inputs, 4 load cell channels, 8 LVDT, 8
-                high-speed analog (32-bit), 14 configurable digital I/Os, 6 accelerometer ports, and 2
-                temperature/humidity sensors.
-            </li>
-            <li><strong>Precision ADCs</strong> – Utilizes AD7768 (8-ch, 24-bit, 256kSPS) and AK5578EN (8-ch, 32-bit,
-                768kSPS) for high-resolution analog conversion.
-            </li>
-            <li><strong>High-Speed Interfaces</strong> – WiFi6, Gigabit Ethernet, and USB3.0 for fast, reliable data
-                transmission across platforms.
-            </li>
-            <li><strong>Smart Qt-Based GUI</strong> – Real-time FFT, arithmetic operations, data logging, Excel/MATLAB
-                export, and cross-platform compatibility (Windows/Android).
-            </li>
-            <li><strong>Onboard DisplayPort Output</strong> – Allows direct monitor connection to review and analyze
-                live data.
-            </li>
-            <li><strong>Rugged Industrial Design</strong> – Built with industrial-grade components for operation between
-                −40°C to +85°C.
-            </li>
-            <li><strong>Modular & Configurable</strong> – Customizable for sensor types, reference voltage outputs, and
-                calibration settings.
-            </li>
-            <li><strong>Data Logging up to 1 Month</strong> – Capable of uninterrupted logging for extended durations
-                with onboard storage and smart buffering.
-            </li>
-        </ul>
+            <div class="step-image-box">
+                <img
+                        src="assets/gallery/4.jpg"
+                        alt="Iphone app preferences selection screen"
+                        class="step-image"
+                />
+            </div>
 
-        <!-- Gallery -->
-        <div class="gallery-container">
-            <div class="gallery" data-gallery="project3">
-                <img src="assets/projects/SmartLogger40CH/1.jpg" alt="Smart Logger Board Design">
+            <!-- STEP 02 -->
+            <div class="step-image-box">
+                <img
+                        src="assets/projects/projects.png"
+                        alt="Iphone app preferences selection screen"
+                        class="step-image"
+                />
+            </div>
+
+            <div class="step-text-box">
+                <p class="step-number">02</p>
+                <h3 class="heading-teriary-lightbackgroud">Projects</h3>
+                <p class="step-description">
+                    Current projects involve developing a high-speed, Wi‑Fi 6–enabled data logger
+                    based on Zynq Ultrascale+ and PetaLinux for real-time, edge-level data acquisition.
+                    In parallel, I am implementing AI inference directly on FPGA fabric to accelerate
+                    signal-processing pipelines. These efforts leverage hands‑on expertise in custom sensor
+                    drivers (e.g. AD7768, ISL26104, CS5532) and full-stack design—from low-level SPI and hardware
+                    interfaces to Qt-based GUIs—with results published at academic conferences.
+                </p>
+            </div>
+
+            <!-- STEP 03 -->
+            <div class="step-text-box">
+                <p class="step-number">03</p>
+                <h3 class="heading-teriary-lightbackgroud">Education</h3>
+                <p class="step-description">
+                <ul class="step-description-list">
+                    <li class="step-description-item">
+                        <strong>M.Sc. in Electrical Engineering &mdash; Integrated Circuits</strong></br>
+                        Sahand University of Technology, 2025 (in progress)
+                    </li>
+                    <li class="step-description-item">
+                        <strong>B.Sc. in Electrical Engineering &mdash; Electronics</strong></br>
+                        Sahand University of Technology, 2023
+                    </li>
+
+                </ul>
+                </p>
+            </div>
+
+            <div class="step-image-box">
+                <img
+                        src="assets/icons/personal/profile-square.jpg"
+                        alt="Iphone app preferences selection screen"
+                        class="step-image"
+                />
+            </div>
+
+            <!-- STEP 04 -->
+            <div class="step-image-box">
+                <img
+                        src="assets/gallery/9.jpg"
+                        alt="Iphone app preferences selection screen"
+                        class="step-image"
+                />
+            </div>
+
+            <div class="step-text-box">
+                <p class="step-number">04</p>
+                <h3 class="heading-teriary-lightbackgroud">Teaching Experience</h3>
+                <p class="step-description">
+                    <strong>Courses taught at undergraduate level:</strong>
+
+                <ul class="step-description-list">
+                    <li class="step-description-item">
+                        Digital Systems II
+                    </li>
+
+                    <li class="step-description-item">
+                        Microprocessor System Design
+                    </li>
+
+                    <li class="step-description-item">
+                        ASIC/FPGA Circuit Design
+                    </li>
+
+                </ul>
+                </p>
+            </div>
+
+            <!-- STEP 05 -->
+            <div class="step-text-box">
+                <p class="step-number">05</p>
+                <h3 class="heading-teriary-lightbackgroud">Skills</h3>
+                <p class="step-description">
+                <ul class="step-description-list">
+                    <li class="step-description-item">
+                        <strong>Programming:</strong>
+                        C, C++, VHDL Embedded
+                    </li>
+                    <li class="step-description-item">
+                        <strong>Embedded Platforms:</strong>
+                        ARM, FPGAs
+                    </li>
+                    <li class="step-description-item">
+                        <strong>Operating Systems:</strong>
+                        PetaLinux
+                    </li>
+                    <li class="step-description-item">
+                        <strong>Driver Development:</strong>
+                        A2D interfaces (AD7768, ISL26104)
+                    </li>
+                    <li class="step-description-item">
+                        <strong>Signal Processing:</strong>
+                        Real-time implementation & optimization
+                    </li>
+                    <li class="step-description-item">
+                        <strong>GUI Development:</strong>
+                        Qt (Desktop & Android Applications)
+                    </li>
+                </ul>
+                </p>
+            </div>
+
+            <div class="step-image-box">
+                <img
+                        src="assets/icons/personal/profile-square.jpg"
+                        alt="Iphone app preferences selection screen"
+                        class="step-image"
+                />
+            </div>
+
+        </div>
+    </section>
+
+    <section class="project-section" id="projects">
+        <div class="container">
+            <h2 class="subheading center-text">Recent Projects</h2>
+            <p class="subheading-description center-text">
+                <!-- Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae minima aspernatur impedit dolore nulla
+                mollitia porro illo. -->
+            </p>
+
+            <div class="projects">
+
+                <!-- project 01 -->
+                <div class="project-card">
+                    <img src="assets/projects/FSHADataLogger-UI/1.png" alt="UI Screenshot 1" class="project-image">
+                    <div class="project-card-body">
+                        <div class="flex flex-col gap-8">
+                            <h3 class="project-title mb-0">
+                                FSHA-DataLoggerGUI
+                            </h3>
+                            <p class="project-description">A custom Qt-based graphical user interface was developed for
+                                an
+                                embedded data logger system.</p>
+                        </div>
+                        <a href="projects/fsha-project-details.html" class="btn btn--full">Know more &gt;</a>
+
+                    </div>
+                </div>
+
+                <!-- project 02 -->
+                <div class="project-card">
+                    <img src="assets/projects/ZYNQDataLogger/1.jpg" alt="ZYNQ Logger Board" class="project-image">
+                    <div class="project-card-body">
+                        <div class="flex flex-col gap-8">
+                            <h3 class="project-title mb-0">
+                                ZYNQ-Based Real-Time Data Logger
+                            </h3>
+                            <p class="project-description">A high-speed, multi-channel data acquisition system designed
+                                using
+                                the ZYNQ XC7Z020 SoC and the 24-bit AD7768 ADC.</p>
+                        </div>
+                        <a href="../aEteghad.portofilo/projects/znq-project-details.html" class="btn btn--full">Know
+                            more &gt;</a>
+                    </div>
+                </div>
+
+                <!-- project 03 -->
+                <div class="project-card">
+                    <img src="assets/projects/SmartLogger40CH/1.jpg" alt="UI Screenshot 1" class="project-image">
+                    <div class="project-card-body">
+                        <div class="flex flex-col gap-8">
+                            <h3 class="project-title mb-0">
+                                Smart Industrial Data Logger
+                            </h3>
+                            <p class="project-description">A cutting-edge, multi-purpose industrial data logger is
+                                currently under development, designed to support real-time signal acquisition,
+                                intelligent processing, and flexible connectivity.</p>
+                        </div>
+                        <a href="../aEteghad.portofilo/projects/smart-industrial-project-details.html"
+                           class="btn btn--full">Know more &gt;</a>
+                    </div>
+                </div>
+
+                <!-- project 04 -->
+                <div class="project-card">
+                    <img src="assets/projects/" alt="UI Screenshot 1" class="project-image">
+                    <div class="project-card-body">
+                        <div class="flex flex-col gap-8">
+                            <h3 class="project-title mb-0">
+                                Autoheat Vending Machine
+                            </h3>
+                            <p class="project-description">An innovative smart vending machine designed to deliver hot,
+                                ready-to-consume products through an intuitive touchscreen interface and automated
+                                electromechanical system.</p>
+                        </div>
+                        <a href="../aEteghad.portofilo/projects/autoheat-vending-machine-project-details.html"
+                           class="btn btn--full">Know more &gt;</a>
+                    </div>
+                </div>
+
+
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Smart Heated Vending Machine -->
-<div id="project4" class="tab-content">
-    <h3 style="color: var(--accent-color); margin-top: 1rem;">
-     Smart Vending Machine with Integrated Heating and Touch Interface
-    </h3>
+    <section class="project-section" id="publications">
+        <div class="container">
+            <h2 class="subheading center-text">Recent Publications</h2>
 
-    <p>
-        <strong>An innovative smart vending machine designed to deliver hot, ready-to-consume products through an intuitive touchscreen interface and automated electromechanical system.</strong>
-        Built around an STM32H7 microcontroller and powered by a Qt-based GUI running on a mini-PC, the machine integrates real-time control, API-based payment, programmable heating, and motorized delivery—all within a compact and modular design. 
-    </p>
-
-    <ul style="line-height: 1.8;">
-        <li><strong>Embedded Real-Time Control</strong> – STM32H7 with FreeRTOS handles motor control, microwave activation, and system logic.</li>
-        <li><strong>Qt/C++ Touch Interface</strong> – A sleek, intuitive GUI on a DisplayPort-connected screen allows product selection and heating configuration (warm/hot).</li>
-        <li><strong>POS Integration via RS232</strong> – Secure, API-driven communication with payment terminals ensures reliable transaction handling.</li>
-        <li><strong>Programmable Heating</strong> – Real microwave oven controlled by hardware-level switches activated by microcontroller for user-defined durations.</li>
-        <li><strong>Motorized Delivery System</strong> – Dual stepper motors drive a tray mechanism that retrieves products and places them into the microwave, then into the output box.</li>
-        <li><strong>Modular Product Storage</strong> – Shelved layout enables scalability for different product types and volumes.</li>
-        <li><strong>Mini-PC with DisplayPort</strong> – Drives the high-resolution GUI with reliable rendering and connectivity.</li>
-        <li><strong>Robust Embedded Software Stack</strong> – Real-time firmware in C (STM32) and cross-platform GUI in C++ (Qt).</li>
-    </ul>
-
-    <!-- Gallery 
-    <div class="gallery-container">
-        <div class="gallery" data-gallery="project4">
-            <img src="assets/projects/SmartVendingMachine/1.jpg" alt="Smart Vending Machine Prototype">
-        </div>
-        </div>
-    </div> -->
-    <!-- OtherTabs -->
-
-</section>
-<section id="contact">
-    <h2><i class="fas fa-envelope"></i> Contact</h2>
-    <div class="contact-section">
-        <div class="left-column">
-            <!-- Social Media Box -->
-            <div class="social-media-box">
-                <h3><i class="fas fa-share-alt" style="margin-right: 8px; color: var(--accent-color);"></i>Social Media
-                </h3>
-                <div class="social-icons">
-
-                    <!-- Email -->
-                    <span class="tooltip">
-    <a href="mailto:eteghadalireza@gmail.com" target="_blank"
-       style="font-size: 2rem; margin: 0 20px; color: var(--accent-color);">
-       <svg class="themed-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 460" width="3.5rem" height="3.5rem"
-            fill="currentColor">
-      <path d="M440.917,67.925H71.083C31.827,67.925,0,99.752,0,139.008v233.984c0,39.256,31.827,71.083,71.083,71.083
-		h369.834c39.255,0,71.083-31.827,71.083-71.083V139.008C512,99.752,480.172,67.925,440.917,67.925z M178.166,321.72l-99.54,84.92
-		c-7.021,5.992-17.576,5.159-23.567-1.869c-5.992-7.021-5.159-17.576,1.87-23.567l99.54-84.92c7.02-5.992,17.574-5.159,23.566,1.87
-		C186.027,305.174,185.194,315.729,178.166,321.72z M256,289.436c-13.314-0.033-26.22-4.457-36.31-13.183l0.008,0.008l-0.032-0.024
-		c0.008,0.008,0.017,0.008,0.024,0.016L66.962,143.694c-6.98-6.058-7.723-16.612-1.674-23.583c6.057-6.98,16.612-7.723,23.582-1.674
-		l152.771,132.592c3.265,2.906,8.645,5.004,14.359,4.971c5.706,0.017,10.995-2.024,14.44-5.028l0.074-0.065l152.615-132.469
-		c6.971-6.049,17.526-5.306,23.583,1.674c6.048,6.97,5.306,17.525-1.674,23.583l-152.77,132.599
-		C282.211,284.929,269.322,289.419,256,289.436z M456.948,404.771c-5.992,7.028-16.547,7.861-23.566,1.869l-99.54-84.92
-		c-7.028-5.992-7.861-16.546-1.869-23.566c5.991-7.029,16.546-7.861,23.566-1.87l99.54,84.92
-		C462.107,387.195,462.94,397.75,456.948,404.771z"/>
-      </svg>
-    </a>
-        <span class="tooltiptext">Email</span>
-      </span>
-
-                    <!-- Google Scholar -->
-                    <span class="tooltip">
-        <a href="https://scholar.google.com/citations?user=cy2gu3IAAAAJ" target="_blank"
-           style="font-size: 2rem; margin: 0 20px; color: var(--accent-color);">
-          <!-- Your custom SVG icon -->
-          <svg class="themed-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="3rem" height="3rem"
-               fill="currentColor">
-           <path d="M 48 32 C 21.5 32 0 53.5 0 80 L 0 432 C 0 458.5 21.5 480 48 480 L 400 480 C 426.5 480 448 458.5 448 432 L 448 80 C 448 53.5 426.5 32 400 32 L 48 32 z M 188.69531 96 L 366.93555 96 L 350.46484 108.85938 L 350.46484 131.55273 C 356.58074 132.33805 355.93359 136.01292 355.93359 140.41016 L 355.93359 247.63281 C 355.93359 252.59844 351.87154 256.66211 346.90625 256.66211 L 343.58203 256.66211 C 338.6164 256.66211 334.55273 252.59808 334.55273 247.63281 L 334.55273 140.41016 C 334.55273 136.00235 333.91278 132.32357 340.07422 131.54883 L 340.07422 117.2832 L 292.65039 156.17578 C 293.19834 157.19151 293.71814 157.84328 294.21289 158.69531 C 298.37973 166.07266 300.50195 175.2445 300.50195 186.45508 C 300.50195 195.04833 299.06991 202.77005 296.16602 209.58594 C 293.2752 216.4033 289.75942 221.97045 285.6582 226.25977 C 281.55701 230.56406 277.44275 234.49591 273.32812 238.03711 C 269.21486 241.58524 265.69906 245.28375 262.82031 249.125 C 259.91892 252.95314 258.47266 256.91247 258.47266 261.01367 C 258.47266 265.12181 260.3486 269.29452 264.08594 273.5 C 267.8098 277.7186 272.39123 281.80635 277.80859 285.84375 C 283.23797 289.85418 288.65493 294.30653 294.07227 299.15039 C 299.50131 303.98623 304.05933 310.21146 307.7832 317.77148 C 311.53367 325.35666 313.4082 333.7088 313.4082 342.88867 C 313.4082 354.99795 310.32064 365.93466 304.16211 375.66797 C 297.99007 385.36114 289.94334 393.09684 280.06055 398.76758 C 270.15151 404.47697 259.55333 408.77389 248.25195 411.67773 C 236.92398 414.55506 225.68694 416 214.46289 416 C 207.37866 416 200.23024 415.4525 193.04102 414.33398 C 185.82883 413.21398 178.60279 411.2357 171.32422 408.44922 C 164.03255 405.64267 157.57316 402.19843 151.97461 398.05859 C 146.36256 393.96392 141.84477 388.67686 138.38086 382.23828 C 134.91694 375.79976 133.19727 368.55971 133.19727 360.51953 C 133.19727 350.9809 135.85421 342.13421 141.17969 333.88477 C 146.50481 325.69549 153.56199 318.85925 162.33789 313.44336 C 177.65114 303.91787 201.67434 298.03206 234.36914 295.80664 C 226.89588 286.46381 223.14648 277.66689 223.14648 269.4375 C 223.14648 264.75479 224.36834 259.73766 226.79102 254.32031 C 222.8845 254.86718 218.86242 255.17383 214.75977 255.17383 C 197.19704 255.17383 182.36436 249.46431 170.32031 237.9668 C 158.27629 226.48824 152.26172 212.1206 152.26172 194.75 C 152.26172 192.93401 152.31391 191.33134 152.44336 189.56055 L 81.064453 189.56055 L 188.69531 96 z M 220.07422 134.33398 C 208.8753 134.33398 200.28236 138.36304 194.29297 146.4043 C 188.30507 154.42442 185.30859 164.13895 185.30859 175.55078 C 185.30859 185.27059 186.9492 195.16722 190.23047 205.25781 C 193.49857 215.34329 198.8517 224.34729 206.35156 232.2832 C 213.8248 240.23914 222.52348 244.20898 232.40625 244.20898 C 243.42216 244.20898 252.02911 240.51954 258.20117 233.13672 C 264.34622 225.76629 267.43164 216.46329 267.43164 205.25781 C 267.43164 195.71264 265.80524 185.72081 262.53711 175.27148 C 259.28103 164.80901 253.85206 155.36886 246.27344 146.96484 C 238.7211 138.53274 229.97011 134.33398 220.07422 134.33398 z M 238.5918 306.41406 C 230.55711 306.41406 222.65275 307.12634 214.89258 308.54492 C 207.13241 309.92488 199.47583 312.25478 191.92383 315.54297 C 184.34522 318.81255 178.22564 323.61796 173.56445 329.97266 C 168.87661 336.31933 166.54492 343.79435 166.54492 352.39453 C 166.54492 360.59035 168.60405 367.90081 172.71875 374.26758 C 176.8214 380.59526 182.2367 385.55152 188.96875 389.09961 C 195.70076 392.65432 202.7576 395.33574 210.12695 397.09961 C 217.50975 398.85145 225.02377 399.76367 232.67969 399.76367 C 247.82231 399.76367 260.85547 396.35252 271.79297 389.53516 C 282.70351 382.71926 288.17383 372.1931 288.17383 357.98633 C 288.17383 354.99821 287.75694 352.05432 286.93555 349.18359 C 286.07694 346.2797 285.2319 343.79439 284.39844 341.73047 C 283.56499 339.70522 281.97671 337.26317 279.63281 334.45117 C 277.302 331.63256 275.51712 329.54862 274.31836 328.16211 C 273.09446 326.73003 270.80621 324.68508 267.43164 321.98242 C 264.08738 319.26867 261.95132 317.57694 261 316.95117 L 260.99805 316.95117 C 260.06034 316.29355 257.62635 314.51567 253.70703 311.63086 C 249.78813 308.72002 247.64052 307.17679 247.26172 306.99414 C 245.20436 306.62337 242.31565 306.41406 238.5918 306.41406 z"/>
-          </svg>
-        </a>
-        <span class="tooltiptext">Google Scholar</span>
-      </span>
-
-                    <span class="tooltip">
-  <a href="https://www.researchgate.net/profile/Alireza-Eteghad" target="_blank"
-     style="font-size: 2rem; margin: 0 20px; color: var(--accent-color);">
-    <svg class="themed-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="3rem" height="3rem"
-         fill="currentColor">
-      <path d="M 48 32 C 21.5 32 0 53.5 0 80 L 0 432 C 0 458.5 21.5 480 48 480 L 400 480 C 426.5 480 448 458.5 448 432 L 448 80 C 448 53.5 426.5 32 400 32 L 48 32 z M 325.20117 96 C 330.82804 96 335.93243 96.651372 340.45898 97.980469 C 344.93467 99.29777 348.94834 101.11477 352.49023 103.44141 C 355.98128 105.74336 359.00097 108.45416 361.49414 111.52344 C 364.05137 114.60451 366.10872 117.8918 367.7207 121.42188 C 368.34658 122.54654 368.1698 123.44247 367.17188 124.06836 L 353.27148 129.7832 C 352.09419 130.41051 351.26481 130.09098 350.61133 128.84961 C 347.4923 123.0695 344.83123 119.2734 340.45898 116.51172 C 336.03447 113.76185 331.94086 112.45703 325.20117 112.45703 C 317.87355 112.45703 314.59971 113.9142 310.00977 117.20117 C 305.45673 120.42368 302.11969 124.47694 300.15039 130.65234 C 299.75509 131.76552 299.39606 133.14769 298.97461 134.77148 C 298.62908 136.4214 298.34785 138.44168 298.16992 140.80664 C 297.99038 143.17268 297.82317 146.1016 297.66992 149.55469 C 297.56787 153.0078 297.51758 157.20137 297.51758 162.06055 C 297.51758 166.94478 297.56786 171.13868 297.66992 174.5918 C 297.82327 178.03162 297.99053 180.96013 298.16992 183.32617 C 298.34783 185.71726 298.62908 187.72549 298.97461 189.38867 C 299.39641 190.98738 299.75509 192.3661 300.15039 193.49219 C 302.11969 199.64289 304.93311 203.00606 309.07617 205.70508 C 313.16841 208.4417 317.87355 210.41211 325.20117 210.41211 C 331.71062 210.41211 337.66996 208.55732 341.55664 205.73047 C 345.40647 202.90468 348.60259 199.17139 350.03516 194.06836 C 350.6625 191.91967 351.46763 189.24603 352.01758 185.97266 C 352.51636 182.69897 352.51758 179.23534 352.51758 174.45312 C 352.51758 173.69762 352.09388 173.3125 351.39062 173.3125 L 329.12695 173.3125 C 327.87376 173.3125 327.25977 172.7001 327.25977 171.44727 L 327.25977 158.68555 C 327.25977 157.41946 327.87376 156.80469 329.12695 156.80469 L 369.98438 156.80469 C 371.26371 156.80469 371.86523 157.41911 371.86523 158.68555 L 371.86523 169.5918 C 371.86523 175.37192 371.86484 180.73178 371.26367 185.69336 C 370.68758 190.65496 369.90853 194.94977 368.92383 198.08203 C 365.80339 207.89137 360.85476 214.8745 353.27148 220.07812 C 345.66207 225.32118 335.85368 228.14648 325.20117 228.14648 C 314.25539 228.14648 305.03638 225.62955 297.51758 220.62891 C 289.9855 215.56528 284.59997 208.13333 281.31445 198.19727 C 280.68713 196.3182 280.20261 194.3877 279.83203 192.36719 C 279.4482 190.35994 279.10141 188.019 278.79492 185.32031 C 278.47552 182.5966 278.27128 179.40138 278.14453 175.62891 C 278.01631 171.88256 277.96484 167.30393 277.96484 162.06055 C 277.96484 156.7914 278.01659 152.27876 278.14453 148.51953 C 278.27168 144.74705 278.47552 141.5101 278.79492 138.8125 C 279.10141 136.12674 279.4482 133.77484 279.83203 131.76758 C 280.20261 129.74708 280.68909 127.82829 281.31641 125.94922 C 284.60193 116.01316 289.9855 108.54511 297.51758 103.53125 C 305.03642 98.518462 314.25539 96 325.20117 96 z M 173.52734 173.8125 C 217.09601 173.8125 250.33008 193.67089 250.33008 236.45898 C 250.33008 265.48697 227.41412 294.54191 196.46875 301.7793 C 215.20225 335.0277 237.7209 364.44058 254.54883 382.75195 C 264.4473 393.45532 278.19453 403.01953 291.94141 403.01953 L 291.94141 412.93164 C 287.74856 414.86159 280.88088 416 274.39648 416 C 252.23637 416 234.67781 407.22664 223.19531 393.45508 C 210.61105 378.95271 188.44983 347.61039 165.15039 305.98633 C 152.89914 305.98633 144.88164 305.98606 135.71289 305.21875 L 135.71289 369.00391 C 135.71289 392.7001 141.08505 397.67521 151.39062 399.17188 L 171.26367 401.88086 L 171.26367 412.93164 C 161.71108 412.56105 139.54998 411.80469 122.36328 411.80469 C 104.39603 411.80469 86.441431 412.56105 76.134766 412.93164 L 76.134766 401.88086 L 90.636719 399.17188 C 100.61111 397.27953 106.28906 392.7001 106.28906 369.00391 L 106.28906 218.50586 C 106.28906 194.79824 100.61076 190.24462 90.636719 188.32617 L 76.134766 185.66602 L 76.134766 174.58008 C 85.661226 174.95066 100.95604 174.94922 116.26367 174.94922 C 133.04039 174.94922 151.00846 173.8125 173.52734 173.8125 z M 166.66016 190.99805 C 156.34026 190.99805 144.52429 190.9983 135.71289 191.76562 L 135.71289 287.61133 C 144.52429 288.44166 150.22826 288.78711 163.2207 288.78711 C 197.2364 288.78711 217.84961 268.54435 217.84961 238.36523 C 217.84961 207.82875 198.76959 190.99805 166.66016 190.99805 z "/>
-    </svg>
-  </a>
-  <span class="tooltiptext">ResearchGate</span>
-</span>
-
-                    <span class="tooltip">
-  <a href="https://www.linkedin.com/in/alireza-eteghad/" target="_blank"
-     style="font-size: 2rem; margin: 0 20px; color: var(--accent-color);">
-    <svg class="themed-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="3rem" height="3rem"
-         fill="currentColor">
-      <path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/>
-    </svg>
-  </a>
-  <span class="tooltiptext">LinkedIn</span>
-</span>
-
-                    <span class="tooltip">
-  <a href="https://x.com/alireza_eteghad" target="_blank"
-     style="font-size: 2rem; margin: 0 20px; color: var(--accent-color);">
-    <svg class="themed-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="3rem" height="3rem"
-         fill="currentColor">
-      <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-48.9 158.8c.2 2.8.2 5.7.2 8.5 0 86.7-66 186.6-186.6 186.6-37.2 0-71.7-10.8-100.7-29.4 5.3.6 10.4.8 15.8.8 30.7 0 58.9-10.4 81.4-28-28.8-.6-53-19.5-61.3-45.5 10.1 1.5 19.2 1.5 29.6-1.2-30-6.1-52.5-32.5-52.5-64.4v-.8c8.7 4.9 18.9 7.9 29.6 8.3a65.447 65.447 0 0 1-29.2-54.6c0-12.2 3.2-23.4 8.9-33.1 32.3 39.8 80.8 65.8 135.2 68.6-9.3-44.5 24-80.6 64-80.6 18.9 0 35.9 7.9 47.9 20.7 14.8-2.8 29-8.3 41.6-15.8-4.9 15.2-15.2 28-28.8 36.1 13.2-1.4 26-5.1 37.8-10.2-8.9 13.1-20.1 24.7-32.9 34z"/>
-    </svg>
-  </a>
-  <span class="tooltiptext">X (Twitter)</span>
-</span>
-
+            <div class="publications">
+                <ul class="publication-list">
+                    <li>
+                        📄 (2024).
+                        <a href="#">Emotion Classification from Gaze Data Alone: A Deep Learning Approach without Pupil Diameter.</a>
+                    </li>
+                    <li>
+                        📄 (2024).
+                        <a href="#">Attempts on detecting Alzheimer's disease by fine-tuning pre-trained model with Gaze Data.</a>
+                        In <em>ACM ETRA 2024 COGAIN</em>.
+                        <div class="publication-buttons">
+                            <button class="cite-button">Cite</button>
+                            <button class="doi-button">DOI</button>
+                        </div>
+                    </li>
+                </ul>
+                <div class="show-all">
+                    <a href="publications/publications-list.html" class="btn btn--primary">Show all &gt;</a>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- Email Display (Optional)
-            <div class="email-display">
-              <a href="mailto:eteghadalireza@gmail.com"><i class="fas fa-envelope"></i> eteghadalireza@gmail.com</a>
-            </div>  -->
+    <section class="section-contact" id="contact">
+        <div class="container">
+            <h2 class="subheading center-text">Contact Me</h2>
+            <p class="subheading-description center-text">
+                <!-- Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae minima aspernatur impedit dolore nulla
+                mollitia porro illo. -->
+            </p>
 
-            <!-- Contact Form -->
-            <div class="contact-form">
-                <h3><i class="fas fa-paper-plane" style="margin-right: 8px; color: var(--accent-color);"></i>Send a
-                    Message</h3>
-                <form id="my-form" action="https://formspree.io/f/xkgrlarr" method="POST" enctype="multipart/form-data">
-                    <input type="text" name="name" placeholder="Your Name" required/>
-                    <input type="email" name="email" placeholder="Your Email" required/>
-                    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-                    <button id="my-form-button" type="submit">Send</button>
-                    <p id="my-form-status" style="margin-top: 10px; font-weight: bold;"></p>
+            <div class="contact">
+                <form id="my-form" class="contact-form" name="sign-up" action="https://formspree.io/f/xkgrlarr"
+                      method="POST" enctype="multipart/form-data">
+
+                    <div>
+                        <label for="full-name">Full Name</label>
+                        <input
+                                id="full-name"
+                                name="full-name"
+                                type="text"
+                                placeholder="Please enter your full name"
+                                required
+                        />
+                    </div>
+
+                    <div>
+                        <label for="email">Email address</label>
+                        <input
+                                id="email"
+                                name="email"
+                                type="email"
+                                placeholder="Please enter your email"
+                                required
+                        />
+                    </div>
+
+                    <div>
+                        <label for="message">Your Message</label>
+                        <textarea
+                                id="message"
+                                name="message"
+                                rows="5"
+                                placeholder="Type your message here..."
+                                required></textarea>
+                    </div>
+
+
+                    <button type="submit" id="my-form-button" class="btn btn--form">Submit</button>
+
+                    <p id="my-form-status" class="submition-warning"></p>
                 </form>
+
             </div>
-        </div>
-
-        <div class="right-column">
-            <!-- Calendly inline widget begin -->
-            <div class="calendly-inline-widget" data-url="https://calendly.com/alireza_eteghad/30min?hide_gdpr_banner=1"
-                 style="min-width:320px;height:700px;"></div>
-            <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
         </div>
+    </section>
+
+</main>
+<footer class="footer">
+    <div class="container grid grid--footer grid--5--cols">
+        <div class="logo-col">
+            <div class="footer-logo">
+                <p class="copyright">
+                    ALIREZA ETEGHAD
+                </p>
+            </div>
+
+            <ul class="social-links">
+                <li>
+                    <a class="footer-link" href="https://www.instagram.com/alireza_eteghad/"
+                    >
+                        <ion-icon class="social-icon" name="logo-instagram"></ion-icon
+                        >
+                    </a>
+                </li>
+                <li>
+                    <a class="footer-link" href="https://x.com/alireza_eteghad"
+                    >
+                        <ion-icon class="social-icon" name="logo-twitter"></ion-icon
+                        >
+                    </a>
+                </li>
+                <li>
+                    <a class="footer-link" href="https://www.linkedin.com/in/alireza-eteghad/"
+                    >
+                        <ion-icon class="social-icon" name="logo-linkedin"></ion-icon
+                        >
+                    </a>
+                </li>
+            </ul>
+
+            <p class="copyright">
+                Copyright &copy; <span class="year">2025</span> by Alireza Eteghad.
+                All rights reserved.
+            </p>
+        </div>
+
+        <div class="address-col">
+            <p class="footer-headering">Contact us</p>
+            <address class="contacts">
+                <p class="address">
+                    Tabriz
+                </p>
+                <p>
+                    <a class="footer-link" href="tel:+989912319055">+989912319055</a>
+                    <br/>
+                    <a class="footer-link" href="mailto:a_eteghad402@sut.ac.ir"
+                    >a_eteghad402@sut.ac.ir</a
+                    >
+                </p>
+            </address>
+        </div>
+
+        <nav class="nav-col">
+            <p class="footer-headering">Projects</p>
+            <ul class="footer-nav">
+                <li><a class="footer-link" href="../projects/autoheat-vending-machine-project-details.html">Autoheat
+                    Vending Machine</a></li>
+                <li><a class="footer-link" href="../projects/fsha-project-details.html">FSHA-DataLoggerGUI</a></li>
+                <li><a class="footer-link" href="../projects/smart-industrial-project-details.html">Smart Industrial
+                    Data Logger</a></li>
+                <li><a class="footer-link" href="../projects/znq-project-details.html">ZYNQ-Based Real-Time Data
+                    Logger</a></li>
+            </ul>
+        </nav>
+
+        <nav class="nav-col">
+            <p class="footer-headering">Resources</p>
+            <ul class="footer-nav">
+                <li><a class="footer-link" href="https://scholar.google.com/citations?user=cy2gu3IAAAAJ"
+                       target="_blank">Google Scholar</a></li>
+                <li><a class="footer-link" href="https://www.researchgate.net/profile/Alireza-Eteghad">Research Gate</a>
+                </li>
+                <li><a class="footer-link" href="https://orcid.org/0009-0005-0581-9511">ORCiD</a></li>
+                <li><a class="footer-link" href="https://calendly.com/alireza_eteghad/30min">Calendly</a></li>
+            </ul>
+        </nav>
     </div>
-</section>
+</footer>
 
-<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
-<script>
-    const lightbox = GLightbox({
-        selector: '.glightbox'
-    });
-</script>
+<script
+        type="module"
+        src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+></script>
+<script
+        nomodule
+        src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+></script>
 
-<script>
-    function applyTheme(theme) {
-        document.querySelectorAll('#theme-dropdown div').forEach(el => el.classList.remove('active'));
-        const themeElement = document.querySelector(`#theme-dropdown div[data-theme="${theme}"]`);
-        if (themeElement) themeElement.classList.add('active');
+<script
+        defer
+        src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"
+></script>
 
-        if (theme === 'dark') {
-            document.body.classList.add('dark-mode');
-        } else if (theme === 'light') {
-            document.body.classList.remove('dark-mode');
-        } else {
-            const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            document.body.classList.toggle('dark-mode', isDark);
-        }
-    }
-
-    const savedTheme = localStorage.getItem('theme') || 'auto';
-    applyTheme(savedTheme);
-
-    document.querySelectorAll('#theme-dropdown div').forEach(item => {
-        item.addEventListener('click', () => {
-            const selected = item.getAttribute('data-theme');
-            localStorage.setItem('theme', selected);
-            applyTheme(selected);
-        });
-    });
-
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.nav-links a');
-
-    window.addEventListener('scroll', () => {
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop - 120;
-            if (pageYOffset >= sectionTop) {
-                current = section.getAttribute('id');
-            }
-        });
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${current}`) {
-                link.classList.add('active');
-            }
-        });
-    });
-
-    document.querySelectorAll('.tab-button').forEach(btn => {
-        btn.addEventListener('click', () => {
-            document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
-            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-
-            btn.classList.add('active');
-            document.getElementById(btn.dataset.tab).classList.add('active');
-        });
-    });
-
-    var form = document.getElementById("my-form");
-
-    async function handleSubmit(event) {
-        event.preventDefault();
-        var status = document.getElementById("my-form-status");
-        var data = new FormData(form);
-
-        fetch(form.action, {
-            method: form.method,
-            body: data,
-            headers: {
-                'Accept': 'application/json'
-            }
-        }).then(response => {
-            if (response.ok) {
-                status.innerHTML = "✅ Your message has been sent successfully!";
-                status.style.color = "green";
-                form.reset();
-            } else {
-                response.json().then(data => {
-                    if (Object.hasOwn(data, 'errors')) {
-                        status.innerHTML = data["errors"].map(error => error["message"]).join(", ");
-                    } else {
-                        status.innerHTML = "❌ Oops! Something went wrong.";
-                    }
-                    status.style.color = "red";
-                });
-            }
-        }).catch(error => {
-            status.innerHTML = "❌ Network error. Please try again later.";
-            status.style.color = "red";
-        });
-    }
-
-    form.addEventListener("submit", handleSubmit);
-
-    document.addEventListener("DOMContentLoaded", function () {
-        const lightbox = document.getElementById("lightbox");
-        const lightboxImage = document.getElementById("lightbox-image");
-        const closeBtn = document.getElementById("lightbox-close");
-        const prevBtn = document.getElementById("lightbox-prev");
-        const nextBtn = document.getElementById("lightbox-next");
-        const zoomInBtn = document.getElementById("zoom-in");
-        const zoomOutBtn = document.getElementById("zoom-out");
-        const resetZoomBtn = document.getElementById("reset-zoom");
-        const wrapper = document.querySelector(".lightbox-wrapper");
-
-        let currentGallery = [];
-        let currentIndex = 0;
-        let zoomLevel = 1;
-        let isDragging = false;
-        let startX, startY, translateX = 0, translateY = 0;
-
-        function updateImage() {
-            zoomLevel = 0.8;
-            translateX = 0;
-            translateY = 0;
-            lightboxImage.onload = () => {
-                applyTransform();
-            };
-
-            lightboxImage.src = currentGallery[currentIndex].src;
-        }
-
-        function applyTransform() {
-            lightboxImage.style.transform = `scale(${zoomLevel}) translate(${translateX}px, ${translateY}px)`;
-        }
-
-        function resetZoom() {
-            zoomLevel = 0.8;
-            translateX = 0;
-            translateY = 0;
-            applyTransform();
-        }
-
-        function openLightbox(images, index) {
-            currentGallery = images;
-            currentIndex = index;
-            updateImage();
-            lightbox.style.display = "flex";
-        }
-
-        function closeLightbox() {
-            lightbox.style.display = "none";
-        }
-
-        function showPrev() {
-            currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
-            updateImage();
-        }
-
-        function showNext() {
-            currentIndex = (currentIndex + 1) % currentGallery.length;
-            updateImage();
-        }
-
-        function zoomIn() {
-            zoomLevel += 0.2;
-            applyTransform();
-        }
-
-        function zoomOut() {
-            zoomLevel = Math.max(0.2, zoomLevel - 0.2);
-            applyTransform();
-        }
-
-        const galleries = document.querySelectorAll(".gallery");
-        galleries.forEach(gallery => {
-            const images = gallery.querySelectorAll("img");
-            images.forEach((img, index) => {
-                img.addEventListener("click", function () {
-                    openLightbox(Array.from(images), index);
-                });
-            });
-        });
-
-        closeBtn.addEventListener("click", closeLightbox);
-        prevBtn.addEventListener("click", showPrev);
-        nextBtn.addEventListener("click", showNext);
-        zoomInBtn.addEventListener("click", zoomIn);
-        zoomOutBtn.addEventListener("click", zoomOut);
-        resetZoomBtn.addEventListener("click", resetZoom);
-        lightboxImage.addEventListener("dblclick", resetZoom);
-
-
-        lightbox.addEventListener("click", function (e) {
-            if (e.target === lightbox) {
-                closeLightbox();
-            }
-        });
-
-        document.addEventListener("keydown", function (e) {
-            if (lightbox.style.display === "flex") {
-                if (e.key === "ArrowLeft") showPrev();
-                else if (e.key === "ArrowRight") showNext();
-                else if (e.key === "Escape") closeLightbox();
-                else if (e.key === "+") zoomIn();
-                else if (e.key === "-") zoomOut();
-            }
-        });
-
-        // Drag to move image
-        wrapper.addEventListener("mousedown", function (e) {
-            if (zoomLevel <= 0.6) return;
-            isDragging = true;
-            startX = e.clientX;
-            startY = e.clientY;
-            wrapper.style.cursor = "grabbing";
-        });
-
-        document.addEventListener("mousemove", function (e) {
-            if (!isDragging) return;
-            const dx = e.clientX - startX;
-            const dy = e.clientY - startY;
-            startX = e.clientX;
-            startY = e.clientY;
-            translateX += dx;
-            translateY += dy;
-            applyTransform();
-        });
-
-        document.addEventListener("mouseup", function () {
-            isDragging = false;
-            wrapper.style.cursor = "grab";
-        });
-    });
-</script>
-
-<div class="lightbox" id="lightbox">
-    <span class="lightbox-close" id="lightbox-close" title="Close">&times;</span>
-    <span class="lightbox-arrow lightbox-prev" id="lightbox-prev" title="Previous">&#10094;</span>
-
-    <div class="lightbox-wrapper" id="lightbox-wrapper">
-        <img class="lightbox-content" id="lightbox-image">
-    </div>
-
-    <span class="lightbox-arrow lightbox-next" id="lightbox-next" title="Next">&#10095;</span>
-
-    <div class="zoom-controls">
-        <span class="zoom-button" id="zoom-in" title="Zoom In">+</span>
-        <span class="zoom-button" id="zoom-out" title="Zoom Out">−</span>
-        <span class="zoom-button" id="reset-zoom" title="Reset"><i class="fas fa-compress"></i></span>
-    </div>
-</div>
-
-
+<script defer src="script.js"></script>
 </body>
 </html>
