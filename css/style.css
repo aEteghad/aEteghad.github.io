@@ -1,0 +1,29 @@
+@import "variables.css";
+@import "general.css";
+
+@import "navigation.css";
+@import "header.css";
+@import "aboutMe.css";
+@import "projects.css";
+@import "publications.css";
+@import "contact.css";
+@import "footer.css";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: var(--gray-color-medium);
+  overflow-x: hidden;
+}

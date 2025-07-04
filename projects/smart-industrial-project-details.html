@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Personal site of Alireza Eteghad, Electrical Engineer specialized in FPGA, Embedded Systems, and Signal Processing. View resume, portfolio and contact info."
+    />
+
+    <!-- Favicon-->
+    <!-- <link rel="icon" href="assets/icons/favicon.png" type="image/png" />
+    <link
+      rel="shortcut icon"
+      href="assets/icons/favicon.png"
+      type="image/png"
+    /> -->
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="styleSheet" href="../css/style.css" />
+    <link rel="styleSheet" href="../css/queries.css" />
+    <link rel="styleSheet" href="../css/project-details.css" />
+
+    <title>Alireza Eteghad &mdash; Portfolio</title>
+  </head>
+  <body>
+  <header class="header">
+    <nav class="main-nav">
+      <ul class="main-nav-list">
+        <li class="main-nav-link mobile-none">
+          <a href="../index.html/#" class="main-nav-link mobile-none"
+          >
+            <span>ALIREZA ETEGHAD</span>
+          </a>
+        </li>
+        <!--        <li class="main-nav-link">-->
+        <!--            <a href="#" class="main-nav-link"-->
+        <!--            >-->
+        <!--                <ion-icon name="moon-outline" class="nav-icon"></ion-icon>-->
+        <!--                <span>Theme</span>-->
+        <!--            </a>-->
+        <!--        </li>-->
+        <!--        <li>-->
+        <!--            <a href="#" class="main-nav-link">-->
+        <!--                <ion-icon name="language" class="nav-icon"></ion-icon>-->
+        <!--                <span>EN</span>-->
+        <!--            </a>-->
+        <!--        </li>-->
+      </ul>
+
+      <ul class="main-nav-list">
+        <li><a href="../index.html/#" class="main-nav-link" class="active">Home</a></li>
+        <li><a href="../index.html/#about" class="main-nav-link">About Me</a></li>
+        <li>
+          <a href="../index.html/#projects" class="main-nav-link">Projects</a>
+        </li>
+        <li>
+          <a href="../index.html/#publications" class="main-nav-link">Publications</a>
+        </li>
+        <li><a href="../index.html/#contact" class="main-nav-link">Contact Me</a></li>
+      </ul>
+    </nav>
+
+
+    <button class="btn-mobile-nav">
+      <ion-icon class="icon-mobile-nav" name="menu-outline"></ion-icon>
+      <ion-icon class="icon-mobile-nav" name="close-outline"></ion-icon>
+    </button>
+  </header>
+
+    <main class="project-section">
+      <div class="container center-text">
+        <h2 class="subheading">
+          64-Channel Multi-Purpose Industrial Data Logger
+        </h2>
+        <p class="subheading-description">
+          <strong
+            >A cutting-edge, multi-purpose industrial data logger is currently
+            under development, designed to support real-time signal acquisition,
+            intelligent processing, and flexible connectivity.</strong
+          >
+        </p>
+      </div>
+
+      <div class="container project-content">
+        <p class="project-paragraph">
+          The system features 64 configurable channels—40 analog and 24
+          digital—and is equipped with a next-generation Zynq Ultrascale+ MPSoC
+          platform. It supports high-speed interfaces including WiFi6, Ethernet,
+          and USB 3.0 for seamless integration with both desktop and mobile
+          environments. The project also includes a powerful cross-platform
+          Qt-based user interface for advanced visualization, processing, and
+          export.
+        </p>
+
+        <ul class="project-list">
+          <li>
+            <strong>64 Total Channels</strong> – Including 20 strain gauge
+            inputs, 4 load cell channels, 8 LVDT, 8 high-speed analog (32-bit),
+            14 configurable digital I/Os, 6 accelerometer ports, and 2
+            temperature/humidity sensors.
+          </li>
+          <li>
+            <strong>Precision ADCs</strong> – Utilizes AD7768 (8-ch, 24-bit,
+            256kSPS) and AK5578EN (8-ch, 32-bit, 768kSPS) for high-resolution
+            analog conversion.
+          </li>
+          <li>
+            <strong>High-Speed Interfaces</strong> – WiFi6, Gigabit Ethernet,
+            and USB3.0 for fast, reliable data transmission across platforms.
+          </li>
+          <li>
+            <strong>Smart Qt-Based GUI</strong> – Real-time FFT, arithmetic
+            operations, data logging, Excel/MATLAB export, and cross-platform
+            compatibility (Windows/Android).
+          </li>
+          <li>
+            <strong>Onboard DisplayPort Output</strong> – Allows direct monitor
+            connection to review and analyze live data.
+          </li>
+          <li>
+            <strong>Rugged Industrial Design</strong> – Built with
+            industrial-grade components for operation between −40°C to +85°C.
+          </li>
+          <li>
+            <strong>Modular & Configurable</strong> – Customizable for sensor
+            types, reference voltage outputs, and calibration settings.
+          </li>
+          <li>
+            <strong>Data Logging up to 1 Month</strong> – Capable of
+            uninterrupted logging for extended durations with onboard storage
+            and smart buffering.
+          </li>
+        </ul>
+
+        <div class="gallery">
+          <div class="gallery">
+            <div class="gallery-item">
+              <img
+                src="../assets/projects/SmartLogger40CH/1.jpg"
+                alt="SmartLogger40CH"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+  <footer class="footer light">
+    <div class="container grid grid--footer grid--5--cols">
+      <div class="logo-col">
+        <div class="footer-logo">
+          <p class="copyright">
+            ALIREZA ETEGHAD
+          </p>
+        </div>
+
+        <ul class="social-links">
+          <li>
+            <a class="footer-link" href="https://www.instagram.com/alireza_eteghad/"
+            >
+              <ion-icon class="social-icon" name="logo-instagram"></ion-icon
+              >
+            </a>
+          </li>
+          <li>
+            <a class="footer-link" href="https://x.com/alireza_eteghad"
+            >
+              <ion-icon class="social-icon" name="logo-twitter"></ion-icon
+              >
+            </a>
+          </li>
+          <li>
+            <a class="footer-link" href="https://www.linkedin.com/in/alireza-eteghad/"
+            >
+              <ion-icon class="social-icon" name="logo-linkedin"></ion-icon
+              >
+            </a>
+          </li>
+        </ul>
+
+        <p class="copyright">
+          Copyright &copy; <span class="year">2025</span> by Alireza Eteghad.
+          All rights reserved.
+        </p>
+      </div>
+
+      <div class="address-col">
+        <p class="footer-headering">Contact us</p>
+        <address class="contacts">
+          <p class="address">
+            Tabriz
+          </p>
+          <p>
+            <a class="footer-link" href="tel:+989912319055">+989912319055</a>
+            <br/>
+            <a class="footer-link" href="mailto:a_eteghad402@sut.ac.ir"
+            >a_eteghad402@sut.ac.ir</a
+            >
+          </p>
+        </address>
+      </div>
+
+      <nav class="nav-col">
+        <p class="footer-headering">Projects</p>
+        <ul class="footer-nav">
+          <li><a class="footer-link" href="../projects/autoheat-vending-machine-project-details.html">Autoheat
+            Vending Machine</a></li>
+          <li><a class="footer-link" href="../projects/fsha-project-details.html">FSHA-DataLoggerGUI</a></li>
+          <li><a class="footer-link" href="../projects/smart-industrial-project-details.html">Smart Industrial
+            Data Logger</a></li>
+          <li><a class="footer-link" href="../projects/znq-project-details.html">ZYNQ-Based Real-Time Data
+            Logger</a></li>
+        </ul>
+      </nav>
+
+      <nav class="nav-col">
+        <p class="footer-headering">Resources</p>
+        <ul class="footer-nav">
+          <li><a class="footer-link" href="https://scholar.google.com/citations?user=cy2gu3IAAAAJ"
+                 target="_blank">Google Scholar</a></li>
+          <li><a class="footer-link" href="https://www.researchgate.net/profile/Alireza-Eteghad">Research Gate</a>
+          </li>
+          <li><a class="footer-link" href="https://orcid.org/0009-0005-0581-9511">ORCiD</a></li>
+          <li><a class="footer-link" href="https://calendly.com/alireza_eteghad/30min">Calendly</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <script
+      defer
+      src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"
+    ></script>
+
+    <script defer src="../script.js"></script>
+  </body>
+</html>
