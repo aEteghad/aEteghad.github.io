@@ -126,3 +126,54 @@ function checkFlexGap() {
 checkFlexGap();
 
 // https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js
+
+// function openPopup(button) {
+//   const citationText = button.getAttribute('data-citation');
+//   document.getElementById('citationText').value = citationText;
+//   document.getElementById('popup').style.display = 'flex';
+// }
+
+// function closePopup() {
+//   document.getElementById('popup').style.display = 'none';
+// }
+
+// function copyCitation() {
+//   const text = document.getElementById('citationText');
+//   text.select();
+//   text.setSelectionRange(0, 99999);
+//   document.execCommand("copy");
+//   // alert("Citation copied!");
+// }
+
+function openPopup(button) {
+  const filePath = button.getAttribute('data-citation');
+  fetch(filePath)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Citation file not found.");
+      }
+      return response.text();
+    })
+    .then(text => {
+      document.getElementById('citationText').value = text;
+      document.getElementById('popup').style.display = 'flex';
+    })
+    .catch(error => {
+      document.getElementById('citationText').value = "Error to load file!";
+      document.getElementById('popup').style.display = 'flex';
+    });
+}
+
+function closePopup() {
+  document.getElementById('popup').style.display = 'none';
+}
+
+function copyCitation() {
+  const text = document.getElementById('citationText');
+  text.select();
+  text.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  // alert("Citation copied!");
+}
+
+
