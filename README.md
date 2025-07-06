@@ -16,6 +16,7 @@
 -home
 -about me
 -projects
+-publications
 -content
 
 ## Hero
