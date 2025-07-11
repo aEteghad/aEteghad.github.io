@@ -64,6 +64,15 @@
   gap: 2.4rem;
 }
 
+.footer-nav li {
+  display: flex;
+  gap: 8px;
+}
+
+.contacts svg {
+  margin-right: 8px;
+}
+
 .footer-link:link,
 .footer-link:visited {
   text-decoration: none;
