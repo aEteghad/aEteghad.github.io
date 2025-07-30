@@ -272,10 +272,6 @@
   .pg-grid::-webkit-scrollbar { height: 8px; }
   .pg-grid::-webkit-scrollbar-thumb { background: rgba(255,255,255,.18); border-radius: 8px; }
   .pg-grid { scrollbar-width: thin; }
-
-  .container {
-    padding: 0;
-  }
 }
 
 /* Ultra-narrow phones: slightly smaller cards and tighter gaps */
