@@ -1,0 +1,291 @@
+/* --- styles are namespaced under .pg- so they don't collide --- */
+:root{
+  --pg-gap: 10px;
+  --pg-grid-min: 200px;
+  --pg-auto-row: 10px;
+  --pg-modal-bg: rgba(0,0,0,0.92);
+  --pg-btn-size: 48px;
+  --pg-thumb-size: 84px;
+  --pg-thumb-gap: 10px;
+}
+.pg { color:#e6e6e6; }
+.pg-grid {
+  display:grid; grid-template-columns:repeat(auto-fill,minmax(var(--pg-grid-min),1fr));
+  grid-auto-rows:var(--pg-auto-row); gap:var(--pg-gap);
+}
+.pg-card{position:relative; overflow:hidden; border-radius:12px; background:#1a1f2b;
+  box-shadow:0 2px 10px rgba(0,0,0,.3); cursor:zoom-in; transition:transform .12s, box-shadow .12s;}
+.pg-card:hover{ transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,0,0,.45); }
+.pg-card img{width:100%; height:auto; display:block;}
+.pg-label{ position:absolute; left:8px; bottom:8px; padding:4px 8px; font-size:.8rem;
+  background:rgba(0,0,0,.55); border-radius:8px; backdrop-filter:blur(4px); }
+
+.pg-modal{ position:fixed; inset:0; display:none; background:var(--pg-modal-bg); z-index:9999; }
+.pg-modal.open{ display:grid; }
+.pg-stage{ display:grid; grid-template-rows:1fr auto; width:100%; height:100%; }
+.pg-main{ position:relative; display:grid; place-items:center; padding:20px 72px; }
+.pg-img{ max-width:100vw; max-height:calc(100vh - 180px); border-radius:12px;
+  box-shadow:0 12px 40px rgba(0,0,0,.5); user-select:none; }
+.pg-btn{ position:absolute; top:50%; translate:0 -50%; width:var(--pg-btn-size); height:var(--pg-btn-size);
+  border-radius:50%; border:none; background:rgba(255,255,255,.12); color:#fff; cursor:pointer;
+  display:grid; place-items:center; font-size:22px; backdrop-filter:blur(6px); }
+.pg-btn:hover{ background:rgba(255,255,255,.22); }
+.pg-prev{ left:16px; } .pg-next{ right:16px; }
+.pg-close{ position:absolute; top:14px; right:14px; border:none; background:rgba(255,255,255,.12);
+  color:#fff; width:40px; height:40px; border-radius:10px; cursor:pointer; font-size:18px; display:grid; place-items:center; }
+
+.pg-strip{ padding:12px 16px 16px; background:linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.15) 40%, rgba(0,0,0,.35) 100%);
+  border-top:1px solid rgba(255,255,255,.06); }
+.pg-thumbs{ display:flex; gap:var(--pg-thumb-gap); overflow-x:auto; scrollbar-width:thin; padding-bottom:6px; }
+.pg-thumbs::-webkit-scrollbar{ height:8px; }
+.pg-thumbs::-webkit-scrollbar-thumb{ background:rgba(255,255,255,.18); border-radius:8px; }
+.pg-thumb{ flex:0 0 auto; width:var(--pg-thumb-size); height:var(--pg-thumb-size); border-radius:10px;
+  overflow:hidden; border:2px solid transparent; opacity:.8; cursor:pointer; transition:.1s; }
+.pg-thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
+.pg-thumb:hover{ transform:translateY(-2px); opacity:1; }
+.pg-thumb.active{ border-color:#9ecbff; opacity:1; box-shadow:0 0 0 3px rgba(158,203,255,.25); }
+
+/* Blur-up placeholder effect */
+.pg-card img,
+.pg-modal .pg-img {
+  transition: filter .35s ease, opacity .35s ease;
+  filter: blur(16px);
+  opacity: .85;
+}
+
+/* Optional: subtle skeleton background while waiting */
+.pg-card,
+.pg-modal .pg-main {
+  background-image: linear-gradient(90deg, #1a1f2b 0, #222739 40%, #1a1f2b 80%);
+  background-size: 400% 100%;
+  animation: pg-skel 2s ease-in-out infinite;
+}
+@keyframes pg-skel {
+  0% { background-position: 0 0; }
+  100% { background-position: 100% 0; }
+}
+
+/* Once any real image is visible, the skeleton sheen is visually covered.
+   (No extra class needed; it's just a background.) */
+
+
+/* Responsive overrides for Puzzle Gallery */
+
+/* Large desktops */
+@media (min-width: 1600px) {
+  :root {
+    --pg-grid-min: 260px;
+    --pg-auto-row: 12px;
+  }
+}
+
+/* Desktops & large tablets landscape */
+@media (max-width: 1200px) {
+  :root {
+    --pg-grid-min: 220px;
+  }
+}
+
+/* Tablets landscape / small laptops */
+@media (max-width: 992px) {
+  :root {
+    --pg-grid-min: 200px;
+    --pg-gap: 10px;
+  }
+  .pg-main {
+    max-width: 100vw;
+    padding: 8px 0;
+  }
+  .pg-img {
+    max-width: calc(100vw - 62px);
+    max-height: fit-content;
+  }
+}
+
+/* Tablets portrait */
+@media (max-width: 768px) {
+  :root {
+    --pg-auto-row: 12px;
+    --pg-grid-min: 170px;
+    --pg-thumb-size: 76px;
+  }
+  .pg-main {
+    padding: 12px 48px;
+  }
+
+  .pg-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+  .pg-close {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+    top: 10px;
+    right: 10px;
+  }
+  .pg-thumb {
+    width: 64px;
+    height: 64px;
+  }
+
+
+  /* Use two generous columns and slightly taller virtual rows for smoother masonry */
+  .pg-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 12px; /* was 10px */
+    gap: 6px;
+    padding: 8px;
+  }
+
+  /* Ensure every tile has a meaningful visible area on phones.
+     We impose responsive aspect ratios per tile (cropped with object-fit)
+     so previews aren’t tiny while still looking like a puzzle. */
+  .pg-card {
+    border-radius: 10px;
+    aspect-ratio: 4 / 3;               /* default shape */
+  }
+  .pg-card:nth-child(6n+1) { aspect-ratio: 1 / 1; }   /* square */
+  .pg-card:nth-child(6n+2) { aspect-ratio: 3 / 4; }   /* portrait */
+  .pg-card:nth-child(6n+3) { aspect-ratio: 16 / 9; }  /* wide */
+  .pg-card:nth-child(6n+4) { aspect-ratio: 4 / 5; }   /* tall-ish */
+  .pg-card:nth-child(6n+5) { aspect-ratio: 5 / 4; }   /* near-square */
+
+  /* Fill the tile and crop gently for a clean preview */
+  .pg-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   /* shows a larger, readable crop */
+  }
+
+  /* Slightly larger labels for readability */
+  .pg-label {
+    font-size: .8rem;
+    padding: 4px 7px;
+  }
+
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  .pg-main {
+    padding: 10px 40px;
+  }
+  .pg-thumb {
+    width: 56px;
+    height: 56px;
+  }
+  .pg-strip {
+    padding: 8px 12px 12px;
+  }
+  .pg-image {
+    height: auto;
+    max-height: calc(100vh - 300px);
+  }
+}
+
+/* Small screens */
+@media (max-width: 420px) {
+  .pg-main {
+    padding: 8px 36px;
+  }
+  .pg-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+  .pg-thumb {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+/* Short viewports (landscape phones, small laptop windows) */
+@media (max-height: 560px) {
+  .pg-strip {
+    padding: 6px 10px 8px;
+  }
+}
+
+/* Very narrow screens: tighten thumbnails to fit more */
+@media (max-width: 360px) {
+  :root {
+    --pg-thumb-size: 64px;
+    --pg-thumb-gap: 6px;
+  }
+  .pg-grid {
+    gap: 3px;
+    padding: 6px;
+  }
+  .pg-label { font-size: .78rem; }
+}
+
+/* Mobile: turn puzzle grid into a horizontal, swipeable list with snap */
+@media (max-width: 600px) {
+  /* Switch layout from grid to horizontal scroll */
+  .pg-grid {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 10px;
+    height: 200px;
+    padding: 12px 14px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    /* subtle edge fade (supported in modern browsers) */
+    mask-image: linear-gradient(90deg, transparent 0, black 24px, black calc(100% - 24px), transparent 100%);
+  }
+
+  /* Disable masonry-specific sizing on mobile */
+  .pg-grid { grid-template-columns: none; grid-auto-rows: auto; }
+  .pg-card { grid-row-end: auto !important; }
+
+  /* Make each item large enough to preview clearly */
+  .pg-card {
+    flex: 0 0 78vw;              /* visible width per card */
+    max-width: 520px;            /* cap on larger phones */
+    aspect-ratio: 4 / 3;         /* consistent, readable crop */
+    scroll-snap-align: start;    /* snap per card */
+    border-radius: 12px;
+  }
+
+  /* Add some visual rhythm by varying a few card shapes */
+  .pg-card:nth-child(5n+2) { aspect-ratio: 1 / 1; }     /* square */
+  .pg-card:nth-child(5n+3) { aspect-ratio: 16 / 9; }    /* wide */
+  .pg-card:nth-child(5n+4) { aspect-ratio: 3 / 4; }     /* portrait */
+
+  /* Ensure images fill their tile */
+  .pg-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Larger labels for readability on the move */
+  .pg-label {
+    font-size: .85rem;
+    padding: 6px 8px;
+  }
+
+  /* Optional: hide scrollbar while keeping scrollability */
+  .pg-grid::-webkit-scrollbar { height: 8px; }
+  .pg-grid::-webkit-scrollbar-thumb { background: rgba(255,255,255,.18); border-radius: 8px; }
+  .pg-grid { scrollbar-width: thin; }
+
+  .container {
+    padding: 0;
+  }
+}
+
+/* Ultra-narrow phones: slightly smaller cards and tighter gaps */
+@media (max-width: 360px) {
+  .pg-grid { gap: 8px; padding: 10px 12px; }
+  .pg-card { flex-basis: 84vw; }
+}
+
+/* When the full image has loaded */
+.pg-img-ready {
+  filter: blur(0) !important;
+  opacity: 1 !important;;
+}
