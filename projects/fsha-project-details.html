@@ -27,6 +27,7 @@
     <link rel="styleSheet" href="../css/style.css" />
     <link rel="styleSheet" href="../css/queries.css" />
     <link rel="styleSheet" href="../css/project-details.css" />
+    <link rel="styleSheet" href="../css/gallery.css"/>
 
     <title>Alireza Eteghad &mdash; FSHA-DataLoggerGUI</title>
   </head>
@@ -118,7 +119,13 @@
           </li>
         </ul>
 
-        <div class="gallery">
+        <div class="container center-text">
+            <h2 class="subheading">Gallery</h2>
+            <!-- GALLERY -->
+            <div id="galleryA"></div>
+        </div>
+
+        <!-- <div class="gallery">
           <div class="gallery-item">
             <img
               src="../assets/projects/FSHADataLogger-UI/1.webp"
@@ -170,7 +177,7 @@
               Your browser does not support the video tag.
             </video>
           </div>
-        </div>
+        </div> -->
       </div>
     </main>
   <footer class="footer light">
@@ -307,6 +314,41 @@
     ></script>
 
     <script defer src="../script.js"></script>
+
+<script type="module">
+    import {createGallery} from '../gallery.js';
+
+    const imagesFromDB = [
+        {src: "../assets/projects/FSHADataLogger-UI/1.webp", alt: "Mountain lake", w: 800, h: 1200},
+        {src: "../assets/projects/FSHADataLogger-UI/2.webp", alt: "Dog portrait", w: 1200, h: 800},
+        {src: "../assets/projects/FSHADataLogger-UI/3.webp", alt: "Forest path", w: 900, h: 650},
+        {src: "../assets/projects/FSHADataLogger-UI/4.webp", alt: "City skyline", w: 900, h: 1400},
+        {src: "../assets/projects/FSHADataLogger-UI/5.webp", alt: "Wave", w: 1200, h: 900},
+        {src: "../assets/projects/FSHADataLogger-UI/6.webp", alt: "Desert dunes", w: 820, h: 1100},
+        {src: "../assets/projects/FSHADataLogger-UI/7.webp", alt: "Bridge", w: 1100, h: 820},
+//        {src: "https://picsum.photos/id/1080/1000/700", alt: "Camping under stars", w: 1000, h: 700},
+//        {src: "https://picsum.photos/id/1021/900/900", alt: "Sea cliff", w: 900, h: 900},
+//       {src: "https://picsum.photos/id/1003/1100/1400", alt: "Waterfall", w: 1100, h: 1400},
+//        {src: "https://picsum.photos/id/1016/1000/800", alt: "Valley", w: 1000, h: 800},
+//        {src: "https://picsum.photos/id/1022/850/1200", alt: "Canyon", w: 850, h: 1200},
+//        {src: "https://picsum.photos/id/1039/1200/900", alt: "Town at dusk", w: 1200, h: 900},
+//        {src: "https://picsum.photos/id/1043/900/1100", alt: "Snow road", w: 900, h: 1100},
+//        {src: "https://picsum.photos/id/1050/1000/1200", alt: "Pier", w: 1000, h: 1200}
+    ];
+
+
+    const g = createGallery(document.querySelector('#galleryA'), {
+        images: imagesFromDB,
+        gridMin: '220px',        // optional per-page override
+        autoRow: '10px',         // optional
+    });
+
+    // later (e.g., after a search or filter)
+    // g.setImages(filteredArray);
+
+    // or append more without losing existing:
+    // g.addImages(newBatch);
+</script>
 
     <div id="popup" class="popup-overlay">
   <div class="popup-content">
