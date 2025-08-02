@@ -109,18 +109,25 @@ export function createGallery(container, options = {}) {
             if (!entry.isIntersecting) return;
             const el = entry.target;
             pgIO.unobserve(el);
-            // Avoid re-setting if already full
-            if (el.dataset.fullSrc && el.src !== el.dataset.fullSrc) {
-                const full = new Image();
-                full.src = el.dataset.fullSrc;
-                full.decode?.().catch(() => {
-                })  // avoid blocking if decode unsupported
-                    .finally(() => {
-                        el.src = el.dataset.fullSrc;
-                    }); // swap to full
+
+            const full = el.dataset.fullSrc;
+            if (!full) {
+                // No blurData case → mark ready
+                el.classList.add('pg-img-ready');
+                return;
             }
+            if (el.src === full) {
+                el.classList.add('pg-img-ready');
+                return;
+            }
+
+            // Preload full, then swap
+            const pre = new Image();
+            pre.onload = () => setFullAndReady(el, full);
+            pre.onerror = () => setFullAndReady(el, full); // fall back to swap anyway
+            pre.src = full;
         });
-    }, {rootMargin: '200px 0px'});
+    }, { rootMargin: '200px 0px' });
 
     function ensureFullImage(imgEl) {
         // If no blur provided, mark ready immediately
