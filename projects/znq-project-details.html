@@ -27,6 +27,7 @@
     <link rel="styleSheet" href="../css/style.css" />
     <link rel="styleSheet" href="../css/queries.css" />
     <link rel="styleSheet" href="../css/project-details.css" />
+    <link rel="styleSheet" href="../css/gallery.css"/>
 
     <title>Alireza Eteghad &mdash; ZYNQ-Based Real-Time Data Logger</title>
   </head>
@@ -131,51 +132,9 @@
           </li>
         </ul>
 
-        <div class="gallery">
-          <div class="gallery">
-            <div class="gallery-item">
-              <img
-                src="../assets/projects/ZYNQDataLogger/1.webp"
-                alt="ZYNQ Logger Board"
-              />
-            </div>
-            <div class="gallery-item">
-              <img
-                src="../assets/projects/ZYNQDataLogger/2.webp"
-                alt="System Architecture"
-              />
-            </div>
-            <div class="gallery-item">
-              <img
-                src="../assets/projects/ZYNQDataLogger/3.webp"
-                alt="Square Signal"
-              />
-            </div>
-            <div class="gallery-item">
-              <img
-                src="../assets/projects/ZYNQDataLogger/4.webp"
-                alt="Sine Signal"
-              />
-            </div>
-            <div class="gallery-item">
-              <img
-                src="../assets/projects/ZYNQDataLogger/5.webp"
-                alt="Triangle Signal"
-              />
-            </div>
-            <div class="gallery-item">
-              <img
-                src="../assets/projects/ZYNQDataLogger/6.webp"
-                alt="Voltage Accuracy Test"
-              />
-            </div>
-            <div class="gallery-item">
-              <img
-                src="../assets/projects/ZYNQDataLogger/7.webp"
-                alt="AD7768 Board"
-              />
-            </div>
-          </div>
+        <div class="container center-text">
+            <h2 class="subheading">Gallery</h2>
+            <div id="galleryZYNQ"></div>
         </div>
       </div>
     </main>
@@ -314,6 +273,30 @@
     ></script>
 
     <script defer src="../script.js"></script>
+
+    <script type="module">
+    import {createGallery} from '../gallery.js';
+
+    const imagesFromDB = [
+        {src: "../assets/projects/ZYNQDataLogger/1.webp", alt: "Board", w: 900, h: 600},
+        {src: "../assets/projects/ZYNQDataLogger/2.webp", alt: "Diagram", w: 900, h: 600},
+        {src: "../assets/projects/ZYNQDataLogger/3.webp", alt: "Pulse Wave", w: 900, h: 880},
+        {src: "../assets/projects/ZYNQDataLogger/4.webp", alt: "Sine Wave", w: 900, h: 600},
+        {src: "../assets/projects/ZYNQDataLogger/5.webp", alt: "Triangular Wave", w: 900, h: 650},
+        {src: "../assets/projects/ZYNQDataLogger/6.webp", alt: "Voltmeters", w: 900, h: 650},
+        {src: "../assets/projects/ZYNQDataLogger/7.webp", alt: "A2D PCB", w: 900, h: 650},
+    ];
+
+
+    const g = createGallery(document.querySelector('#galleryZYNQ'), {
+        images: imagesFromDB,
+        gridMin: '220px',
+        autoRow: '10px',
+    });
+    // g.setImages(filteredArray);
+    // g.addImages(newBatch);
+
+</script>
 
     <div id="popup" class="popup-overlay">
   <div class="popup-content">
