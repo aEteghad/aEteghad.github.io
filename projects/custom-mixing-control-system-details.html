@@ -27,8 +27,9 @@
     <link rel="styleSheet" href="../css/style.css" />
     <link rel="styleSheet" href="../css/queries.css" />
     <link rel="styleSheet" href="../css/project-details.css" />
+    <link rel="styleSheet" href="../css/gallery.css"/>
 
-    <title>Alireza Eteghad &mdash; Smart Industrial Data Logger</title>
+    <title>Alireza Eteghad &mdash; Custom Mixing Control System</title>
   </head>
   <body>
   <header class="header">
@@ -71,83 +72,85 @@
     </button>
   </header>
 
-    <main class="project-section">
-      <div class="container center-text">
-        <h2 class="subheading">
-          64-Channel Multi-Purpose Industrial Data Logger
-        </h2>
-        <p class="subheading-description">
-          <strong
-            >A cutting-edge, multi-purpose industrial data logger is currently
-            under development, designed to support real-time signal acquisition,
-            intelligent processing, and flexible connectivity.</strong
-          >
-        </p>
-      </div>
+<main class="project-section">
+  <div class="container center-text">
+    <h2 class="subheading">Custom Mixing Control System</h2>
+    <p class="subheading-description">
+      <strong>
+        An embedded real-time control platform built around the STM32H7 microcontroller,
+        integrating a TouchGFX UI, inverter communication, advanced safety mechanisms,
+        and sensor-based feedback for industrial mixing units.
+      </strong>
+    </p>
+  </div>
 
-      <div class="container project-content">
-        <p class="project-paragraph">
-          The system features 64 configurable channels—40 analog and 24
-          digital—and is equipped with a next-generation Zynq Ultrascale+ MPSoC
-          platform. It supports high-speed interfaces including WiFi6, Ethernet,
-          and USB 3.0 for seamless integration with both desktop and mobile
-          environments. The project also includes a powerful cross-platform
-          Qt-based user interface for advanced visualization, processing, and
-          export.
-        </p>
+  <div class="container project-content">
+    <p class="project-paragraph">
+      This system was designed to manage three-phase AC motors through a Teco S310 inverter,
+      providing precise speed control, flexible operation, and industrial-grade safety.
+      It features a capacitive touchscreen interface alongside physical push-buttons,
+      real-time monitoring of sensors, and hardware protection mechanisms.  
+      Memory expansion with OSPI and QSPI enables a large application footprint and
+      persistent parameter storage, while an RTC ensures reliable timekeeping.
+    </p>
 
-        <ul class="project-list">
-          <li>
-            <strong>64 Total Channels</strong> – Including 20 strain gauge
-            inputs, 4 load cell channels, 8 LVDT, 8 high-speed analog (32-bit),
-            14 configurable digital I/Os, 6 accelerometer ports, and 2
-            temperature/humidity sensors.
-          </li>
-          <li>
-            <strong>Precision ADCs</strong> – Utilizes AD7768 (8-ch, 24-bit,
-            256kSPS) and AK5578EN (8-ch, 32-bit, 768kSPS) for high-resolution
-            analog conversion.
-          </li>
-          <li>
-            <strong>High-Speed Interfaces</strong> – WiFi6, Gigabit Ethernet,
-            and USB3.0 for fast, reliable data transmission across platforms.
-          </li>
-          <li>
-            <strong>Smart Qt-Based GUI</strong> – Real-time FFT, arithmetic
-            operations, data logging, Excel/MATLAB export, and cross-platform
-            compatibility (Windows/Android).
-          </li>
-          <li>
-            <strong>Onboard DisplayPort Output</strong> – Allows direct monitor
-            connection to review and analyze live data.
-          </li>
-          <li>
-            <strong>Rugged Industrial Design</strong> – Built with
-            industrial-grade components for operation between −40°C to +85°C.
-          </li>
-          <li>
-            <strong>Modular & Configurable</strong> – Customizable for sensor
-            types, reference voltage outputs, and calibration settings.
-          </li>
-          <li>
-            <strong>Data Logging up to 1 Month</strong> – Capable of
-            uninterrupted logging for extended durations with onboard storage
-            and smart buffering.
-          </li>
-        </ul>
+    <ul class="project-list">
+      <li>
+        <strong>STM32H7 + FreeRTOS</strong> – Real-time firmware handling motor control, multi-tasking, and system logic.
+      </li>
+      <li>
+        <strong>Teco S310 Inverter Communication</strong> – RS485/Modbus RTU link for precise motor frequency control.
+      </li>
+      <li>
+        <strong>TouchGFX GUI</strong> – A 4.3" capacitive touchscreen interface designed for intuitive operation.
+      </li>
+      <li>
+        <strong>Multi-Input Control</strong> – Supports both touchscreen and three dedicated push-buttons.
+      </li>
+      <li>
+        <strong>OSPI Flash</strong> – Runs a large 7 MB firmware image efficiently.
+      </li>
+      <li>
+        <strong>QSPI Flash</strong> – Stores and retrieves persistent parameters (e.g., wake-up time).
+      </li>
+      <li>
+        <strong>RTC Integration</strong> – Timekeeping and scheduling embedded into system logic.
+      </li>
+      <li>
+        <strong>Inductive Sensor Feedback</strong> – Ensures gear alignment in a specific direction and verifies sensor health.
+      </li>
+      <li>
+        <strong>Micro-Switch Door Control</strong> – Stops the motor immediately if the access door is opened mid-operation.
+      </li>
+      <li>
+        <strong>Emergency Stop Button</strong> – Hardware-level override to halt the system under any condition.
+      </li>
+      <li>
+        <strong>Inverter State Detection</strong> – Monitors ON/OFF state of the Teco S310 for safe operation.
+      </li>
+      <li>
+        <strong>Motor Brake Control</strong> – Relay-based activation/deactivation of motor braking when required.
+      </li>
+      <li>
+        <strong>Safety & Feedback</strong> – Buzzer alerts, indicator lights, and fault detection for robust operation.
+      </li>
+      <li>
+        <strong>From Scratch Development</strong> – Firmware, UI, and hardware integration fully custom-designed.
+      </li>
+    </ul>
 
-        <div class="gallery">
-          <div class="gallery">
-            <div class="gallery-item">
-              <img
-                src="../assets/projects/SmartLogger40CH/1.webp"
-                alt="SmartLogger40CH"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </main>
+    <div class="container center-text">
+      <h2 class="subheading">Gallery</h2>
+      <div id="galleryMixing"></div>
+    </div>
+
+    <div style="text-align:center; margin: 2rem 0;">
+         <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7357114484651401216?collapsed=1"
+          height="542" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+    </div>
+
+  </div>
+</main>
 
   <footer class="footer light">
     <div class="container grid grid--footer grid--5--cols">
@@ -284,6 +287,34 @@
     ></script>
 
     <script defer src="../script.js"></script>
+
+    <script type="module">
+    import {createGallery} from '../gallery.js';
+
+    const imagesMIXING = [
+        {src: "../assets/projects/TecoMixer/1.webp", alt: "Main", w: 600, h: 650},
+        {src: "../assets/projects/TecoMixer/2.webp", alt: "MainB", w: 600, h: 650},
+        {src: "../assets/projects/TecoMixer/3.webp", alt: "Main Screen", w: 900, h: 880},
+        {src: "../assets/projects/TecoMixer/4.webp", alt: "Timer Screen", w: 900, h: 600},
+        {src: "../assets/projects/TecoMixer/5.webp", alt: "Fixing Screen", w: 900, h: 650},
+        {src: "../assets/projects/TecoMixer/6.webp", alt: "Emergency-Stop Screen", w: 900, h: 650},
+        {src: "../assets/projects/TecoMixer/7.webp", alt: "MicroSwitch Screen", w: 900, h: 650},
+        {src: "../assets/projects/TecoMixer/8.webp", alt: "Main-Board PCB", w: 900, h: 600},
+        {src: "../assets/projects/TecoMixer/9.webp", alt: "Main-Board PCB_Back", w: 900, h: 650},
+        {src: "../assets/projects/TecoMixer/10.webp",alt: "Sub-Board PCB", w: 900, h: 650},
+        {src: "../assets/projects/TecoMixer/11.webp",alt: "Sub-Board PCB_Back", w: 900, h: 650},
+    ];
+
+
+    const g = createGallery(document.querySelector('#galleryMixing'), {
+        images: imagesMIXING,
+        gridMin: '220px',
+        autoRow: '10px',
+    });
+    // g.setImages(filteredArray);
+    // g.addImages(newBatch);
+
+</script>
 
     <div id="popup" class="popup-overlay">
   <div class="popup-content">

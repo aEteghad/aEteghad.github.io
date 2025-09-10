@@ -208,15 +208,16 @@
             </address>
         </div>
 
-      <nav class="nav-col">
-        <p class="footer-headering">Projects</p>
-        <ul class="footer-nav">
-          <li><a class="footer-link" target="_blank" href="autoheat-vending-machine-project-details.html">Autoheat Vending Machine</a></li>
-          <li><a class="footer-link" target="_blank" href="fsha-project-details.html">FSHA-DataLoggerGUI</a></li>
-          <li><a class="footer-link" target="_blank" href="smart-industrial-project-details.html">Smart Industrial Data Logger</a></li>
-          <li><a class="footer-link" target="_blank" href="znq-project-details.html">ZYNQ-Based Real-Time Data Logger</a></li>
-        </ul>
-      </nav>
+        <nav class="nav-col">
+            <p class="footer-headering">Projects</p>
+            <ul class="footer-nav">
+                <li><a class="footer-link" target="_blank" href="znq-project-details.html">ZYNQ-Based Real-Time DataLogger</a></li>
+                <li><a class="footer-link" target="_blank" href="custom-mixing-control-system-details.html">Custom Mixing Control System</a></li>
+                <li><a class="footer-link" target="_blank" href="smart-industrial-project-details.html">Smart IndustrialData Logger</a></li>                 
+                <li><a class="footer-link" target="_blank" href="autoheat-vending-machine-project-details.html">AutoheatVending Machine</a></li>
+                <li><a class="footer-link" target="_blank" href="fsha-project-details.html">FSHA-DataLoggerGUI</a></li>
+            </ul>
+        </nav>
 
       <nav class="nav-col">
         <p class="footer-headering">Resources</p>
@@ -277,7 +278,7 @@
     <script type="module">
     import {createGallery} from '../gallery.js';
 
-    const imagesFromDB = [
+    const imagesZYNQ = [
         {src: "../assets/projects/ZYNQDataLogger/1.webp", alt: "Board", w: 900, h: 600},
         {src: "../assets/projects/ZYNQDataLogger/2.webp", alt: "Diagram", w: 900, h: 600},
         {src: "../assets/projects/ZYNQDataLogger/3.webp", alt: "Pulse Wave", w: 900, h: 880},
@@ -289,7 +290,7 @@
 
 
     const g = createGallery(document.querySelector('#galleryZYNQ'), {
-        images: imagesFromDB,
+        images: imagesZYNQ,
         gridMin: '220px',
         autoRow: '10px',
     });
