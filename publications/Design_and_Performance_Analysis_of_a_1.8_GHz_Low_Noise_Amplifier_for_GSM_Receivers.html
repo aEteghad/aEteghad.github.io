@@ -1,34 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="content-language" content="en" />
 
   <!-- SEO Meta Tags -->
   <meta
     name="description"
-    content="Design and performance analysis of a 1.8 GHz low-noise amplifier for GSM receivers by Alireza Eteghad. Presented at AERO 2025. Includes simulation and layout results using Cadence Virtuoso."
+    content="Design and performance analysis of a 1.8 GHz low-noise amplifier (LNA) for GSM receivers using common-source with inductive degeneration topology. Achieves 17.88 dB gain, 1.87 dB noise figure, and 4.3 mW power consumption. Simulated in Cadence Virtuoso with TSMC 0.18 μm RF CMOS. By Ataollah Panahgholi, Alireza Eteghad, and Esmaeil Najafiaghdam. Published in Journal of Space Science and Technology, 2025."
   />
   <meta
     name="keywords"
-    content="LNA, Low Noise Amplifier, 1.8 GHz, GSM Receiver, RF Design, Cadence Virtuoso, AERO 2025, Shahid Beheshti University, Alireza Eteghad"
+    content="LNA, Low Noise Amplifier, 1.8 GHz, GSM Receiver, RF Design, Cadence Virtuoso, Noise Figure, Inductive Degeneration, Cascoded, TSMC 0.18 μm CMOS, Journal of Space Science and Technology, Alireza Eteghad, Ataollah Panahgholi, Esmaeil Najafiaghdam"
   />
   <meta name="author" content="Alireza Eteghad" />
   <meta name="robots" content="index, follow" />
+
+  <link
+    rel="canonical"
+    href="https://aeteghad.github.io/publications/Design_and_Performance_Analysis_of_a_1.8_GHz_Low_Noise_Amplifier_for_GSM_Receivers.html"
+  />
+
+  <!-- Structured Data for Google Scholar / Search -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "Design and Performance Analysis of a 1.8 GHz Low-Noise Amplifier for GSM Receivers",
+    "author": [
+      {
+        "@type": "Person",
+        "name": "Ataollah Panahgholi",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Department of Electrical Engineering, Sahand University of Technology, Tabriz, Iran"
+        },
+        "sameAs": "https://orcid.org/0009-0001-3935-4530"
+      },
+      {
+        "@type": "Person",
+        "name": "Alireza Eteghad",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Department of Electrical Engineering, Sahand University of Technology, Tabriz, Iran"
+        },
+        "sameAs": "https://orcid.org/0009-0005-0581-9511",
+        "url": "https://aeteghad.github.io"
+      },
+      {
+        "@type": "Person",
+        "name": "Esmaeil Najafiaghdam",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Faculty of Electrical Engineering, Sahand University of Technology, Tabriz, Iran"
+        },
+        "sameAs": "https://orcid.org/0000-0002-7803-998X"
+      }
+    ],
+    "datePublished": "2025-11-03",
+    "dateReceived": "2025-08-10",
+    "dateAccepted": "2025-10-25",
+    "publisher": {
+      "@type": "Organization",
+      "name": "IAS"
+    },
+    "isPartOf": {
+      "@type": "Periodical",
+      "name": "Journal of Space Science and Technology",
+      "issn": "2008-4560",
+      "issueNumber": "Articles in Press"
+    },
+    "image": "https://aeteghad.github.io/publications/Certificate/CertificateLNAJournal.webp",
+    "keywords": ["LNA", "Frequency", "Noise figure", "inductive", "Cascoded"],
+    "url": "https://aeteghad.github.io/publications/Design_and_Performance_Analysis_of_a_1.8_GHz_Low_Noise_Amplifier_for_GSM_Receivers.html",
+    "doi": "10.22034/jsst.2025.1567",
+    "description": "Low Noise Amplifiers (LNAs) play a vital role in communication systems, especially in the receiver section, as they amplify weak received signals with minimal noise. These amplifiers come in various types, but the common-source structure with inductive degeneration is considered one of the most widely used topologies in this field due to its optimal balance between noise figure, gain, and input impedance matching. In this article, the design and simulation of an LNA for the 1.8 GHz GSM band with the aim of achieving high gain, a noise figure of less than 2 dB, and low power consumption are presented. The designed structure utilizes inductive peaking techniques, cascoded configuration to improve stability and isolation, and impedance matching networks. The simulations were conducted using the Cadence Virtuoso tool with the SpectreRF simulator, based on TSMC 0.18 μm RF CMOS technology, with S-parameter and linear and nonlinear analyses. The results show that the designed amplifier has a gain of 17.88 dB, a noise figure of 1.87 dB, and a power consumption of 4.3 mW, making it suitable for sensitive RF applications, especially in mobile devices and base stations.",
+    "pdfUrl": "https://www.jsstpub.com/article_233454_98b4ecb27a52d248b7d2e6e2d43b2d8e.pdf"
+  }
+  </script>
+
+  <!-- Open Graph Tags -->
   <meta property="og:title" content="Design and Performance Analysis of a 1.8 GHz Low-Noise Amplifier for GSM Receivers" />
-  <meta property="og:description" content="Research paper by Alireza Eteghad on the design and performance of a 1.8 GHz LNA for GSM receivers." />
+  <meta property="og:description" content="Research paper by Ataollah Panahgholi, Alireza Eteghad, and Esmaeil Najafiaghdam on the design and performance of a 1.8 GHz LNA for GSM receivers. Published in Journal of Space Science and Technology, 2025." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://aeteghad.github.io/publications/Design_and_Performance_Analysis_of_a_1.8_GHz_Low_Noise_Amplifier_for_GSM_Receivers.html" />
-  <meta property="og:image" content="https://aeteghad.github.io/publications/Certificate/CertificateLNA.webp" />
+  <meta property="og:image" content="https://aeteghad.github.io/publications/Certificate/CertificateLNAJournal.webp" />
+  <meta property="og:site_name" content="Alireza Eteghad" />
   <meta property="og:locale" content="en_US" />
 
-  <!-- Favicon-->
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@aeteghad" />
+  <meta name="twitter:title" content="Design and Performance Analysis of a 1.8 GHz Low-Noise Amplifier for GSM Receivers" />
+  <meta name="twitter:description" content="1.8 GHz LNA for GSM: 17.88 dB gain, 1.87 dB NF, 4.3 mW power. Published in Journal of Space Science and Technology, 2025." />
+  <meta name="twitter:image" content="https://aeteghad.github.io/publications/Certificate/CertificateLNAJournal.webp" />
+
   <!-- <link rel="icon" href="assets/icons/favicon.webp" type="image/png" />
-  <link
-    rel="shortcut icon"
-    href="assets/icons/favicon.webp"
-    type="image/png"
-  /> -->
+  <link rel="shortcut icon" href="assets/icons/favicon.webp" type="image/png" /> -->
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -45,25 +115,6 @@
   <title>
     Alireza Eteghad &mdash; Design and Performance Analysis of a 1.8 GHz Low-Noise Amplifier for GSM Receivers
   </title>
-
-  <!-- Structured Data for Google Scholar / Search -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ScholarlyArticle",
-    "headline": "Design and Performance Analysis of a 1.8 GHz Low-Noise Amplifier for GSM Receivers",
-    "author": {
-      "@type": "Person",
-      "name": "Alireza Eteghad",
-      "url": "https://aeteghad.github.io"
-    },
-    "publisher": "AERO 2025",
-    "datePublished": "2025-05-12",
-    "image": "https://aeteghad.github.io/publications/Certificate/CertificateLNA.webp",
-    "keywords": "LNA, Low Noise Amplifier, GSM, RF, Cadence Virtuoso",
-    "url": "https://aeteghad.github.io/publications/Design_and_Performance_Analysis_of_a_1.8_GHz_Low_Noise_Amplifier_for_GSM_Receivers.html"
-  }
-  </script>
 </head>
 
   <body>
@@ -133,7 +184,7 @@
             <div class="meta-row"><strong>Issue</strong>: -</div>
             <div class="meta-row"><strong>Pages</strong>: -</div>
             <div class="meta-row"><strong>Publisher</strong>: IAS</div>
-            <div class="meta-row"><strong>DOI</strong>:<a href="https://doi.org/10.22034/jsst.2025.1567" target="_blank">10.22034/jsst.2025.1567</a></div>
+            <div class="meta-row"><strong>DOI</strong>:<a href="https://doi.org/10.22034/jsst.2025.1567" target="_blank"> 10.22034/jsst.2025.1567</a></div>
           </section>
 
           <section class="publication-description">
@@ -170,8 +221,6 @@
             <li>17.9 dB Gain</li>
             <li>Mobile Devices</li>
             <li>Base Stations</li>
-            <li>AERO 2025</li>
-            <li>Shahid Beheshti University</li>
             <li>Iranian Aerospace Society</li>
             <li>Alireza Eteghad Research</li>
             <li>Alireza Eteghad</li>
