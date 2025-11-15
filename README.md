@@ -1,126 +1,148 @@
-# <-- aEteghad.portfolio -->
+# aEteghad.portfolio
+---
+## 🌐 Navigation
+- [Home](#)
+- [About Me](#about-me)
+- [Projects](#projects)
+- [Publications](#publications)
+- [Contact](#contact)
+---
+## 💥 Hero
+**Alireza Eteghad**  
+*Electrical Engineer | FPGA | Embedded Systems | Signal Processing*  
 
-# SECTION PELANNING:
+[View Resume](#) | [Contact Me](#contact)
+---
+## 👨‍💻 About Me
+Graduate researcher with experience in **embedded systems, FPGA development, signal processing**, and **industrial automation**. Passionate about designing robust systems, high-performance software, and fostering learning and mentorship.  
 
-- Navigation
-- Hero
-- About
-- skills
-- projects
-- contact
-- CTA (send a message)
-- Footer
+**Education:**  
+- M.Sc. in Electrical Engineering – Integrated Circuits (2025)  
+- B.Sc. in Electrical Engineering – Electronics (2023)  
 
-## Navigation
+**Courses Taught:**  
+- Digital Systems II  
+- Microprocessor System Design  
+- ASIC/FPGA Circuits  
+---
+## 🛠 Skills
+**Programming:** C, C++, VHDL  
+**Embedded Platforms:** ARM, FPGA  
+**Operating Systems:** PetaLinux  
+**Driver Development:** A2D interfaces (AD7768, ISL26104)  
+**Signal Processing & GUI Development:** Qt  
+---
+## 📂 Projects
+### 1️⃣ FSHA-DataLoggerGUI
+**Advanced Data Logger Interface**  
+Qt-based GUI for embedded data logger system: detects USB ports automatically, supports multi-channel real-time acquisition, live plotting, FFT, interpolation, and Excel export.  
 
--home
--about me
--projects
--publications
--content
+**Highlights:**  
+- Auto USB Port Detection  
+- Simultaneous Channel Reading  
+- Live Plotting & FFT Calculation  
+- Excel Export & Function Fitting  
+- Adjustable Sampling Rate  
 
-## Hero
+[Know more >](https://aeteghad.github.io/projects/fsha-project-details.html)  
 
-- Name: Alireza Eteghad
-- Title: Electrical Engineer | FPGA | Embedded Systems | Signal Processing
-- CTA Buttons: View Resume, Contact Me
-- Hero image
+### 2️⃣ ZYNQ-Based Real-Time Data Logger
+**High-Speed, Multi-Channel Data Acquisition**  
+ZYNQ XC7Z020 SoC + AD7768 ADC for industrial & medical applications. Real-time Ethernet data transfer and flexible analog front-end.  
 
-## About
+**Highlights:**  
+- Integrated ARM + FPGA (ZYNQ XC7Z020)  
+- 24-bit ADC, 256 kSPS Sampling Rate  
+- Ethernet TCP/IP Communication  
+- Qt & MATLAB Software Interface  
+- Multi-Signal Support (Sine, Square, Triangle, DC)  
+- High Accuracy Verified  
 
-- Paragraphs from “Graduate researcher...” to “communication and mentorship.”
+[Know more >](projects/znq-project-details.html)  
 
-- Profile images
+### 3️⃣ Smart Industrial Data Logger *(In Progress)*
+**40-Channel Multi-Purpose Industrial Data Logger**  
+Next-gen Zynq Ultrascale+ MPSoC platform with WiFi6, Ethernet, USB3.0, and cross-platform Qt GUI for advanced visualization, real-time processing, and export.  
 
-- Education section:
+**Highlights:**  
+- 64 Channels: 40 analog + 24 digital  
+- Precision ADCs: AD7768 & AK5578EN  
+- High-Speed Interfaces: WiFi6, Gigabit Ethernet, USB3.0  
+- Smart Qt-Based GUI (FFT, arithmetic ops, Excel/MATLAB export)  
+- Onboard DisplayPort Output  
+- Rugged Industrial Design (-40°C to +85°C)  
+- Modular & Configurable  
+- Data Logging up to 1 Month  
 
-  - M.Sc. in Electrical Engineering – Integrated Circuits (2025)
-  - B.Sc. in Electrical Engineering – Electronics (2023)
+[Know more >](https://aeteghad.github.io/projects/smart-industrial-project-details.html)  
 
-- Courses Taught
+### 4️⃣ Custom Mixing Control System
+**Embedded Real-Time Motor Control Platform**  
+STM32H7 + FreeRTOS + TouchGFX UI controlling industrial mixers with inverter communication and advanced safety mechanisms.  
 
-  - conference images
+**Highlights:**  
+- Multi-Motor Real-Time Control  
+- TouchGFX Interactive UI  
+- Safety Interlocks & Emergency Stop  
+- USB & Modbus RTU Communication  
 
-  - name of courses:
-    - Digital Systems II
-    - Microprocessor System Design
-    - ASIC/FPGA Circuits
+[Know more >](https://aeteghad.github.io/projects/custom-mixing-control-system-details.html)  
 
-## Skills
+### 5️⃣ Autoheat Vending Machine
+**Smart Automated Vending Machine**  
+Delivers hot, ready-to-consume products via touchscreen interface and automated electromechanical system.  
 
-- Programming: C, C++, VHDL
-- Embedded Platforms: ARM, FPGAs
-- OS: PetaLinux
-- Driver Dev: A2D interfaces (AD7768, ISL26104)
-- Signal Processing
-- GUI Dev: Qt
+**Highlights:**  
+- Touchscreen Operation  
+- Hot Product Dispensing  
+- Electromechanical Automation  
+- Embedded Safety & Control  
 
-## Projects
+[Know more >](https://aeteghad.github.io/projects/autoheat-vending-machine-project-details.html)
 
-Each project as a card or collapsible section with (or a modale window):
+---
+## 📚 Publications
+### 1️⃣ Real-Time Edge AI Deployment on Zynq UltraScale+ FPGAs: A Versatile Framework for Computer Vision
+**Presented at:** International Conference on Microelectronics (IICM), 2025  
+**Date:** October 28, 2025  
+**Publisher:** IEEE  
+**Keywords:** Edge AI Deployment, Zynq UltraScale+, Vitis AI, DPU, Real-Time Computer Vision, FPGA Acceleration  
+[Full Paper](https://aeteghad.github.io/publications/Real_Time_Edge_AI_Deployment_on_Zynq_UltraScale+_FPGAs_A_Versatile_Framework_for_Computer_Vision.html) | [DOI](#) | [PDF](#)
 
-- Title
-- Description
-- Bullet highlights
-- 3 related images
+### 2️⃣ Design and Performance Analysis of a 1.8 GHz Low-Noise Amplifier for GSM Receivers
+**Published in:** Journal of Space Science and Technology  
+**Date:** November 3, 2025  
+**Publisher:** IAS  
+**ISSN:** 2008-4560  
+**DOI:** 10.22034/jsst.2025.1567  
+**Keywords:** LNA, Low Noise Amplifier, 1.8 GHz, GSM Receiver, RF Design, Cadence Virtuoso  
+[Full Paper](https://aeteghad.github.io/publications/Design_and_Performance_Analysis_of_a_1.8_GHz_Low_Noise_Amplifier_for_GSM_Receivers.html) | [DOI](https://www.jsstpub.com/article_233454.html) | [PDF](https://www.jsstpub.com/article_233454_98b4ecb27a52d248b7d2e6e2d43b2d8e.pdf)
 
-Projects:
+### 3️⃣ ZYNQ Based Real-Time Data Logger with 256 kSPS Sampling Using Ethernet Interface
+**Presented at:** 2025 33rd International Conference on Electrical Engineering (ICEE), Isfahan University of Technology, Isfahan, Iran (May 13-15, 2025)  
+**Date:** May 13, 2025  
+**Publisher:** IEEE  
+**DOI:** 10.1109/ICEE67339.2025.11213828  
+**Keywords:** ZYNQ, Data Logger, Real-Time, 256 kSPS, Ethernet, ICEE 2025  
+[Full Paper](https://aeteghad.github.io/publications/ZYNQ_Based_Real_Time_Data_Logger_with_256_kSPS_Sampling_using_Ethernet_Interface.html) | [DOI](https://doi.org/10.1109/ICEE67339.2025.11213828) | [PDF](publications/PDF/ZYNQ_Based_Real_Time_Data_Logger_with_256_kSPS_Sampling_using_Ethernet_Interface_pdf.html)
 
-1. FSHA-DataLoggerGUI
-   [title] Advanced Data Logger Interface
-   [description] A custom Qt-based graphical user interface was developed for an embedded data logger system. This interface automatically detects connected USB ports and enables simultaneous, real-time data acquisition from multiple channels. Core functionalities include live signal plotting, real-time FFT analysis, linear transformations, interpolation, adjustable sampling rates, and seamless data export to Excel files. The application was implemented in C++/Qt with a codebase exceeding 12,000 lines, optimized for performance and responsiveness on embedded systems.
+### 4️⃣ Designing and checking the construction of an electronic syringe pump and its precise control using an AVR microcontroller
+**Presented at:** 2nd International Conference & 5th National Conference on Laboratory Equipment and Technologies (ILRC), 2024  
+**Date:** 2024  
+**Publisher:** Civilica  
+**Keywords:** AVR Microcontroller, Syringe Pump, Electronic Control, ILRC 2024  
+[Full Paper](https://aeteghad.github.io/publications/Designing_and_checking_the_construction_of_an_electronic_syringe_pump_and_its_precise_control_using_an_AVR_microcontroller.html) | [PDF](https://www.researchgate.net/publication/391645604_Designing_and_checking_the_construction_of_an_electronic_syringe_pump_and_its_precise_control_using_an_AVR_microcontroller#fullTextFileContent)
 
-   - Auto USB Port Detection – Automatically detects and connects to the correct COM port.
-   - Simultaneous Channel Reading – All sensors can be read and plotted in real time.
-   - Live Plotting – Data is visualized instantly with smooth, multi-channel plots.
-   - FFT Calculation – Real-time FFT computation for frequency domain analysis.
-   - Excel Export – All collected data is saved to Excel format.
-   - Function Fitting & Interpolation – Linear functions and point-based interpolation for calibration and transformation.
-   - Sample Rate Control – User-defined sampling frequency (data per second).
+---
+## 📫 Contact & Resume
+**Get in Touch:**  
+- **Email:** [a_eteghad402@sut.ac.ir](mailto:a_eteghad402@sut.ac.ir)  
+- **GitHub:** [https://github.com/aeteghad](https://github.com/aeteghad)  
+- **LinkedIn:** [https://linkedin.com/in/alireza-eteghad](https://linkedin.com/in/alireza-eteghad)
 
-2. ZYNQ Based Real-Time Data Logger
-   [title] ZYNQ-Based Real-Time Data Logger
-   [description] A high-speed, multi-channel data acquisition system designed using the ZYNQ XC7Z020 SoC and the 24-bit AD7768 ADC. This system features a sampling rate of 256 kSPS and real-time data transfer over Ethernet, making it ideal for industrial measurement, power monitoring, and medical applications. It captures and processes analog signals using ADA4807 precision amplifiers and a delta-sigma ADC. The architecture efficiently bridges programmable logic and ARM processors for concurrent data processing and transmission.
+[Download Resume PDF](#)  
 
-   - Powered by ZYNQ XC7Z020 SoC – Integrated ARM + FPGA system for high-speed processing.
-   - 24-bit AD7768 ADC – Delta-sigma ADC with exceptional resolution and noise performance.
-   - 256 kSPS Sampling Rate – Fast and accurate data acquisition for high-frequency signals.
-   - Ethernet (TCP/IP) Communication – Real-time data transfer using lwIP stack.
-   - Flexible Analog Front-End – ADA4807 amplifiers with configurable gain (×1 and ×10).
-   - Direct PL-to-PS Data Transfer – AXI_GPIO-based communication without DMA overhead.
-   - Software Integration – Qt and MATLAB-based interfaces for live display and configuration.
-   - Multi-Signal Support – Tested with sine, square, triangle, and DC signals.
-   - High Accuracy – Verified by comparing against precision voltmeter readings.
-
-3. Smart Industrial Data Logger (In Progress)
-   [title] 40-Channel Multi-Purpose Industrial Data Logger (In Progress)
-   [description]A cutting-edge, multi-purpose industrial data logger is currently under development, designed to support real-time signal acquisition, intelligent processing, and flexible connectivity. The system features 64 configurable channels—40 analog and 24 digital—and is equipped with a next-generation Zynq Ultrascale+ MPSoC platform. It supports high-speed interfaces including WiFi6, Ethernet, and USB 3.0 for seamless integration with both desktop and mobile environments. The project also includes a powerful cross-platform Qt-based user interface for advanced visualization, processing, and export.
-
-   - 64 Total Channels – Including 20 strain gauge inputs, 4 load cell channels, 8 LVDT, 8 high-speed analog (32-bit), 14 configurable digital I/Os, 6 accelerometer ports, and 2 temperature/humidity sensors.
-   - Precision ADCs – Utilizes AD7768 (8-ch, 24-bit, 256kSPS) and AK5578EN (8-ch, 32-bit, 768kSPS) for high-resolution analog conversion.
-   - High-Speed Interfaces – WiFi6, Gigabit Ethernet, and USB3.0 for fast, reliable data transmission across platforms.
-   - Smart Qt-Based GUI – Real-time FFT, arithmetic operations, data logging, Excel/MATLAB export, and cross-platform compatibility (Windows/Android).
-   - Onboard DisplayPort Output – Allows direct monitor connection to review and analyze live data.
-   - Rugged Industrial Design – Built with industrial-grade components for operation between −40°C to +85°C.
-   - Modular & Configurable – Customizable for sensor types, reference voltage outputs, and calibration settings.
-   - Data Logging up to 1 Month – Capable of uninterrupted logging for extended durations with onboard storage and smart buffering.
-
-## Contact + Resume
-
-- icons of:
-  email, LinkedIn, Research gate, google scolar, x.
-
-- Downloadable PDF button (provide later and link it to the button on the hero section)
-
-## CTA (send a message) + calendar
-
-- a form for sending message
-- line calendar for setting a 30-min meating.
-
-## Footer
-
-- copyright
-- adress
-- phone
-- different sections
-
+---
+## ⚡ Footer
+- © 2025 Alireza Eteghad  
+- Quick Links: [Home](#) | [About Me](#about-me) | [Projects](#projects) | [Publications](#publications) | [Contact](#contact)
