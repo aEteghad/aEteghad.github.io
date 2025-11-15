@@ -58,7 +58,7 @@ ZYNQ XC7Z020 SoC + AD7768 ADC for industrial & medical applications. Real-time E
 - Multi-Signal Support (Sine, Square, Triangle, DC)  
 - High Accuracy Verified  
 
-[Know more >](projects/znq-project-details.html)  
+[Know more >](https://aeteghad.github.io/projects/znq-project-details.html)  
 
 ### 3️⃣ Smart Industrial Data Logger *(In Progress)*
 **40-Channel Multi-Purpose Industrial Data Logger**  
@@ -107,7 +107,7 @@ Delivers hot, ready-to-consume products via touchscreen interface and automated 
 **Date:** October 28, 2025  
 **Publisher:** IEEE  
 **Keywords:** Edge AI Deployment, Zynq UltraScale+, Vitis AI, DPU, Real-Time Computer Vision, FPGA Acceleration  
-[Full Paper](https://aeteghad.github.io/publications/Real_Time_Edge_AI_Deployment_on_Zynq_UltraScale+_FPGAs_A_Versatile_Framework_for_Computer_Vision.html) | [DOI](#) | [PDF](#)
+[Full Paper](https://aeteghad.github.io/publications/Real_Time_Edge_AI_Deployment_on_Zynq_UltraScale+_FPGAs_A_Versatile_Framework_for_Computer_Vision.html) | [DOI] | [PDF]
 
 ### 2️⃣ Design and Performance Analysis of a 1.8 GHz Low-Noise Amplifier for GSM Receivers
 **Published in:** Journal of Space Science and Technology  
@@ -124,7 +124,7 @@ Delivers hot, ready-to-consume products via touchscreen interface and automated 
 **Publisher:** IEEE  
 **DOI:** 10.1109/ICEE67339.2025.11213828  
 **Keywords:** ZYNQ, Data Logger, Real-Time, 256 kSPS, Ethernet, ICEE 2025  
-[Full Paper](https://aeteghad.github.io/publications/ZYNQ_Based_Real_Time_Data_Logger_with_256_kSPS_Sampling_using_Ethernet_Interface.html) | [DOI](https://doi.org/10.1109/ICEE67339.2025.11213828) | [PDF](publications/PDF/ZYNQ_Based_Real_Time_Data_Logger_with_256_kSPS_Sampling_using_Ethernet_Interface_pdf.html)
+[Full Paper](https://aeteghad.github.io/publications/ZYNQ_Based_Real_Time_Data_Logger_with_256_kSPS_Sampling_using_Ethernet_Interface.html) | [DOI](https://doi.org/10.1109/ICEE67339.2025.11213828) | [PDF](https://aeteghad.github.io/publications/PDF/ZYNQ_Based_Real_Time_Data_Logger_with_256_kSPS_Sampling_using_Ethernet_Interface_pdf.html)
 
 ### 4️⃣ Designing and checking the construction of an electronic syringe pump and its precise control using an AVR microcontroller
 **Presented at:** 2nd International Conference & 5th National Conference on Laboratory Equipment and Technologies (ILRC), 2024  
