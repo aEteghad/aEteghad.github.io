@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Home -->
+  <url>
+    <loc>https://aeteghad.github.io/</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Projects -->
+  <url>
+    <loc>https://aeteghad.github.io/projects/znq-project-details.html</loc>
+  </url>
+  <url>
+    <loc>https://aeteghad.github.io/projects/custom-mixing-control-system-details.html</loc>
+  </url>
+  <url>
+    <loc>https://aeteghad.github.io/projects/smart-industrial-project-details.html</loc>
+  </url>
+  <url>
+    <loc>https://aeteghad.github.io/projects/autoheat-vending-machine-project-details.html</loc>
+  </url>
+  <url>
+    <loc>https://aeteghad.github.io/projects/fsha-project-details.html</loc>
+  </url>
+
+  <!-- Publications List -->
+  <url>
+    <loc>https://aeteghad.github.io/publications/publications-list.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Publication Pages -->
+  <url>
+    <loc>https://aeteghad.github.io/publications/Real_Time_Edge_AI_Deployment_on_Zynq_UltraScale+_FPGAs_A_Versatile_Framework_for_Computer_Vision.html</loc>
+  </url>
+  <url>
+    <loc>https://aeteghad.github.io/publications/Design_and_Performance_Analysis_of_a_1.8_GHz_Low_Noise_Amplifier_for_GSM_Receivers.html</loc>
+  </url>
+  <url>
+    <loc>https://aeteghad.github.io/publications/ZYNQ_Based_Real_Time_Data_Logger_with_256_kSPS_Sampling_using_Ethernet_Interface.html</loc>
+  </url>
+  <url>
+    <loc>https://aeteghad.github.io/publications/Designing_and_checking_the_construction_of_an_electronic_syringe_pump_and_its_precise_control_using_an_AVR_microcontroller.html</loc>
+  </url>
+
+  <!-- PDF HTML Wrapper Pages -->
+  <url>
+    <loc>https://aeteghad.github.io/publications/PDF/ZYNQ_Based_Real_Time_Data_Logger_with_256_kSPS_Sampling_using_Ethernet_Interface_pdf.html</loc>
+  </url>
+
+</urlset>
